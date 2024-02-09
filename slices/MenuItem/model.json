@@ -29,6 +29,34 @@
         }
       },
       "items": {}
+    },
+    {
+      "id": "withSubmenu",
+      "name": "With Submenu",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "label": {
+          "type": "Text",
+          "config": {
+            "label": "Label",
+            "placeholder": ""
+          }
+        },
+        "submenu": {
+          "type": "Link",
+          "config": {
+            "label": "Submenu",
+            "select": "document",
+            "customtypes": [
+              "submenu"
+            ]
+          }
+        }
+      },
+      "items": {}
     }
   ]
 }

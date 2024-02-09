@@ -22,73 +22,10 @@ const routes: prismic.ClientConfig['routes'] = [
     type: 'page',
     path: '/:uid',
   },
-  {
-    type: 'tickets',
-    path: '/tickets',
-  },
-  {
-    type: 'tickets_season',
-    path: '/tickets/:uid',
-  },
-  {
-    type: 'lessons',
-    path: '/lessons',
-  },
-  {
-    type: 'lessons_season',
-    path: '/lessons/:uid',
-  },
-  {
-    type: 'lesson',
-    resolvers: {
-      category: 'category',
-    },
-    path: '/lessons/:category/:uid',
-  },
-  {
-    type: 'rentals',
-    path: '/rentals',
-  },
-  {
-    type: 'rentals_season',
-    path: '/rentals/:uid',
-  },
-  {
-    type: 'conditions',
-    path: '/conditions',
-  },
-  {
-    type: 'blog',
-    path: '/blog',
-  },
-  {
-    type: 'blog_post',
-    path: '/blog/:uid',
-  },
-  {
-    type: 'events',
-    path: '/events',
-  },
-  {
-    type: 'event',
-    path: '/events/:uid',
-  },
-  {
-    type: 'activities',
-    path: '/activities',
-  },
-  {
-    type: 'activity',
-    path: '/activities/:uid',
-  },
-  {
-    type: 'community',
-    path: '/community',
-  },
-  {
-    type: 'press',
-    path: '/press',
-  },
+  // {
+  //   type: 'conditions',
+  //   path: '/conditions',
+  // },
 ];
 
 /**

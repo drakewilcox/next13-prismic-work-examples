@@ -675,6 +675,51 @@ export type SettingsDocument<Lang extends string = string> =
     Lang
   >;
 
+type SubmenuDocumentDataSlicesSlice = SubmenuItemSlice;
+
+/**
+ * Content for Submenu documents
+ */
+interface SubmenuDocumentData {
+  /**
+   * Description field in *Submenu*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: submenu.description
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  description: prismic.KeyTextField;
+
+  /**
+   * Slice Zone field in *Submenu*
+   *
+   * - **Field Type**: Slice Zone
+   * - **Placeholder**: *None*
+   * - **API ID Path**: submenu.slices[]
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#slices
+   */
+  slices: prismic.SliceZone<SubmenuDocumentDataSlicesSlice>;
+}
+
+/**
+ * Submenu document from Prismic
+ *
+ * - **API ID**: `submenu`
+ * - **Repeatable**: `true`
+ * - **Documentation**: https://prismic.io/docs/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type SubmenuDocument<Lang extends string = string> =
+  prismic.PrismicDocumentWithUID<
+    Simplify<SubmenuDocumentData>,
+    "submenu",
+    Lang
+  >;
+
 export type AllDocumentTypes =
   | ConditionsDocument
   | ErrorDocument
@@ -684,7 +729,208 @@ export type AllDocumentTypes =
   | MetadataDocument
   | PageDocument
   | SeasonDocument
-  | SettingsDocument;
+  | SettingsDocument
+  | SubmenuDocument;
+
+/**
+ * Primary content in *Form → Primary*
+ */
+export interface FormSliceDefaultPrimary {
+  /**
+   * Text field in *Form → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: form.primary.text
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  text: prismic.RichTextField;
+
+  /**
+   * HubSpot Form ID field in *Form → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: form.primary.hubspot_form_id
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  hubspot_form_id: prismic.KeyTextField;
+}
+
+/**
+ * Default variation for Form Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type FormSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<FormSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *Form*
+ */
+type FormSliceVariation = FormSliceDefault;
+
+/**
+ * Form Shared Slice
+ *
+ * - **API ID**: `form`
+ * - **Description**: Form
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type FormSlice = prismic.SharedSlice<"form", FormSliceVariation>;
+
+/**
+ * Primary content in *MenuItem → Primary*
+ */
+export interface MenuItemSliceDefaultPrimary {
+  /**
+   * Label field in *MenuItem → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: menu_item.primary.label
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  label: prismic.KeyTextField;
+
+  /**
+   * Link field in *MenuItem → Primary*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: menu_item.primary.link
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  link: prismic.LinkField;
+}
+
+/**
+ * Default variation for MenuItem Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type MenuItemSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<MenuItemSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Primary content in *MenuItem → Primary*
+ */
+export interface MenuItemSliceWithSubmenuPrimary {
+  /**
+   * Label field in *MenuItem → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: menu_item.primary.label
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  label: prismic.KeyTextField;
+
+  /**
+   * Submenu field in *MenuItem → Primary*
+   *
+   * - **Field Type**: Content Relationship
+   * - **Placeholder**: *None*
+   * - **API ID Path**: menu_item.primary.submenu
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  submenu: prismic.ContentRelationshipField<"submenu">;
+}
+
+/**
+ * With Submenu variation for MenuItem Slice
+ *
+ * - **API ID**: `withSubmenu`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type MenuItemSliceWithSubmenu = prismic.SharedSliceVariation<
+  "withSubmenu",
+  Simplify<MenuItemSliceWithSubmenuPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *MenuItem*
+ */
+type MenuItemSliceVariation = MenuItemSliceDefault | MenuItemSliceWithSubmenu;
+
+/**
+ * MenuItem Shared Slice
+ *
+ * - **API ID**: `menu_item`
+ * - **Description**: MenuItem
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type MenuItemSlice = prismic.SharedSlice<
+  "menu_item",
+  MenuItemSliceVariation
+>;
+
+/**
+ * Primary content in *SubmenuItem → Primary*
+ */
+export interface SubmenuItemSliceDefaultPrimary {
+  /**
+   * Label field in *SubmenuItem → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: submenu_item.primary.label
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  label: prismic.KeyTextField;
+
+  /**
+   * Link field in *SubmenuItem → Primary*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: submenu_item.primary.link
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  link: prismic.LinkField;
+}
+
+/**
+ * Default variation for SubmenuItem Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type SubmenuItemSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<SubmenuItemSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *SubmenuItem*
+ */
+type SubmenuItemSliceVariation = SubmenuItemSliceDefault;
+
+/**
+ * SubmenuItem Shared Slice
+ *
+ * - **API ID**: `submenu_item`
+ * - **Description**: SubmenuItem
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type SubmenuItemSlice = prismic.SharedSlice<
+  "submenu_item",
+  SubmenuItemSliceVariation
+>;
 
 declare module "@prismicio/client" {
   interface CreateClient {
@@ -723,7 +969,24 @@ declare module "@prismicio/client" {
       SettingsDocument,
       SettingsDocumentData,
       SettingsDocumentDataNavigationItem,
+      SubmenuDocument,
+      SubmenuDocumentData,
+      SubmenuDocumentDataSlicesSlice,
       AllDocumentTypes,
+      FormSlice,
+      FormSliceDefaultPrimary,
+      FormSliceVariation,
+      FormSliceDefault,
+      MenuItemSlice,
+      MenuItemSliceDefaultPrimary,
+      MenuItemSliceWithSubmenuPrimary,
+      MenuItemSliceVariation,
+      MenuItemSliceDefault,
+      MenuItemSliceWithSubmenu,
+      SubmenuItemSlice,
+      SubmenuItemSliceDefaultPrimary,
+      SubmenuItemSliceVariation,
+      SubmenuItemSliceDefault,
     };
   }
 }

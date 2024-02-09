@@ -1,23 +1,23 @@
-"use client";
+'use client';
 
-import styles from "./menu.module.css";
+import styles from './menu.module.css';
 
 // Radix Global Navigation global styles
-import "./radixNavigationMenu.css";
+import './radixNavigationMenu.css';
 
-import { useState, useEffect, useRef } from "react";
-import Link from "next/link";
-import { usePathname } from "next/navigation";
-import { type Content, isFilled } from "@prismicio/client";
-import Cookies from "js-cookie";
-import { SliceZone, PrismicLink } from "@prismicio/react";
-import { components } from "@/slices";
-import * as NavigationMenu from "@radix-ui/react-navigation-menu";
-import classNames from "classnames";
-import { useStore } from "@/hooks/useStore";
-import { NavConditions } from "@/components/Weather/NavConditions";
-import { NavWebcams } from "@/components/Weather/NavWebcams";
-import { AllConditions } from "@/components/Weather/conditionTypes";
+import { useState, useEffect, useRef } from 'react';
+import Link from 'next/link';
+import { usePathname } from 'next/navigation';
+import { type Content, isFilled } from '@prismicio/client';
+import Cookies from 'js-cookie';
+import { SliceZone, PrismicLink } from '@prismicio/react';
+import { components } from '@/slices';
+import * as NavigationMenu from '@radix-ui/react-navigation-menu';
+import classNames from 'classnames';
+import { useStore } from '@/hooks/useStore';
+import { NavConditions } from '@/components/Weather/NavConditions';
+import { NavWebcams } from '@/components/Weather/NavWebcams';
+import { AllConditions } from '@/components/Weather/conditionTypes';
 
 export function Menu({
   menuData,
@@ -28,23 +28,23 @@ export function Menu({
 }) {
   const { data } = menuData;
 
-  const [menuReset, setMenuReset] = useState("");
+  const [menuReset, setMenuReset] = useState('');
   const pathname = usePathname();
 
   const [setUnitSystem] = useStore((state: any) => [state.setUnitSystem]);
 
   const initialized = useRef(false);
-  const unitCookie = Cookies.get("unitSystem");
+  const unitCookie = Cookies.get('unitSystem');
 
   useEffect(() => {
     if (!initialized.current && unitCookie) {
-      setUnitSystem(unitCookie || "US");
+      setUnitSystem(unitCookie || 'US');
       initialized.current = true;
     }
   }, [unitCookie]); // eslint-disable-line react-hooks/exhaustive-deps
 
   useEffect(() => {
-    setMenuReset("");
+    setMenuReset('');
   }, [pathname]);
 
   return (
@@ -78,7 +78,7 @@ export function Menu({
                 <PrismicLink
                   field={data.button_link}
                   internalComponent={Link}
-                  className={classNames([styles.menuButton, "button"])}
+                  className={classNames([styles.menuButton, 'button'])}
                 >
                   <span>{data.button_label}</span>
                 </PrismicLink>

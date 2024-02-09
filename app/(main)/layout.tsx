@@ -101,9 +101,14 @@ export default async function MainLayout({
   `,
     })
     .catch(() => {})) as any;
+
+  console.log('MENU DATA', menuData);
+
   const footerData = (await client
     .getSingle<Content.FooterDocument>('footer')
     .catch(() => {})) as any;
+
+  console.log('FOOTER DATA', footerData);
   const weather = await fetchWeather();
   const snow = await fetchSnowReport();
   const poiOverall = await fetchPOIOverall();
@@ -162,7 +167,7 @@ export default async function MainLayout({
       <SkipToContent />
       <Header menuData={menuData} conditionsData={conditionsData} />
       {children}
-      <Footer footerData={footerData} />
+      {/* <Footer footerData={footerData} /> */}
       <div className="preventTransparency" />
       <PrismicPreview repositoryName={repositoryName} />
       <PodiumChatManager />
