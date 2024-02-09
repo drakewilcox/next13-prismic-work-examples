@@ -1,0 +1,98 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  line-height: calc(1em + 0.5rem);
+}
+
+html,
+body {
+  text-rendering: optimizeLegibility;
+  text-size-adjust: 100%;
+  -webkit-font-smoothing: antialiased;
+  overscroll-behavior: none;
+  -webkit-tap-highlight-color: transparent;
+  hyphenate-character: "-";
+}
+/* https://usabilitypost.com/2012/11/05/stop-fixing-font-smoothing/ */
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+img {
+  pointer-events: none;
+  user-select: none;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* TODO: Review only applying to some components */
+/* p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  hyphens: auto;
+} */
+
+p,
+ul,
+ol {
+  a {
+    overflow-wrap: anywhere;
+    word-break: normal;
+    hyphens: none;
+    position: relative;
+    display: inline-block;
+  }
+}
+
+#root,
+#__next {
+  isolation: isolate;
+}
+
+:focus:not(:focus-visible) {
+  outline: none;
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible {
+  outline: 1px solid hsla(0, 0%, 100%, 0);
+}
+
+a:focus-visible:before,
+button:focus-visible:before,
+input:focus-visible:before {
+  border: 2px solid var(--a11y-border-color);
+  border-radius: 5px;
+  box-shadow: 0 0 0 3px var(--a11y-shadow-color);
+  content: "";
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  bottom: -5px;
+  left: -5px;
+  z-index: 2;
+}

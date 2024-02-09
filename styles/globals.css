@@ -1,0 +1,304 @@
+@import "@/styles/_reset.css";
+@import "@/styles/_grid.css";
+@import "@/styles/_typography.css";
+
+:root {
+  /* Breakpoints */
+  --xs: 375px;
+  --sm: 640px;
+  --md: 960px;
+  --lg: 1280px;
+  --xl: 1440px;
+  --xxl: 1920px;
+
+  /* Spacing */
+  --gutter: clamp(1.5rem, 1.324rem + 0.751vw, 2rem);
+  /* iPhone notch offset */
+  @media (min-width: 100vh) and (max-height: 428px) {
+    --gutter: 2.5rem;
+  }
+  --margin: clamp(1.5rem, 0.469rem + 4.34vw, 4.375rem);
+  --spacing: clamp(3rem, 1.944rem + 4.507vw, 6rem);
+  --spacing-sm: clamp(2rem, 1.575rem + 1.812vw, 3.75rem);
+
+  --section-spacing: var(--spacing);
+
+  --module-row-padding: 64px;
+  --sticky-header-top: 64px;
+
+  /* Colors */
+  --white: #ffffff;
+  --off-white: #f0f0f0;
+  --black: #1a1a1a;
+
+  /* TODO: review color usage */
+  --text-graphics-primary: #1a1a1a;
+  --text-graphics-secondary: #1a1a1a99;
+  --text-graphics-inactive: hwb(0 10% 90% / 0.271);
+  --color-status-closed: #da2f20;
+  --color-status-open: #008500;
+  --color-status-on-hold: #1a1a1a99;
+  --blue: #0071eb;
+  --border-default: hwb(0 10% 90% / 0.2);
+  --border-line-break: rgba(26, 26, 26, 0.1);
+  --gray-dark: #303030;
+  --surface-hover: rgba(255, 255, 255, 0.2);
+  --border-hover-or-active: rgba(26, 26, 26, 0.6);
+  --focus-border-color: #cf1d2b;
+
+  --a11y-border-color: var(--blue);
+  --a11y-shadow-color: rgba(0, 97, 201, 0.2);
+
+  /* Color Usage */
+  --text-color: var(--black);
+  --text-color-gray: #707070;
+  --background-color: var(--white);
+
+  /* Font Sizes */
+  /* 400 > 1440 https://royalfig.github.io/fluid-typography-calculator/ */
+  --font-size-h1: clamp(
+    3rem,
+    1.0769230769230769rem + 7.6923076923076925vw,
+    8rem
+  );
+  --line-height-h1: 1;
+  --letter-spacing-h1: normal;
+
+  --font-size-h2: clamp(
+    2.25rem,
+    0.8076923076923077rem + 5.769230769230769vw,
+    6rem
+  );
+  --line-height-h2: 0.9;
+  --letter-spacing-h2: normal;
+
+  --font-size-h3: clamp(
+    2.25rem,
+    1.7692307692307692rem + 1.9230769230769231vw,
+    3.5rem
+  );
+  --line-height-h3: 0.9;
+  --letter-spacing-h3: normal;
+
+  --font-size-s1: clamp(
+    1.938rem,
+    1.6737692307692307rem + 1.056923076923077vw,
+    2.625rem
+  );
+  --line-height-s1: 1.1;
+  --letter-spacing-s1: calc(var(--font-size-s1) * 0.01 * -1);
+
+  --font-size-s2: clamp(
+    1.5625rem,
+    1.4903846153846154rem + 0.2884615384615385vw,
+    1.75rem
+  );
+  --line-height-s2: 1.11;
+  --letter-spacing-s2: calc(var(--font-size-s2) * 0.01 * -1);
+
+  --font-size-p1: clamp(
+    1.25rem,
+    1.2019230769230769rem + 0.19230769230769232vw,
+    1.375rem
+  );
+  --line-height-p1: 1.3;
+  --letter-spacing-p1: calc(var(--font-size-p1) * 0.005 * -1);
+
+  --font-size-p2: clamp(
+    1.125rem,
+    1.0769230769230769rem + 0.19230769230769232vw,
+    1.25rem
+  );
+  --line-height-p2: 1.3;
+  --letter-spacing-p2: calc(var(--font-size-p2) * 0.01 * -1);
+
+  --font-size-p3: clamp(
+    1rem,
+    0.9519230769230769rem + 0.19230769230769232vw,
+    1.125rem
+  );
+  --line-height-p3: 1.4;
+  --letter-spacing-p3: calc(var(--font-size-p3) * 0.005 * -1);
+
+  --font-size-cta: 1rem;
+  --line-height-cta: 1;
+  --letter-spacing-cta: calc(var(--font-size-cta) * 0.02);
+
+  --font-size-caption: clamp(
+    0.75rem,
+    0.7259615384615384rem + 0.09615384615384616vw,
+    0.8125rem
+  );
+  --line-height-caption: 1.2;
+  --letter-spacing-caption: calc(var(--font-size-caption) * 0.02);
+
+  --font-size-section: clamp(
+    0.75rem,
+    0.7259615384615384rem + 0.09615384615384616vw,
+    0.8125rem
+  );
+  --line-height-section: 1.2;
+  --letter-spacing-section: calc(var(--font-size-section) * 0.05);
+
+  --border-radius: clamp(
+    0.25rem,
+    0.15384615384615385rem + 0.38461538461538464vw,
+    0.5rem
+  );
+
+  /* Transition durations */
+  --duration-micro: 0.1s;
+  --duration-short: 0.3s;
+  --duration-normal: 0.45s;
+  --duration-long: 0.65s;
+  --duration-longer: 1.25s;
+
+  /* Transition timing */
+  --ease-out: cubic-bezier(0.215, 0.61, 0.355, 1);
+  --ease-in: cubic-bezier(0.75, 0, 1, 1);
+  --ease-in-out: cubic-bezier(0.645, 0.045, 0.355, 1);
+  --ease-in-out-pow: cubic-bezier(0.5, 0, 0, 1);
+  --ease: cubic-bezier(0.44, 0.21, 0, 1);
+}
+
+body {
+  color: var(--text-color);
+  background: var(--background-color);
+  font-family: var(--font-default);
+}
+
+a {
+  color: inherit;
+  /* text-decoration: none; */
+}
+
+a[href^="http"]:not(:has(span:only-child)) {
+  padding-right: 0.6em;
+}
+
+a[href^="http"]:not(:has(span:only-child))::after {
+  position: absolute;
+  content: "";
+  display: inline-block;
+  width: 0.65em;
+  height: 0.65em;
+  transform: translateY(20%);
+  background-size: 100%;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='%23666666' %3E%3Cpath fill-rule='evenodd' d='M5.22 14.78a.75.75 0 001.06 0l7.22-7.22v5.69a.75.75 0 001.5 0v-7.5a.75.75 0 00-.75-.75h-7.5a.75.75 0 000 1.5h5.69l-7.22 7.22a.75.75 0 000 1.06z' clip-rule='evenodd' /%3E%3C/svg%3E%0A");
+}
+
+.button {
+  cursor: pointer;
+  position: relative;
+  display: inline-block;
+  text-align: center;
+  white-space: nowrap;
+  padding-inline: 0.95rem;
+  border-radius: 1.5rem;
+  border: 1px solid rgba(26, 26, 26, 0.2);
+  transition:
+    color var(--duration-short) var(--ease),
+    border-color var(--duration-short) var(--ease);
+  background-color: var(--background-color);
+  user-select: none;
+
+  span {
+    z-index: 1;
+    position: relative;
+    display: block;
+    font-size: var(--font-size-cta);
+    letter-spacing: var(--letter-spacing-cta);
+    color: var(--text-color);
+    line-height: 2;
+    @media (--md) {
+      line-height: 2.4;
+    }
+  }
+
+  &:link,
+  &:visited {
+    text-decoration: none;
+  }
+
+  @media (any-hover: hover) and (any-pointer: fine) {
+    &:hover,
+    &:focus:not(:focus-visible) {
+      text-decoration: none;
+      border: 1px solid rgba(26, 26, 26, 0.6);
+      &.shadow::before {
+        opacity: 1;
+      }
+    }
+  }
+
+  &:focus-visible:before {
+    border-radius: 1.5rem;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+  }
+
+  &.fill-blue {
+    border: 1px solid var(--blue);
+    background-color: var(--blue);
+    span {
+      color: var(--white);
+    }
+  }
+}
+
+.error-message {
+  font-size: var(--font-size-h3);
+  line-height: var(--line-height-h3);
+  letter-spacing: var(--letter-spacing-h3);
+  margin-block-start: var(--spacing);
+  margin-block-end: var(--spacing) !important;
+  text-transform: uppercase;
+  font-weight: 800;
+  text-align: center;
+}
+
+.visually-hidden:not(:focus):not(:active) {
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+
+/* Prevents transparency of the bottom bar in iOS */
+.preventTransparency {
+  z-index: 1000;
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 150px;
+  transform: translateY(100%);
+  background-color: var(--background-color);
+}
+
+/* Handles the transition for the Podium widget */
+/* The display of the Podium widget is handled in /components/PodiumChatManager */
+#podium-website-widget {
+  visibility: hidden;
+  opacity: 0;
+  transition:
+    visibility var(--duration-micro) var(--ease),
+    opacity var(--duration-micro) var(--ease);
+  /* For local testing */
+  /* background-color: red;
+  position: fixed;
+  bottom: 1rem;
+  right: 1rem;
+  width: 150px;
+  height: 50px; */
+}
+
+.grecaptcha-badge {
+  display: none;
+}

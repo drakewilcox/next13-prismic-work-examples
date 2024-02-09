@@ -1,0 +1,20 @@
+{
+  "id": "season",
+  "label": "Season",
+  "format": "custom",
+  "repeatable": false,
+  "status": true,
+  "json": {
+    "Main": {
+      "season": {
+        "type": "Select",
+        "config": {
+          "label": "Current Season",
+          "placeholder": "",
+          "options": ["winter", "summer"],
+          "default_value": "winter"
+        }
+      }
+    }
+  }
+}

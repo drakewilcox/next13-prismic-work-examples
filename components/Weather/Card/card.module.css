@@ -1,0 +1,62 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  background: var(--white);
+  margin-block-end: var(--spacing);
+
+  scroll-margin-block-start: 6rem;
+  @media (--sm) {
+    scroll-margin-block-start: 8rem;
+  }
+
+  .cardHeader {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    gap: 1rem;
+    margin-block-end: 1rem;
+
+    @media (--sm) {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+      padding-bottom: 1rem;
+    }
+
+    .cardHeaderTitle {
+      font-family: var(--font-serif-medium);
+      color: var(--black);
+      font-size: var(--font-size-s1);
+      line-height: var(--line-height-s1);
+      letter-spacing: var(--letter-spacing-s1);
+      font-weight: normal;
+      text-transform: none;
+      margin-block: 0;
+    }
+
+    .cardToggleContainer {
+      display: flex;
+      padding: 0px;
+      align-items: center;
+      gap: 0.5rem;
+    }
+  }
+
+  .cardSubTitle {
+    color: var(--text-graphics-secondary);
+    max-width: 555px;
+    font-size: var(--font-size-caption);
+    line-height: var(--line-height-caption);
+    letter-spacing: var(--letter-spacing-caption);
+  }
+
+  .cardBody {
+    padding-top: 1rem;
+  }
+}
+
+.card:focus-visible {
+  outline: none;
+}

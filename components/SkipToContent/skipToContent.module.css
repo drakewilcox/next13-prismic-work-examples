@@ -1,0 +1,32 @@
+.skip:focus-within {
+  width: 100%;
+  background: rgba(0, 0, 0, 0.25);
+  z-index: 10000;
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+}
+
+a.link {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  z-index: 0;
+  padding: 1rem 1.25rem;
+  background-color: var(--white);
+  color: var(--black);
+  display: flex;
+  gap: var(--gutter);
+  border-radius: var(--border-radius);
+  font-size: var(--font-size-cta);
+  line-height: 1;
+  letter-spacing: var(--letter-spacing-cta);
+  transform: translateY(-200%);
+  transition: transform var(--duration-normal) var(--ease);
+}
+
+a.link:focus {
+  transform: translateY(0%);
+}

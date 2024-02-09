@@ -1,0 +1,64 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  background: var(--white);
+  margin-block-end: var(--spacing);
+
+  scroll-margin-block-start: 6rem;
+  @media (--sm) {
+    scroll-margin-block-start: 8rem;
+  }
+
+  .cardHeader {
+    width: 100%;
+    padding-bottom: 3rem;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    gap: 1rem;
+
+    .cardHeaderTitle {
+      font-family: var(--font-serif-medium);
+      color: var(--black);
+      font-size: var(--font-size-s1);
+      line-height: var(--line-height-s1);
+      letter-spacing: var(--letter-spacing-s1);
+      font-weight: normal;
+      text-transform: none;
+      margin-block: 0;
+    }
+
+    .cardToggleContainer {
+      display: flex;
+      padding: 0;
+      align-items: center;
+      gap: 1rem;
+    }
+  }
+
+  .cardSubTitle {
+    color: var(--text-graphics-secondary);
+    font-size: var(--font-size-caption);
+    line-height: var(--line-height-caption);
+    letter-spacing: var(--letter-spacing-caption);
+  }
+
+  .cardBody {
+    display: grid;
+    gap: var(--gutter);
+    @media (--sm) {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+}
+
+.item {
+  width: 100%;
+  height: auto;
+  border-radius: var(--border-radius);
+  overflow: hidden;
+}
+
+.card:focus-visible {
+  outline: none;
+}

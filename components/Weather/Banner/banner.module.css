@@ -1,0 +1,32 @@
+.banner {
+  --text-color: var(--white);
+  background-color: var(--blue);
+  color: var(--text-color);
+  position: relative;
+  display: grid;
+  align-items: end;
+  overflow: hidden;
+  min-height: 16.5rem;
+  width: 100%;
+}
+
+.content {
+  position: relative;
+  z-index: 1;
+  padding-block-start: 4.5rem;
+  @media (--sm) {
+    padding-block-start: 4.875rem;
+  }
+  h1 {
+    font-family: var(--font-headline);
+    font-size: var(--font-size-h1);
+    line-height: var(--line-height-h1);
+    letter-spacing: var(--letter-spacing-h1);
+    text-transform: uppercase;
+    max-width: 20ch;
+    margin-block: 1.5rem;
+    @media (--sm) {
+      margin-block: 3rem;
+    }
+  }
+}

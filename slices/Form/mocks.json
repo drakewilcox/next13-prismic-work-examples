@@ -1,0 +1,25 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"text": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Aliqua adipisicing aliquip amet."
+						}
+					}
+				]
+			},
+			"hubspot_form_id": {
+				"__TYPE__": "FieldContent",
+				"value": "drop",
+				"type": "Text"
+			}
+		},
+		"items": []
+	}
+]

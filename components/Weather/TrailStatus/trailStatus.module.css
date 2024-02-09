@@ -1,0 +1,254 @@
+.accordionRoot {
+  border-radius: 6px;
+  width: 100%;
+}
+
+.accordionItem {
+  border-radius: 0px;
+  scroll-margin-top: 4.5rem;
+  position: relative;
+}
+
+.accordionTrigger:focus-visible {
+  outline: none;
+  position: relative;
+}
+
+.accordionHeader {
+  display: flex;
+  padding: 0px;
+  all: unset;
+}
+
+.accordionTrigger {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  justify-content: space-between;
+  color: var(--text-graphics-primary);
+  font-family: var(--font-serif);
+  font-size: var(--font-size-s2);
+  letter-spacing: var(--letter-spacing-s2);
+  line-height: var(--line-height-s2);
+  font-weight: 400px;
+  background-color: transparent;
+  padding: 17.5px 0px 17.5px 0px;
+  &:hover,
+  &:focus {
+    cursor: pointer;
+  }
+
+  &:focus-visible:before {
+    top: 0;
+    bottom: 0;
+  }
+
+  border: none;
+  border-top: 1px solid var(--border-default);
+
+  border-radius: 0px;
+  box-shadow: none;
+
+  display: grid;
+  grid-template-columns: 50% 47% 3%;
+
+  @media (--sm-max) {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 20px;
+    padding: 17.5px 0px 17.5px 0px;
+  }
+
+  .triggerName {
+    width: 100%;
+    text-align: left;
+    white-space: nowrap;
+    @media (--sm-max) {
+      grid-column: 1;
+    }
+  }
+
+  .rightCol {
+    display: flex;
+    justify-content: space-between;
+
+    @media (--sm-max) {
+      grid-column: 1 / span 2;
+      grid-row: 2;
+    }
+  }
+
+  .chevContainer {
+    display: flex;
+    justify-content: flex-end;
+    /* transition: transform 0.5s cubic-bezier(0.23, 1, 0.32, 1); */
+
+    @media (--sm-max) {
+      grid-column: 2;
+    }
+  }
+
+  .triggerLiftType {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    white-space: nowrap;
+    text-align: left;
+    font-family: var(--font-medium);
+    font-size: var(--font-size-section);
+    letter-spacing: var(--letter-spacing-section);
+    line-height: var(--line-height-section);
+    text-transform: uppercase;
+  }
+
+  .triggerOpenStatus {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    font-family: var(--font-medium);
+    font-size: var(--font-size-section);
+    letter-spacing: var(--letter-spacing-section);
+    line-height: var(--line-height-section);
+    text-transform: uppercase;
+  }
+  .sectorCLOSED {
+    color: var(--color-status-closed);
+  }
+  .sectorOPEN {
+    color: var(--color-status-open);
+  }
+  .sectorSTOPPED {
+    color: var(--color-status-on-hold);
+  }
+}
+
+.accordionItem[data-state="open"] {
+  .accordionTrigger {
+    color: black;
+  }
+}
+
+.accordionContent {
+  overflow: hidden;
+  font-size: var(--font-size-p3);
+  letter-spacing: var(--letter-spacing-p3);
+  line-height: var(--line-height-p3);
+  color: var(--text-graphics-primary);
+  background-color: var(--background-color);
+  padding-top: 0.5rem;
+  padding-bottom: 2rem;
+
+  .gridContainer {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0;
+
+    @media (--sm-max) {
+      grid-template-columns: repeat(1, 1fr);
+    }
+
+    .trailRow {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+      padding: 7px 40px 7px 15px;
+      border-left: 1px solid var(--border-default);
+
+      @media (--sm-max) {
+        border-left: none;
+        padding: 13.5px 0px 13.5px 0px;
+      }
+
+      .rowLeft {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+      }
+      .difficultyIcon {
+        width: 18px;
+        height: 18px;
+      }
+
+      .trailName {
+        margin-left: 5px;
+      }
+
+      .trailStatus {
+        font-family: var(--font-medium);
+        font-size: var(--font-size-section);
+        letter-spacing: var(--letter-spacing-section);
+        line-height: var(--line-height-section);
+
+        @media (--md) {
+          transform: translateX(0.35rem);
+        }
+      }
+    }
+  }
+}
+
+.trailCLOSED {
+  color: var(--color-status-closed);
+}
+.trailOPEN {
+  color: var(--color-status-open);
+}
+.trailSTOPPED {
+  color: var(--color-status-on-hold);
+}
+
+.trailPARTIAL {
+  color: var(--color-status-on-hold);
+}
+.accordionContent[data-state="open"] {
+  animation: slideDown 300ms cubic-bezier(0.87, 0, 0.13, 1);
+}
+.accordionContent[data-state="closed"] {
+  animation: slideUp 300ms cubic-bezier(0.87, 0, 0.13, 1);
+}
+
+.accordionContentText {
+  padding: 15px 20px;
+}
+
+.accordionChevron {
+  width: 20px;
+  transition: transform 300ms cubic-bezier(0.87, 0, 0.13, 1);
+}
+
+.accordionTrigger[data-state="open"] {
+  &:hover {
+    .chevContainer {
+      transform: none;
+    }
+  }
+}
+
+.accordionTrigger[data-state="open"] > .chevContainer {
+  .accordionChevron {
+    color: black;
+    transform: rotate(-180deg);
+  }
+}
+
+@keyframes slideDown {
+  from {
+    height: 0;
+  }
+  to {
+    height: var(--radix-accordion-content-height);
+  }
+}
+
+@keyframes slideUp {
+  from {
+    height: var(--radix-accordion-content-height);
+  }
+  to {
+    height: 0;
+  }
+}

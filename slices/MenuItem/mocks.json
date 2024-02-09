@@ -1,0 +1,21 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"label": {
+				"__TYPE__": "FieldContent",
+				"value": "special",
+				"type": "Text"
+			},
+			"link": {
+				"__TYPE__": "LinkContent",
+				"value": {
+					"__TYPE__": "ExternalLink",
+					"url": "http://twitter.com"
+				}
+			}
+		},
+		"items": []
+	}
+]

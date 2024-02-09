@@ -1,0 +1,73 @@
+.headerWrapper {
+  pointer-events: none;
+  position: fixed;
+  width: 100%;
+  z-index: 2001;
+  display: flex;
+  justify-content: center;
+  padding-block-start: 1rem;
+  padding-inline: 0.75rem;
+  @media (--md) {
+    top: 1.25rem;
+    padding-inline: 1.25rem;
+  }
+  /* iPhone notch offset */
+  @media (min-width: 100vh) and (max-height: 428px) {
+    padding-inline: 2.5rem;
+  }
+}
+
+.header {
+  --text-color-static: var(--black);
+  --text-color-active: var(--red);
+  --background-color: var(--white);
+  pointer-events: all;
+  position: relative;
+  width: 100%;
+  max-width: var(--xl);
+  z-index: 2001;
+  color: var(--text-color-static);
+  background-color: var(--white);
+  border-radius: var(--border-radius);
+  box-shadow:
+    0px 6.2511px 8.57863px 0px rgba(0, 0, 0, 0.02),
+    0px 20.99613px 28.81384px 0px rgba(0, 0, 0, 0.03),
+    0px 94px 129px 0px rgba(0, 0, 0, 0.05);
+  &.menuActive {
+    box-shadow: none;
+  }
+}
+
+.container {
+  width: 100%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding: 0.25rem 0.5rem;
+
+  @media (--md) {
+    padding-block: 0.35rem;
+    padding-inline: var(--gutter);
+    /* 0.5rem is to account for logo padding */
+    gap: calc(var(--gutter) - 0.5rem);
+  }
+}
+
+.logo {
+  position: relative;
+  z-index: 10;
+  margin: 0.3125rem 0.25rem;
+  @media (--md) {
+    flex-shrink: 0;
+    margin: 0.3125rem 0.5rem;
+  }
+}
+
+.logoLink {
+  display: block;
+  width: 2.5rem;
+  @media (--md) {
+    width: 2.5rem;
+    transform: translateX(-0.5rem);
+  }
+}

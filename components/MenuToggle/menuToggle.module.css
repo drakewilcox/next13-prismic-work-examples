@@ -1,0 +1,22 @@
+.toggle {
+  all: unset;
+  position: relative;
+  z-index: 5;
+  display: block;
+  margin-left: auto;
+  padding-inline: 0;
+  text-transform: uppercase;
+  width: 1.5rem;
+  height: 1.5rem;
+  padding: 0.25rem;
+
+  svg {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  @media (--md) {
+    display: none;
+  }
+}

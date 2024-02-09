@@ -1,0 +1,10 @@
+.errorText {
+  display: flex;
+  justify-content: center;
+  padding: 32px;
+  color: var(--text-graphics-primary);
+  font-family: var(--font-medium);
+  font-size: var(--font-size-section);
+  line-height: var(--line-height-section);
+  letter-spacing: var(--letter-spacing-section);
+}

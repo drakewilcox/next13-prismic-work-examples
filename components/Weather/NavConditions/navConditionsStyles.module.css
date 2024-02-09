@@ -1,0 +1,18 @@
+.NavigationConditions {
+  margin-inline-end: 1.25rem;
+}
+
+.navItem {
+  font-size: var(--font-size-cta);
+  line-height: var(--line-height-cta);
+  letter-spacing: var(--letter-spacing-cta);
+  display: flex;
+  justify-content: flex-end;
+  cursor: pointer;
+  gap: 0.5rem;
+
+  svg {
+    width: 1.5rem;
+    display: block;
+  }
+}

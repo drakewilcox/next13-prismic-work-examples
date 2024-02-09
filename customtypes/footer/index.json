@@ -1,0 +1,90 @@
+{
+  "id": "footer",
+  "label": "Footer",
+  "format": "custom",
+  "repeatable": false,
+  "status": true,
+  "json": {
+    "Main": {
+      "primary_links": {
+        "type": "Group",
+        "config": {
+          "label": "Primary Links",
+          "repeat": true,
+          "fields": {
+            "label": {
+              "type": "Text",
+              "config": {
+                "label": "Label",
+                "placeholder": ""
+              }
+            },
+            "link": {
+              "type": "Link",
+              "config": {
+                "label": "Link",
+                "placeholder": "",
+                "select": null
+              }
+            }
+          }
+        }
+      },
+      "secondary_links": {
+        "type": "Group",
+        "config": {
+          "label": "Secondary Links",
+          "repeat": true,
+          "fields": {
+            "label": {
+              "type": "Text",
+              "config": {
+                "label": "Label",
+                "placeholder": ""
+              }
+            },
+            "link": {
+              "type": "Link",
+              "config": {
+                "label": "Link",
+                "placeholder": "",
+                "select": null
+              }
+            }
+          }
+        }
+      },
+      "social_platforms": {
+        "type": "Group",
+        "config": {
+          "label": "Social Platforms",
+          "repeat": true,
+          "fields": {
+            "label": {
+              "type": "Text",
+              "config": {
+                "label": "Label",
+                "placeholder": ""
+              }
+            },
+            "link": {
+              "type": "Link",
+              "config": {
+                "label": "Link",
+                "placeholder": "",
+                "select": null
+              }
+            }
+          }
+        }
+      },
+      "copyright": {
+        "type": "Text",
+        "config": {
+          "label": "Copyright",
+          "placeholder": ""
+        }
+      }
+    }
+  }
+}

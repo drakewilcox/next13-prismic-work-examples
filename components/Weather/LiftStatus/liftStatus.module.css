@@ -1,0 +1,125 @@
+.liftGridContainer {
+  display: grid !important;
+  width: 100%;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin-top: 1.25rem;
+
+  @media (--sm-max) {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+.liftContainer {
+  display: flex;
+  padding-left: 0.625rem;
+  margin-bottom: 0.625rem;
+  gap: 1rem;
+  flex-direction: column;
+  align-items: flex-start;
+  flex: 1 0 0;
+  border-radius: var(--base-none, 0px);
+  border-left: 1px solid var(--border-default);
+
+  @media (--sm-max) {
+    border-top: 1px solid var(--border-default);
+    border-left: none;
+    padding-top: 1.5rem;
+    padding-left: 0;
+    margin-bottom: 0;
+    gap: 1.5rem;
+  }
+}
+
+.liftTitle {
+  color: var(--black);
+  font-family: var(--font-serif-medium);
+  font-size: var(--font-size-s2);
+  line-height: var(--line-height-s2);
+  letter-spacing: var(--letter-spacing-s2);
+  white-space: pre-wrap;
+  margin-top: -0.2em;
+}
+
+.label {
+  font-family: var(--font-serif-medium);
+  font-size: var(--font-size-s1);
+  line-height: var(--line-height-s1);
+  letter-spacing: var(--letter-spacing-s1);
+  margin-block-start: 1.25rem;
+  margin-block-end: -1.5rem;
+  @media (--sm) {
+    display: none;
+  }
+}
+
+.liftBody {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+
+  @media (--sm-max) {
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-between;
+  }
+}
+
+.liftTypeContainer {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.liftTypeIcon {
+  width: 24px;
+  height: 24px;
+
+  @media (--sm-max) {
+    display: none;
+  }
+}
+
+.liftType {
+  color: var(--text-graphics-secondary);
+  font-family: var(--font-medium);
+  font-size: var(--font-size-section);
+  line-height: var(--line-height-section);
+  letter-spacing: var(--letter-spacing-section);
+  text-transform: uppercase;
+}
+
+.availContainer {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  align-self: stretch;
+  font-family: var(--font-medium);
+  font-size: var(--font-size-section);
+  line-height: var(--line-height-section);
+  letter-spacing: var(--letter-spacing-section);
+  font-style: normal;
+  font-weight: 500;
+  text-transform: uppercase;
+  margin-bottom: -0.4em;
+
+  @media (--sm-max) {
+    width: 50%;
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+.liftCLOSED {
+  color: var(--color-status-closed);
+}
+.liftOPEN {
+  color: var(--color-status-open);
+}
+.liftSTOPPED {
+  color: var(--color-status-on-hold);
+}
+
+.liftPARTIAL {
+  color: var(--color-status-on-hold);
+}

@@ -1,0 +1,296 @@
+.NavigationMenuRoot {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100%;
+  z-index: 1;
+}
+
+.NavigationMenuRoot > div {
+  width: 100%;
+}
+
+.NavigationMenuList {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  display: flex;
+  flex-grow: 1;
+  align-items: center;
+
+  list-style-type: none;
+  padding-inline-start: 0;
+  margin-block: 0;
+
+  /* Menu offset */
+  li:nth-child(1) {
+    margin-inline-start: 2px;
+  }
+}
+
+.NavigationMenuTrigger,
+.NavigationMenuLink {
+  all: unset;
+  user-select: none;
+  cursor: pointer;
+  position: relative;
+  font-size: var(--font-size-cta);
+  letter-spacing: var(--letter-spacing-cta);
+  line-height: var(--line-height-cta);
+  position: relative;
+  padding-block: 0.5rem;
+}
+
+.NavigationPrimaryItem {
+  button,
+  a {
+    display: flex;
+    padding-inline: 1.125rem;
+    padding-block: 0.5rem;
+    &:focus-visible:after {
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+    }
+  }
+}
+
+.NavigationMenuTrigger {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2px;
+}
+
+.NavigationMenuContent {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: auto;
+  display: flex;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  column-gap: var(--gutter);
+  width: 100%;
+  padding: var(--gutter);
+  @media (--lg) {
+    padding-inline-start: 8.3rem;
+  }
+
+  animation-duration: var(--duration-short);
+  animation-timing-function: var(--ease);
+}
+.NavigationMenuContent[data-motion="from-start"] {
+  animation-name: enterFromLeft;
+}
+.NavigationMenuContent[data-motion="from-end"] {
+  animation-name: enterFromRight;
+}
+.NavigationMenuContent[data-motion="to-start"] {
+  animation-name: exitToLeft;
+}
+.NavigationMenuContent[data-motion="to-end"] {
+  animation-name: exitToRight;
+}
+
+.NavigationMenuContent {
+  ul li {
+    margin-block-end: 1rem;
+  }
+
+  a:not(.button) {
+    &:link,
+    &:visited {
+      display: block;
+      font-size: var(--font-size-cta);
+      letter-spacing: var(--letter-spacing-cta);
+      line-height: var(--line-height-cta);
+      color: var(--black);
+      text-decoration: none;
+      transition: opacity var(--duration-short) var(--ease);
+    }
+    &:hover,
+    &:focus:not(:focus-visible) {
+      opacity: 0.45;
+    }
+  }
+}
+
+.NavigationMenuIndicator {
+  pointer-events: none;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  height: 10px;
+  bottom: -0.75rem;
+  overflow: hidden;
+  z-index: 1;
+  transition:
+    width,
+    transform var(--duration-short) var(--ease);
+}
+.NavigationMenuIndicator[data-state="visible"] {
+  animation: fadeIn var(--duration-short) var(--ease);
+}
+.NavigationMenuIndicator[data-state="hidden"] {
+  animation: fadeOut var(--duration-short) var(--ease);
+}
+
+.NavigationMenuViewport {
+  position: relative;
+  z-index: 0;
+  transform-origin: top center;
+  /* offset for header border radius */
+  margin-top: -0.8rem;
+  width: 100%;
+  background-color: white;
+  border-bottom-left-radius: var(--border-radius);
+  border-bottom-right-radius: var(--border-radius);
+  overflow: hidden;
+  box-shadow:
+    0px 6.2511px 8.57863px 0px rgba(0, 0, 0, 0.02),
+    0px 20.99613px 28.81384px 0px rgba(0, 0, 0, 0.03),
+    0px 94px 129px 0px rgba(0, 0, 0, 0.05);
+  height: var(--radix-navigation-menu-viewport-height);
+  width: 100%;
+  transition: height var(--duration-short) var(--ease);
+}
+
+.NavigationMenuViewport[data-state="open"] {
+  animation: scaleIn var(--duration-short) var(--ease);
+}
+
+.NavigationMenuViewport[data-state="closed"] {
+  animation: scaleOut var(--duration-short) var(--ease);
+}
+
+.List {
+  display: grid;
+  padding-inline-start: 0;
+  margin: 0;
+  column-gap: var(--gutter);
+  list-style: none;
+}
+
+.ViewportPosition {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  top: 100%;
+  left: 0;
+  perspective: 2000px;
+}
+
+.CaretDown {
+  display: block;
+  position: relative;
+  top: 1px;
+  width: 0.9375rem;
+  height: 0.9375rem;
+  transition: transform var(--duration-short) var(--ease);
+}
+
+[data-state="open"] > .CaretDown {
+  transform: rotate(-180deg);
+}
+
+.Arrow {
+  position: relative;
+  top: 70%;
+  background-color: var(--white);
+  width: 0.7rem;
+  height: 0.7rem;
+  transform: rotate(45deg);
+  border-top-left-radius: 2px;
+}
+
+@keyframes enterFromRight {
+  from {
+    opacity: 0;
+    transform: translateX(200px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes enterFromLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-200px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes exitToRight {
+  from {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateX(200px);
+  }
+}
+
+@keyframes exitToLeft {
+  from {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateX(-200px);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: rotateX(-30deg) scaleY(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: rotateX(0deg) scaleY(1);
+  }
+}
+
+@keyframes scaleOut {
+  from {
+    opacity: 1;
+    transform: rotateX(0deg) scaleY(1);
+  }
+  to {
+    opacity: 0;
+    transform: rotateX(-10deg) scaleY(0.95);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+/* Last .NavigationPrimaryItem in the list */
+.NavigationPrimaryItem:not(:has(~ .NavigationPrimaryItem)) {
+  margin-inline-end: auto;
+}

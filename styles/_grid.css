@@ -1,0 +1,107 @@
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  @media (--sm) {
+    grid-template-columns: repeat(10, minmax(0, 1fr));
+  }
+  @media (--md) {
+    grid-template-columns: repeat(14, minmax(0, 1fr));
+  }
+  width: 100%;
+  max-width: var(--xl);
+  column-gap: var(--gutter);
+  margin-inline: auto;
+  padding-inline: var(--gutter);
+
+  /* 14 columns */
+  .feature {
+    grid-column: 1 / -1;
+    &.grid {
+      display: grid;
+      column-gap: var(--gutter);
+      padding-inline: 0;
+    }
+
+    .grid-half {
+      grid-column: 1 / -1;
+      @media (--md) {
+        grid-column: auto / span 7;
+      }
+    }
+  }
+
+  /* 12 columns */
+  .inset {
+    grid-column: 1 / -1;
+    @media (--lg) {
+      grid-template-columns: repeat(12, minmax(0, 1fr));
+      grid-column: 2 / span 12;
+    }
+    &.grid {
+      display: grid;
+      column-gap: var(--gutter);
+      padding-inline: 0;
+    }
+    .grid-half {
+      grid-column: 1 / -1;
+      @media (--md) {
+        grid-column: auto / span 7;
+      }
+      @media (--lg) {
+        grid-column: auto / span 6;
+      }
+    }
+  }
+
+  .inset .sidebar {
+    grid-column: 1 / -1;
+    @media (--md) {
+      grid-column: 1 / span 3;
+    }
+  }
+
+  .inset .content {
+    display: grid;
+    gap: var(--gutter);
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    @media (--sm) {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+    @media (--md) {
+      grid-column: 4 / span 9;
+    }
+  }
+
+  /* 10 columns */
+  .popout {
+    grid-column: 1 / -1;
+    @media (--md) {
+      grid-column: 3 / span 10;
+    }
+    .grid-half {
+      grid-column: 1 / -1;
+      @media (--md) {
+        grid-column: auto / span 7;
+      }
+    }
+  }
+
+  /* 8 columns */
+  .content {
+    grid-column: 1 / -1;
+    @media (--md) {
+      grid-column: 3 / span 10;
+    }
+    @media (--lg) {
+      grid-column: 4 / span 8;
+    }
+    &[data-align="left"] {
+      @media (--md) {
+        grid-column: 1 / span 10;
+      }
+      @media (--lg) {
+        grid-column: 2 / span 8;
+      }
+    }
+  }
+}

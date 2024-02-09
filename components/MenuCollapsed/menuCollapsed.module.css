@@ -1,0 +1,162 @@
+.menu {
+  pointer-events: all;
+  white-space: nowrap;
+  overflow-y: auto;
+  overscroll-behavior: none;
+  -webkit-overflow-scrolling: touch;
+  -ms-overflow-style: -ms-autohiding-scrollbar;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+  scrollbar-width: none;
+  z-index: 1000;
+  position: fixed;
+  /* top: -1.5rem; */
+  top: 0;
+  left: 0;
+  height: 100dvh;
+  width: 100%;
+  color: var(--text-color);
+  background-color: var(--background-color);
+  display: block;
+  @media (--md) {
+    display: none;
+  }
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.scrollMask {
+  background-color: var(--white);
+  width: 100%;
+  height: 1rem;
+  position: fixed;
+  top: -1rem;
+  left: 0;
+}
+
+.menu nav {
+  width: 100%;
+  height: 100%;
+  margin-block-start: 0;
+  padding-inline: 1.75rem;
+  flex-direction: column;
+  display: flex;
+
+  /* iPhone notch offset */
+  @media (min-width: 100vh) and (max-height: 428px) {
+    padding-inline: 3rem;
+  }
+
+  @media (--md) {
+    display: none;
+  }
+
+  label {
+    display: block;
+    font-size: var(--font-size-section);
+    line-height: var(--line-height-section);
+    letter-spacing: var(--letter-spacing-section);
+    text-transform: uppercase;
+    color: rgba(26, 26, 26, 0.45);
+    border-bottom: 1px solid rgba(26, 26, 26, 0.1);
+    padding-block-end: 0.5rem;
+    margin-block-end: 0.75rem;
+  }
+
+  .subLabel {
+    text-transform: normal;
+    margin-block-end: 1rem;
+    display: block;
+    border-bottom: none;
+  }
+
+  ul {
+    list-style: none;
+    padding-inline-start: 0;
+  }
+
+  > ul > li {
+    display: block;
+    margin: 0;
+    padding-block: 0.5rem;
+  }
+
+  > ul:last-child {
+    padding-block-end: 1.5rem;
+  }
+
+  > ul > li > ul li {
+    margin-block-end: 1rem;
+  }
+
+  /* Third level */
+  ul li ul li ul {
+  }
+
+  ul li ul li ul li {
+    padding-inline-start: 1rem;
+  }
+
+  a:not(:global(.button)) {
+    display: block;
+    padding: 0.5rem;
+    transform: translateX(-0.5rem);
+    font-size: var(--font-size-cta);
+    line-height: var(--line-height-cta);
+    letter-spacing: var(--letter-spacing-cta);
+    transition: color var(--duration-micro) var(--ease-out);
+    &:link,
+    &:visited {
+      color: var(--text-color-static);
+      text-decoration: none;
+    }
+    @media (any-hover: hover) and (any-pointer: fine) {
+      &:hover,
+      &:focus {
+        outline: none;
+        color: var(--blue);
+      }
+    }
+  }
+}
+
+.items {
+  display: flex;
+  flex-direction: column;
+  margin-block-start: 0;
+}
+
+.menuButtonWrapper {
+  position: sticky;
+  top: 0;
+  /* Using the background to cover the scrolling nav behind the header */
+  padding-block-start: 5.25rem;
+  padding-block-end: 1rem;
+  padding-inline: 1.5rem;
+  background-color: var(--white);
+  border-bottom: 1px solid rgba(26, 26, 26, 0.2);
+  z-index: 1;
+
+  /* iPhone notch offset */
+  @media (min-width: 100vh) and (max-height: 428px) {
+    padding-inline: 2.5rem;
+    padding-block: 2rem;
+    position: unset;
+  }
+}
+
+.menuButton {
+  &:global(.button) {
+    display: block;
+    margin-inline: auto;
+
+    @media (--sm) {
+      max-width: 400px;
+    }
+  }
+}

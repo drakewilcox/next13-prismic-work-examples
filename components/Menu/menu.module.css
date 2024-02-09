@@ -1,0 +1,16 @@
+.menu {
+  display: none;
+  @media (--md) {
+    display: flex;
+  }
+  width: 100%;
+}
+
+.menuButton {
+  margin-block: auto;
+  &:global(.button) {
+    span {
+      line-height: 2;
+    }
+  }
+}

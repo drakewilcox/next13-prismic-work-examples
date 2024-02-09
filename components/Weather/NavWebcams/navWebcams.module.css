@@ -1,0 +1,38 @@
+.navigationWebcams {
+  margin-inline-end: 1.25rem;
+}
+
+.navItem {
+  font-size: var(--font-size-cta);
+  line-height: var(--line-height-cta);
+  letter-spacing: var(--letter-spacing-cta);
+  display: flex;
+  justify-content: flex-end;
+  cursor: pointer;
+  gap: 0.5rem;
+  svg {
+    width: 1.5rem;
+    display: block;
+  }
+}
+
+.items {
+  width: 100%;
+  display: grid;
+  gap: calc(var(--gutter) * 0.5);
+  margin-block-start: 0.5rem;
+  @media (--sm) {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+
+.item {
+  position: relative;
+  width: 100%;
+  height: auto;
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  flex-shrink: 0;
+  aspect-ratio: 16/9;
+  background-color: rgba(26, 26, 26, 0.033);
+}

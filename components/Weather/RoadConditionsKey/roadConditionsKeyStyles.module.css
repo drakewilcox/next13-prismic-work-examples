@@ -1,0 +1,134 @@
+.roadKeyContainer {
+  display: flex;
+  width: 100%;
+  max-width: 520px;
+  margin-block-end: 1.5rem;
+}
+
+.accordionRoot {
+  width: 100%;
+}
+
+.accordionItem {
+  position: relative;
+  /* overflow: hidden; */
+  border-radius: 0;
+}
+
+.accordionItem:first-child {
+  margin-top: 0;
+}
+
+.accordionItem:focus-within {
+  position: relative;
+  z-index: 1;
+}
+
+.accordionHeader {
+  display: flex;
+  padding: 0;
+  all: unset;
+}
+
+.accordionTrigger:focus-visible {
+  outline: none;
+  position: relative;
+}
+
+.accordionTrigger {
+  cursor: pointer;
+  position: relative;
+  display: flex;
+  background-color: transparent;
+  border: none;
+  border-top: 1px solid var(--border-default);
+  flex: 1;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 1.25rem;
+  color: var(--black);
+  font-family: var(--font-default);
+  font-size: var(--font-size-p3);
+  letter-spacing: var(--letter-spacing-p3);
+  line-height: var(--line-height-p3);
+  text-align: left;
+  padding-block: 1rem;
+  padding-inline: 0;
+  &:focus-visible:before {
+    top: 0;
+    bottom: 0;
+  }
+}
+
+.accordionContent {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  background-color: var(--background-color);
+  gap: 1rem;
+
+  .statusKeyRow {
+    white-space: pre-wrap;
+    height: 100%;
+    width: 100%;
+
+    display: flex;
+    padding: var(--base-none, 0);
+    gap: 0.5rem;
+
+    .iconContainer {
+      flex-shrink: 0;
+      height: 1rem;
+      width: 1rem;
+      padding: 0.125rem;
+    }
+
+    .keyText {
+      margin-block-start: 0.125rem;
+      white-space: pre-wrap;
+      font-size: var(--font-size-caption);
+      color: var(--text-graphics-secondary);
+      letter-spacing: var(--letter-spacing-caption);
+      line-height: var(--line-height-caption);
+    }
+  }
+}
+
+.accordionChevron {
+  width: 20px;
+  transition: transform 300ms cubic-bezier(0.87, 0, 0.13, 1);
+}
+
+.accordionTrigger[data-state="open"] {
+  &:hover {
+    .chevContainer {
+      transform: none;
+    }
+  }
+}
+
+.accordionTrigger[data-state="open"] > .chevContainer {
+  .accordionChevron {
+    color: var(--black);
+    transform: rotate(-180deg);
+  }
+}
+
+@keyframes slideDown {
+  from {
+    height: 0;
+  }
+  to {
+    height: var(--radix-accordion-content-height);
+  }
+}
+
+@keyframes slideUp {
+  from {
+    height: var(--radix-accordion-content-height);
+  }
+  to {
+    height: 0;
+  }
+}
