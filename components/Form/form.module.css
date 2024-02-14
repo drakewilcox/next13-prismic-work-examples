@@ -1,0 +1,121 @@
+.form {
+  color: var(--text-color-primary);
+  background: var(--background-color);
+  width: 100%;
+
+  .formRow {
+    display: flex;
+    flex-direction: column;
+    margin-block-end: 2rem;
+    gap: var(--gutter);
+    @media (--sm) {
+      flex-direction: row;
+    }
+
+    .fieldContainer {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+    }
+  }
+
+  label {
+    font-family: var(--font-default);
+    font-size: var(--font-size-p3);
+    line-height: var(--line-height-p3);
+    letter-spacing: var(--letter-spacing-p3);
+  }
+}
+
+.confirmationContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 13px;
+}
+
+.confirmationText {
+  font-size: var(--font-size-s1);
+  line-height: var(--line-height-s1);
+  letter-spacing: var(--letter-spacing-s1);
+  font-family: var(--font-serif-medium);
+  font-weight: 500;
+  text-transform: none;
+}
+
+.submitRowContainer {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+}
+
+.errorContainer {
+  margin: 15px 0px 15px 0px;
+}
+
+.error {
+  color: #cf1d2b;
+  font-family: var(--font-default) !important;
+  font-size: var(--font-size-caption) !important;
+  line-height: var(--line-height-caption) !important;
+  letter-spacing: var(--letter-spacing-caption) !important;
+  font-weight: 600;
+}
+
+.button {
+  @media (--md) {
+    gap: 0.5rem;
+  }
+
+  span {
+    display: block;
+    &:nth-child(2) {
+      width: 2.75rem;
+      @media (--md) {
+        width: 2.25rem;
+      }
+    }
+  }
+
+  @media (any-hover: hover) and (any-pointer: fine) {
+    svg {
+      circle {
+        transition:
+          fill var(--duration-short) var(--ease),
+          color var(--duration-short) var(--ease);
+        fill: transparent;
+        color: var(--text-color);
+      }
+      :global(.arrowPrimary) {
+        transition: transform var(--duration-short) var(--ease);
+        color: var(--text-color);
+        transform: translateX(0%);
+      }
+      :global(.arrowSecondary) {
+        transition: transform var(--duration-short) var(--ease);
+        color: var(--text-color);
+        transform: translateX(-100%);
+      }
+    }
+    &:hover,
+    &:focus:not(:focus-visible) {
+      color: var(--text-color);
+      svg {
+        circle {
+          fill: var(--red);
+          color: var(--red);
+        }
+        :global(.arrowPrimary) {
+          transform: translateX(100%);
+        }
+        :global(.arrowSecondary) {
+          transform: translateX(0%);
+        }
+      }
+    }
+  }
+}
+
+.text {
+  margin-block-end: calc(var(--section-spacing) * 0.75);
+}

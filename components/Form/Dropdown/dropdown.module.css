@@ -1,0 +1,124 @@
+.selectTrigger {
+  all: unset;
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+
+  height: 50px;
+  padding: 0 1.25rem;
+  min-width: 10rem;
+  box-shadow: 0 0 0 1px var(--white);
+  gap: var(--gutter);
+  box-shadow: 0 0 0 1px var(--white);
+  font-size: var(--font-size-p3);
+  line-height: var(--line-height-p3);
+  letter-spacing: var(--letter-spacing-p3);
+  cursor: pointer;
+  border: 1px solid var(--border-default);
+  border-radius: 6px;
+
+  &:hover,
+  &:focus,
+  &:focus-visible {
+    background-color: var(--red);
+    box-shadow: 0 0 0 1px var(--red);
+  }
+
+  &[aria-expanded="true"] {
+    background-color: var(--red);
+    box-shadow: none;
+  }
+}
+
+.selectIcon {
+  color: var(--text-color);
+  width: 0.825rem;
+}
+
+.selectContent {
+  background-color: white;
+  border: 1px solid var(--border-default);
+  border-radius: 6px;
+}
+
+.selectItem {
+  display: flex;
+  color: var(--text-graphics-secondary);
+  align-items: center;
+  justify-content: space-between;
+  padding-inline-start: 2rem;
+  padding-inline-end: 1rem;
+  padding-block: 1rem;
+  position: relative;
+  user-select: none;
+  cursor: pointer;
+  border-bottom: 1px solid var(--border-default);
+
+  &:last-child {
+    border-bottom: none;
+  }
+
+  &[data-state="unchecked"] {
+    color: var(--unchecked-text-color);
+    .plus {
+      display: none;
+    }
+  }
+
+  &[data-highlighted] {
+    outline: none;
+    color: var(--text-graphics-primary);
+    background-color: var(--off-white);
+  }
+
+  &:focus-visible {
+    outline: 1px solid hsla(0, 0%, 100%, 0);
+  }
+
+  &:focus-visible:after {
+    border: 2px solid var(--a11y-border-color);
+    border-radius: 5px;
+    content: "";
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    bottom: 5px;
+    left: 5px;
+    z-index: 2;
+  }
+
+  &[data-state="checked"] {
+    color: var(--text-graphics-primary);
+  }
+}
+
+.selectItemIndicator {
+  position: absolute;
+  left: 0.5rem;
+  width: 1.25rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.inputLabel {
+  color: var(--text-graphics-primary);
+}
+
+.description {
+  color: var(--text-graphics-secondary);
+  margin-bottom: 0.75rem;
+}
+
+.optionContainer {
+  padding: 5px 0px 5px 0px;
+}
+
+.optional {
+  color: var(--text-color-gray);
+  font-size: var(--font-size-caption);
+  line-height: var(--line-height-caption);
+  letter-spacing: var(--letter-spacing-caption);
+  text-transform: uppercase;
+}

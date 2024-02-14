@@ -1,0 +1,38 @@
+.input {
+  background-color: var(--background-color);
+  color: var(--text-graphics-primary);
+  border: 1px solid var(--border-default);
+  height: 50px;
+  padding: 1.25rem;
+  border-radius: 6px;
+
+  &::placeholder {
+    color: var(--text-graphics-inactive);
+  }
+}
+
+.inputLabel {
+  color: var(--text-graphics-primary);
+  font-family: var(--font-default);
+  font-size: var(--font-size-p3);
+  line-height: var(--line-height-p3);
+  letter-spacing: var(--letter-spacing-p3);
+}
+
+.description {
+  color: var(--sub-text-color);
+  margin-bottom: 0.75rem;
+}
+
+.input:focus {
+  border-color: var(--highlight-color);
+  outline: none;
+}
+
+.optional {
+  color: var(--text-color-gray);
+  font-size: var(--font-size-caption);
+  line-height: var(--line-height-caption);
+  letter-spacing: var(--letter-spacing-caption);
+  text-transform: uppercase;
+}

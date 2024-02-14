@@ -1,0 +1,98 @@
+.modalOverlay {
+  background-color: var(--black);
+  position: fixed;
+  inset: 0;
+  animation: overlayShow 150ms cubic-bezier(0.16, 1, 0.3, 1);
+  opacity: 0.5;
+  z-index: 5000;
+}
+
+.modalContent {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  align-items: center;
+  background-color: var(--white);
+  box-shadow:
+    hsl(206 22% 7% / 35%) 0px 10px 38px -10px,
+    hsl(206 22% 7% / 20%) 0px 10px 20px -15px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation: contentShow 150ms cubic-bezier(0.16, 1, 0.3, 1);
+  z-index: 5001;
+  padding: 2rem;
+  width: 90%;
+  border-radius: var(--border-radius);
+  @media (--sm) {
+    max-width: 32rem;
+    padding: 3rem 5rem;
+  }
+  p {
+    text-align: center;
+    color: var(--black);
+    font-size: var(--font-size-p1);
+    line-height: var(--line-height-p1);
+    letter-spacing: var(--letter-spacing-p1);
+  }
+}
+
+.modalContent:focus {
+  outline: none;
+}
+
+.modalTitle {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin-block-start: 0;
+  margin-block-end: 1rem;
+  font-size: var(--font-size-s1);
+  line-height: var(--line-height-s1);
+  letter-spacing: var(--letter-spacing-s1);
+  font-family: var(--font-serif-medium);
+  font-weight: 500;
+  text-transform: none;
+}
+
+.modalButton {
+  all: unset;
+  cursor: pointer;
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 1.5rem;
+  height: 35px;
+  font-size: var(--font-size-caption);
+  line-height: var(--line-height-caption);
+  letter-spacing: var(--letter-spacing-caption);
+  color: var(--text-color);
+  background-color: var(--background-color);
+  transition: background-color var(--duration-short) var(--ease);
+  &:hover,
+  &:focus {
+    background-color: var(--red);
+  }
+}
+
+@keyframes overlayShow {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 0.3;
+  }
+}
+
+@keyframes contentShow {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -48%) scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+}

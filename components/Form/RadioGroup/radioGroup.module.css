@@ -1,0 +1,62 @@
+.radioRoot {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.optionContainer {
+  display: flex;
+  align-items: center;
+}
+
+.radioItem {
+  all: unset;
+  background-color: var(--background-color);
+  width: 25px;
+  height: 25px;
+  border-radius: 100%;
+  border: 1px solid var(--border-default);
+  position: relative;
+}
+
+.radioIndicator {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 25px;
+  height: 25px;
+  position: relative;
+}
+
+.radioIndicator::after {
+  content: "";
+  display: block;
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+  background-color: var(--text-graphics-primary);
+}
+
+.label {
+  color: var(--text-graphics-primary);
+  font-size: 15px;
+  line-height: 1;
+  padding-left: 15px;
+}
+
+.inputLabel {
+  color: var(--text-graphics-primary);
+}
+
+.description {
+  color: var(--text-graphics-secondary);
+  margin-bottom: 0.75rem;
+}
+
+.optional {
+  color: var(--text-color-gray);
+  font-size: var(--font-size-caption);
+  line-height: var(--line-height-caption);
+  letter-spacing: var(--letter-spacing-caption);
+  text-transform: uppercase;
+}
