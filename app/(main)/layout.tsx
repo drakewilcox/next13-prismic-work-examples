@@ -37,10 +37,10 @@ export async function generateMetadata(): Promise<Metadata> {
     .catch(() => {});
 
   return {
-    metadataBase: new URL('https://powdermountain.vercel.app'),
+    metadataBase: new URL(''),
     title: {
       template: `%s – ${metadata?.data?.meta_title}`,
-      default: 'Powder Mountain – Uncrowded by Design',
+      default: 'Next JS and Prismic Example',
     },
     description: metadata?.data?.meta_description,
     openGraph: {
@@ -102,13 +102,10 @@ export default async function MainLayout({
     })
     .catch(() => {})) as any;
 
-  console.log('MENU DATA', menuData);
-
   const footerData = (await client
     .getSingle<Content.FooterDocument>('footer')
     .catch(() => {})) as any;
 
-  console.log('FOOTER DATA', footerData);
   const weather = await fetchWeather();
   const snow = await fetchSnowReport();
   const poiOverall = await fetchPOIOverall();

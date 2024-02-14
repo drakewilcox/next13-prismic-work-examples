@@ -1,11 +1,11 @@
 'use server';
 
 const SECRET_KEY = process.env.LUMIPLAN_SECRET_KEY;
+const CLIENT_ID = process.env.CLIENT_ID;
 
 async function fetchToken() {
   const endpoint =
     'https://mountain.live/auth/realms/lumiserveur/protocol/openid-connect/token';
-  const clientId = 'powdermountainweb';
 
   try {
     const res = await fetch(endpoint, {
@@ -13,7 +13,7 @@ async function fetchToken() {
       headers: {
         'Content-Type': 'application/x-www-form-urlencoded',
       },
-      body: `grant_type=client_credentials&client_id=${clientId}&client_secret=${SECRET_KEY}`,
+      body: `grant_type=client_credentials&client_id=${CLIENT_ID}&client_secret=${SECRET_KEY}`,
       next: {
         revalidate: 1800,
       },

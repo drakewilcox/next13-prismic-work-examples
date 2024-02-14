@@ -60,7 +60,6 @@ const Default = ({ slice }: ModifiedMenuItemProps): JSX.Element => {
 const WithSubmenu = ({ slice }: ModifiedMenuItemProps): JSX.Element => {
   if (slice.variation !== 'withSubmenu') return <></>;
   const submenuData = slice.primary?.submenu as any;
-  console.log('SUB MENU DATA', submenuData.data);
   const [submenuLinksFirst, submenuLinksSecond] = splitArray(
     submenuData?.data?.slices ?? []
   );

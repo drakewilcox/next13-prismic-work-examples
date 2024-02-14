@@ -77,7 +77,7 @@ export function Header({
             <Link
               href="/"
               className={styles.logoLink}
-              aria-label="Go to the Powder Mountain homepage"
+              aria-label="Go to the Homepage"
             >
               <Logo />
             </Link>

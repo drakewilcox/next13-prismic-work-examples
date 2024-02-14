@@ -25,7 +25,7 @@ export async function generateMetadata(): Promise<Metadata> {
   const title = {
     ...(page?.data?.meta_title
       ? { title: page.data.meta_title }
-      : { title: 'Uncrowded by Design – Powder Mountain' }),
+      : { title: 'Uncrowded by Design' }),
   };
 
   const description = {
