@@ -13,17 +13,17 @@ import { Footer } from '@/components/Footer';
 import { PodiumChatManager } from '@/components/PodiumChatManager';
 
 import {
-  fetchWeather,
   fetchSnowReport,
   fetchResortAccessService,
   fetchPOIOverall,
   fetchWebcamService,
+  fetchOSForecast,
+  CurrentTime,
 } from '@/app/(main)/conditions/actions';
 
 import {
   RoadCondition,
   SnowData,
-  WeatherInfo,
   LiftsOverall,
   TrailsOverall,
   Webcams,
@@ -40,7 +40,7 @@ export async function generateMetadata(): Promise<Metadata> {
     metadataBase: new URL('https://powdermountain.vercel.app'),
     title: {
       template: `%s – ${metadata?.data?.meta_title}`,
-      default: 'Next JS and Prismic Example',
+      default: 'Powder Mountain – Uncrowded by Design',
     },
     description: metadata?.data?.meta_description,
     openGraph: {
@@ -101,19 +101,15 @@ export default async function MainLayout({
   `,
     })
     .catch(() => {})) as any;
-
   const footerData = (await client
     .getSingle<Content.FooterDocument>('footer')
     .catch(() => {})) as any;
-
-  const weather = await fetchWeather();
   const snow = await fetchSnowReport();
   const poiOverall = await fetchPOIOverall();
   const roads = await fetchResortAccessService();
   const webcams = await fetchWebcamService();
-
-  const currentWeather: WeatherInfo =
-    weather?.content?.weatherZones[0].weatherInfos[0];
+  const forecastImperial = fetchOSForecast('imperial');
+  const forecastMetric = fetchOSForecast('metric');
   const currentSnow: SnowData = snow?.content.snowZones[0];
   const roadsData: RoadCondition[] = roads?.content.resorts[0].roadConditions;
   const liftsOverall: LiftsOverall =
@@ -122,26 +118,29 @@ export default async function MainLayout({
     poiOverall?.content?.overalls[0].trailsOverall;
 
   const webCamsData: Webcams[] = webcams?.content.resorts[0]?.webcams;
+  const openSnowConditionsData = await Promise.allSettled([
+    forecastImperial,
+    forecastMetric,
+  ]).then((results: any) => {
+    const [forecastImperial, forecastMetric] = results;
+
+    return {
+      forecastImperial: forecastImperial.value,
+      forecastMetric: forecastMetric.value,
+    };
+  });
 
   const conditionsData = await Promise.allSettled([
-    currentWeather,
     currentSnow,
     roadsData,
     liftsOverall,
     trailsOverall,
     webCamsData,
   ]).then((results: any) => {
-    const [
-      currentWeather,
-      currentSnow,
-      roadsData,
-      liftsOverall,
-      trailsOverall,
-      webCamsData,
-    ] = results;
+    const [currentSnow, roadsData, liftsOverall, trailsOverall, webCamsData] =
+      results;
 
     return {
-      currentWeather: currentWeather.value,
       currentSnow: currentSnow.value,
       roadsData: roadsData.value,
       liftsOverall: liftsOverall.value,
@@ -162,7 +161,11 @@ export default async function MainLayout({
         `}
       </Script>
       <SkipToContent />
-      <Header menuData={menuData} conditionsData={conditionsData} />
+      <Header
+        menuData={menuData}
+        conditionsData={conditionsData}
+        openSnowData={openSnowConditionsData}
+      />
       {children}
       <Footer footerData={footerData} />
       <div className="preventTransparency" />

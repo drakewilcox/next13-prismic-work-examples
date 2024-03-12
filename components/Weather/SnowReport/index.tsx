@@ -4,7 +4,10 @@ import classNames from "classnames";
 import { useStore } from "@/hooks/useStore";
 import { formatDate } from "@/utilities/formatDate";
 // Types
-import { WeatherInfo, SnowData } from "@/components/Weather/conditionTypes";
+import {
+  SnowData,
+  OSForecastResponse,
+} from "@/components/Weather/conditionTypes";
 // Components
 import { Card } from "../Card";
 import { UnitToggle } from "../UnitToggle";
@@ -12,20 +15,13 @@ import { UnitToggle } from "../UnitToggle";
 import styles from "./snowReport.module.css";
 import sharedStyles from "../sharedWeatherStyles.module.css";
 
-export function SnowReport({
-  weatherInfo,
-  snowData,
-}: {
-  weatherInfo: WeatherInfo;
-  snowData: SnowData;
-}) {
+export function SnowReport({ snowData }: { snowData: SnowData }) {
   const {
     snowTotalDepth,
     snowFallDepthCompleteSeason,
     freshSnowFallDepth12H,
     freshSnowFallDepth24H,
     freshSnowFallDepth48H,
-    freshSnowFallDepth72H,
     freshSnowFallDepth7D,
     lastModified,
   } = snowData ?? {};
@@ -36,13 +32,7 @@ export function SnowReport({
     return <></>;
   }
 
-  const temperature = weatherInfo?.current?.temperature;
   const formattedDate = formatDate(lastModified);
-
-  const currentTemp =
-    unitSystem === "SI"
-      ? `${Math.ceil(temperature?.value || 0)}\u00B0C`
-      : `${Math.ceil(temperature?.countryValue || 0)}\u00B0F`;
 
   const snowfallBase =
     unitSystem === "SI"
@@ -68,25 +58,12 @@ export function SnowReport({
       ? `${Math.ceil(freshSnowFallDepth48H.value)} cm`
       : `${Math.ceil(freshSnowFallDepth48H.countryValue)}"`;
 
-  const snowfall72H =
-    unitSystem === "SI"
-      ? `${Math.ceil(freshSnowFallDepth72H.value)} cm`
-      : `${Math.ceil(freshSnowFallDepth72H.countryValue)}"`;
-
   const snowfall7D =
     unitSystem === "SI"
       ? `${Math.ceil(freshSnowFallDepth7D.value)} cm`
       : `${Math.ceil(freshSnowFallDepth7D.countryValue)}"`;
 
   const stats = [
-    ...(snowData
-      ? [
-          {
-            title: "Surface \nConditions",
-            data: currentTemp,
-          },
-        ]
-      : []),
     {
       title: "12HR \nSnowfall",
       data: snowfall12H,

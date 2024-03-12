@@ -7,33 +7,38 @@ import {
   SnowData,
   LiftsOverall,
   TrailsOverall,
+  OSForecastResponse,
 } from "@/components/Weather/conditionTypes";
 // Styles
 import styles from "./banner.module.css";
 
 export function Banner({
-  data,
+  forecastImp,
+  forecastMet,
   snowData,
   liftsOverall,
   trailsOverall,
 }: {
-  data: WeatherInfo;
+  forecastImp?: OSForecastResponse;
+  forecastMet?: OSForecastResponse;
   snowData: SnowData;
   liftsOverall: LiftsOverall;
   trailsOverall: TrailsOverall;
 }) {
-  const temperature = data?.current?.temperature;
-  const skyStatus = data?.current?.skyStatus;
-  const snowTotalDepth = snowData?.snowTotalDepth;
-
   const [unitSystem] = useStore((state: any) => [state.unitSystem]);
+  const forecastCurrent =
+    unitSystem === "US"
+      ? forecastImp?.forecastCurrent
+      : forecastMet?.forecastCurrent;
+
+  const { temp, conditionsLabel } = forecastCurrent ?? {};
+
+  const snowTotalDepth = snowData?.snowTotalDepth;
 
   const currentTemp =
     unitSystem === "SI"
-      ? `${Math.ceil(temperature?.value || 0)}\u00B0C`
-      : `${Math.ceil(temperature?.countryValue || 0)}\u00B0F`;
-
-  const currentSky = skyStatus?.replace(/_/g, " ");
+      ? `${Math.ceil(temp || 0)}\u00B0C`
+      : `${Math.ceil(temp || 0)}\u00B0F`;
 
   const currentSnow =
     unitSystem === "SI"
@@ -43,8 +48,8 @@ export function Banner({
   const lifts = `${liftsOverall?.openLifts}/${liftsOverall?.lifts}`;
   const trails = `${trailsOverall?.openTrails}/${trailsOverall?.totalTrails}`;
 
-  const weatherDataString = data
-    ? `It's ${currentTemp} and ${currentSky} with`
+  const weatherDataString = forecastCurrent
+    ? `It's ${currentTemp} and ${conditionsLabel} with`
     : "";
   const snowDataString = snowData ? `${currentSnow} base depth.` : "";
   const liftsAndTrails = liftsOverall && trailsOverall;

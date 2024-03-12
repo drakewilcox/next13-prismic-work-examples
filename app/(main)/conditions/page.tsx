@@ -3,28 +3,10 @@ import { notFound } from 'next/navigation';
 import { isEmpty } from 'lodash';
 // PRISMIC
 import { createClient } from '@/prismicio';
-// ACTIONS
-import {
-  fetchWeather,
-  fetchSnowReport,
-  fetchPOI,
-  fetchPOIOverall,
-  fetchResortOpeningService,
-  fetchResortAccessService,
-  fetchWebcamService,
-} from './actions';
+import { fetchConditionData, getNavSections } from './conditionsHelpers';
 // TYPES
-import {
-  LiftsOverall,
-  ResortInfo,
-  RoadCondition,
-  Sector,
-  SnowData,
-  TrailsOverall,
-  WeatherInfo,
-} from '@/components/Weather/conditionTypes';
+import { ResortInfo } from '@/components/Weather/conditionTypes';
 // COMPONENTS
-
 import { CurrentConditions } from '@/components/Weather/CurrentConditions';
 import { SnowReport } from '@/components/Weather/SnowReport';
 import { LiftStatus } from '@/components/Weather/LiftStatus';
@@ -41,27 +23,22 @@ import styles from './conditions.module.css';
 export default async function Conditions() {
   const client = createClient();
   const page = await client.getSingle('conditions').catch(() => notFound());
+  const conditionsData = await fetchConditionData();
 
-  const weather = await fetchWeather();
-  const snow = await fetchSnowReport();
-  const poiData = await fetchPOI();
-  const poiOverall = await fetchPOIOverall();
-  const resort = await fetchResortOpeningService();
-  const roads = await fetchResortAccessService();
-  const webCams = await fetchWebcamService();
-
-  const liftsOverall: LiftsOverall =
-    poiOverall?.content?.overalls[0].liftsOverall;
-  const trailsOverall: TrailsOverall =
-    poiOverall?.content?.overalls[0].trailsOverall;
-  const currentWeather: WeatherInfo =
-    weather?.content?.weatherZones[0].weatherInfos[0];
-  const forecast: WeatherInfo[] =
-    weather?.content?.weatherZones[0].weatherInfos;
-  const currentSnow: SnowData = snow?.content?.snowZones[0];
-  const sectorsData: Sector[] = poiData?.content?.resorts[0].sectors;
-  const resortData: ResortInfo[] = resort?.content?.resorts[0].resortInfos;
-  const roadsData: RoadCondition[] = roads?.content?.resorts[0].roadConditions;
+  const {
+    currentTime,
+    forecastImperial,
+    forecastMetric,
+    snowDetailImperial,
+    snowDetailMetric,
+    currentSnow,
+    sectorsData,
+    resortData,
+    roadsData,
+    liftsOverall,
+    trailsOverall,
+    webcams,
+  } = conditionsData;
 
   const dailyReport: ResortInfo | undefined = resortData?.find(
     (item: ResortInfo) => item.title === 'Daily Report'
@@ -70,85 +47,46 @@ export default async function Conditions() {
     (item: ResortInfo) => item.title === 'Hours of Operation'
   );
 
-  const hideCurrentConditions =
-    isEmpty(currentWeather) && isEmpty(roadsData) && isEmpty(resortData);
-  const hideLiftStatus = isEmpty(poiOverall) && isEmpty(poiData);
+  const openSnowDataEmpty = !forecastImperial || !forecastMetric;
+  const hideCurrentConditions = openSnowDataEmpty && !roadsData && resortData;
+  const hideLiftStatus = !liftsOverall && !trailsOverall;
   const allConditionsEmpty = hideCurrentConditions && hideLiftStatus;
 
-  const navSections = [
-    ...(!hideCurrentConditions
-      ? [
-          {
-            first: 'Current',
-            second: 'Conditions',
-          },
-        ]
-      : []),
-    ...(!!currentSnow
-      ? [
-          {
-            first: 'Snow',
-            second: 'Report',
-          },
-        ]
-      : []),
-    ...(!isEmpty(currentWeather)
-      ? [
-          {
-            first: 'Weather',
-            second: 'Forecast',
-          },
-        ]
-      : []),
-    ...(!hideLiftStatus
-      ? [
-          {
-            first: 'Lift &',
-            second: 'Terrain Status',
-          },
-        ]
-      : []),
-    ...(!isEmpty(sectorsData)
-      ? [
-          {
-            first: 'Trail',
-            second: 'Status',
-          },
-        ]
-      : []),
-    ...(!isEmpty(webCams)
-      ? [
-          {
-            first: 'Live',
-            second: 'Feed',
-          },
-        ]
-      : []),
-  ];
+  const navSections = getNavSections(conditionsData);
 
   return (
     <PageWrapper>
       <Banner
-        data={currentWeather}
+        forecastImp={forecastImperial}
+        forecastMet={forecastMetric}
         snowData={currentSnow}
         liftsOverall={liftsOverall}
         trailsOverall={trailsOverall}
       />
       {!allConditionsEmpty ? (
         <>
+          {/* <div>{currentTime?.datetime}</div> */}
           <InPageNav sections={navSections} />
           <div className="grid">
             <div className="inset">
               {!hideCurrentConditions && (
                 <CurrentConditions
-                  data={currentWeather}
+                  forecastImp={forecastImperial}
+                  forecastMet={forecastMetric}
                   snowData={currentSnow}
                   dailyReport={dailyReport}
                   roadsData={roadsData}
                 />
               )}
-              <SnowReport weatherInfo={currentWeather} snowData={currentSnow} />
-              {!isEmpty(currentWeather) && <Forecast forecast={forecast} />}
+              <SnowReport snowData={currentSnow} />
+              {!openSnowDataEmpty && (
+                <Forecast
+                  forecastImp={forecastImperial}
+                  forecastMet={forecastMetric}
+                  snowImp={snowDetailImperial}
+                  snowMet={snowDetailMetric}
+                />
+              )}
               {!hideLiftStatus && (
                 <LiftStatus
                   sectorsData={sectorsData}
@@ -160,7 +98,7 @@ export default async function Conditions() {
               {!isEmpty(sectorsData) && (
                 <TrailStatus sectorsData={sectorsData} />
               )}
-              <LiveFeed data={webCams} />
+              <LiveFeed data={webcams} />
             </div>
           </div>
         </>

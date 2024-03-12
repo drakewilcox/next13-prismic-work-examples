@@ -8,6 +8,7 @@
   letter-spacing: var(--letter-spacing-cta);
   display: flex;
   justify-content: flex-end;
+  align-items: center;
   cursor: pointer;
   gap: 0.5rem;
 
@@ -15,4 +16,9 @@
     width: 1.5rem;
     display: block;
   }
+}
+
+.icon {
+  width: 24px;
+  height: 24px;
 }

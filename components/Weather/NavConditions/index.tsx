@@ -8,11 +8,10 @@ import { findWeatherData } from '@/utilities/findWeatherData';
 // Types
 import {
   LiftsOverall,
-  ResortInfo,
+  OpenSnowConditionsData,
   RoadCondition,
   SnowData,
   TrailsOverall,
-  WeatherInfo,
 } from '@/components/Weather/conditionTypes';
 // Components
 import { CurrentConditionsFlyout } from '../CurrentConditionsFlyout';
@@ -20,23 +19,30 @@ import { CurrentConditionsFlyout } from '../CurrentConditionsFlyout';
 import styles from './navConditionsStyles.module.css';
 
 export function NavConditions({
-  currentWeather,
   currentSnow,
   roadsData,
   trailsOverall,
   liftsOverall,
+  openSnowData,
 }: {
-  currentWeather: WeatherInfo;
   currentSnow: SnowData;
   roadsData: RoadCondition[];
   trailsOverall: TrailsOverall;
   liftsOverall: LiftsOverall;
+  openSnowData: OpenSnowConditionsData;
 }) {
   const [unitSystem] = useStore((state: any) => [state.unitSystem]);
 
-  const temperature = currentWeather?.current?.temperature;
+  const { forecastImperial, forecastMetric } = openSnowData;
+
+  const currentForecast =
+    unitSystem === 'US'
+      ? forecastImperial?.forecastCurrent
+      : forecastMetric?.forecastCurrent;
+
+  const { temp, conditionsLabel, conditionsIconUrl } = currentForecast ?? {};
+
   const freshSnowFallDepth48H = currentSnow?.freshSnowFallDepth48H;
-  const skyStatus = currentWeather?.current?.skyStatus;
 
   const snowfall48H =
     unitSystem === 'SI'
@@ -50,12 +56,10 @@ export function NavConditions({
 
   const currentTemp =
     unitSystem === 'SI'
-      ? `${Math.ceil(temperature?.value)}\u00B0C`
-      : `${Math.ceil(temperature?.countryValue)}\u00B0F`;
+      ? `${Math.ceil(temp || 0)}\u00B0C`
+      : `${Math.ceil(temp || 0)}\u00B0F`;
 
-  const skyStatusData = findWeatherData(skyStatus);
-
-  if (!isEmpty(currentWeather)) {
+  if (!isEmpty(openSnowData)) {
     return (
       <NavigationMenu.Item className={styles.NavigationConditions}>
         <NavigationMenu.Trigger className="NavigationMenuTrigger">
@@ -71,10 +75,12 @@ export function NavConditions({
                 </span>
               </>
             )}
-            {temperature && (
+            {temp && (
               <>
-                <span className="visually-hidden">{`${skyStatusData?.text} and ${currentTemp}`}</span>
-                <span aria-hidden={true}>{skyStatusData.icon}</span>
+                <span className="visually-hidden">{`${conditionsLabel} and ${currentTemp}`}</span>
+                {/* eslint-disable-next-line */}
+                <img className={styles.icon} src={conditionsIconUrl} />
+
                 <span aria-hidden={true}>{currentTemp}</span>
               </>
             )}
@@ -82,7 +88,7 @@ export function NavConditions({
         </NavigationMenu.Trigger>
         <NavigationMenu.Content className="NavigationMenuContent WithConditions">
           <CurrentConditionsFlyout
-            data={currentWeather}
+            openSnowData={openSnowData}
             snowData={currentSnow}
             roadsData={roadsData}
             trailsOverall={trailsOverall}

@@ -10,21 +10,21 @@ export type WeatherInfo = {
 };
 
 export type Slug =
-  | "SNOW"
-  | "CLOUDY"
-  | "CLOUDY_LIGHT_RAIN"
-  | "CLOUDY_LIGHT_SNOWFALL"
-  | "CLOUDY_MODERATE_HEAVY_RAIN"
-  | "CLOUDY_MODERATE_HEAVY_SNOWFALL"
-  | "FAIR_WEATHER_PARTLY_CLOUDY"
-  | "FOG"
-  | "MOSTLY_CLOUDY_LIGHT_RAIN"
-  | "MOSTLY_CLOUDY_SOME_SUN"
-  | "MOSTLY_SUNNY"
-  | "SUNNY"
-  | "THUNDERSTORMS"
-  | "VARIABLE_SKY_LIGHT_SNOWFALL"
-  | "VARIABLE_SKY_SCATTERED_THUNDERSTORMS";
+  | 'SNOW'
+  | 'CLOUDY'
+  | 'CLOUDY_LIGHT_RAIN'
+  | 'CLOUDY_LIGHT_SNOWFALL'
+  | 'CLOUDY_MODERATE_HEAVY_RAIN'
+  | 'CLOUDY_MODERATE_HEAVY_SNOWFALL'
+  | 'FAIR_WEATHER_PARTLY_CLOUDY'
+  | 'FOG'
+  | 'MOSTLY_CLOUDY_LIGHT_RAIN'
+  | 'MOSTLY_CLOUDY_SOME_SUN'
+  | 'MOSTLY_SUNNY'
+  | 'SUNNY'
+  | 'THUNDERSTORMS'
+  | 'VARIABLE_SKY_LIGHT_SNOWFALL'
+  | 'VARIABLE_SKY_SCATTERED_THUNDERSTORMS';
 
 export type WeatherInfoDetails = {
   hour: number;
@@ -41,9 +41,9 @@ export type WeatherInfoDetails = {
 
 export type Measurement = {
   value: number;
-  unit: "KMH" | "MPH" | "CELSIUS" | "FAHRENHEIT";
+  unit: 'KMH' | 'MPH' | 'CELSIUS' | 'FAHRENHEIT';
   countryValue: number;
-  countryUnit?: "KMH" | "MPH" | "CELSIUS" | "FAHRENHEIT";
+  countryUnit?: 'KMH' | 'MPH' | 'CELSIUS' | 'FAHRENHEIT';
 };
 
 // SNOW ENDNPOINT: body.content.snowZones[0]
@@ -61,9 +61,9 @@ export type SnowData = {
 
 export type SnowMeasurement = {
   value: number;
-  unit: "CENTIMETER | METER";
+  unit: 'CENTIMETER | METER';
   countryValue: number;
-  countryUnit?: "FOOT | INCH";
+  countryUnit?: 'FOOT | INCH';
 };
 
 // POI: body.resorts[0].sectors
@@ -75,11 +75,11 @@ export type Sector = {
 };
 
 export type LiftType =
-  | "CHAIRLIFT"
-  | "DETACHABLE_CHAIRLIFT"
-  | "SURFACE_LIFT"
-  | "ROPE_TOW"
-  | "MAGIC_CARPET";
+  | 'CHAIRLIFT'
+  | 'DETACHABLE_CHAIRLIFT'
+  | 'SURFACE_LIFT'
+  | 'ROPE_TOW'
+  | 'MAGIC_CARPET';
 
 export type Lift = {
   name: string;
@@ -177,11 +177,81 @@ export type RoadCondition = {
 
 // Collection of all conditions data
 export type AllConditions = {
-  currentWeather: WeatherInfo;
+  currentTime?: any;
+  forecastImperial?: OSForecastResponse;
+  forecastMetric?: OSForecastResponse;
+  snowDetailImperial?: OSSnowResponse;
+  snowDetailMetric?: OSSnowResponse;
   currentSnow: SnowData;
+  sectorsData?: Sector[];
+  resortData?: ResortInfo[];
   dailyReport?: ResortInfo;
   roadsData: RoadCondition[];
   liftsOverall: LiftsOverall;
   trailsOverall: TrailsOverall;
   webcams: Webcams[];
+};
+
+export type OpenSnowConditionsData = {
+  forecastImperial: OSForecastResponse;
+  forecastMetric: OSForecastResponse;
+};
+// Open Snow Weather Types
+
+export type OSForecastResponse = {
+  forecastCurrent: OSForecastCurrent;
+  forecastDaily: OSForecastDaily[];
+  attribution: OSAttribution;
+} | null;
+
+export type OSAttribution = {
+  linkUrl: string;
+  linkText: string;
+  description: string;
+  imageLightUrl: string;
+  imageDarkUrl: string;
+};
+
+export type OSForecastCurrent = {
+  displayAt: string;
+  conditionsId: number;
+  conditionsLabel: string;
+  conditionsIconUrl: string;
+  temp: number;
+  windDirLabel: string;
+  windSpeed: number;
+  precipType: number;
+  snowLevel: number;
+};
+
+export type OSForecastDaily = {
+  displayAt: string;
+  displayAtLocalLabel: string;
+  dayPeriod: string;
+  conditionsId: number;
+  conditionsLabel: string;
+  conditionsIconUrl: string;
+  temp: number;
+  tempMin: number;
+  tempMax: number;
+  widDirLabel: string;
+  windSpeed: number;
+  windGustSpeed: number;
+  precipSnow: number;
+  precipSnowMin: number;
+  precipSnowMax: number;
+  snowLevel: number;
+};
+
+export type OSSnowResponse = {
+  forecastSemiDaily: OSForecastDaily[];
+  forecastSnowDaily: OSSnowDaily[];
+  forecastSnowSummary: OSSnowDaily[];
+} | null;
+
+export type OSSnowDaily = {
+  displayAtLocalLabel: string;
+  precipSnow: number;
+  precipSnowMin: number;
+  precipSnowMax: number;
 };

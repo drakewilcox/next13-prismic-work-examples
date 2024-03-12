@@ -55,6 +55,7 @@
 
 .logo {
   position: relative;
+
   z-index: 10;
   margin: 0.3125rem 0.25rem;
   @media (--md) {

@@ -1,9 +1,9 @@
-import styles from './navWebcams.module.css';
+import styles from "./navWebcams.module.css";
 
-import * as NavigationMenu from '@radix-ui/react-navigation-menu';
+import * as NavigationMenu from "@radix-ui/react-navigation-menu";
 
-import Loading from '@/components/Loading';
-import { Webcams } from '@/components/Icons';
+import Loading from "@/components/Loading";
+import { Webcams } from "@/components/Icons";
 
 export function NavWebcams({ webcams }: { webcams: any }) {
   if (webcams) {
@@ -18,14 +18,14 @@ export function NavWebcams({ webcams }: { webcams: any }) {
         <NavigationMenu.Content className="NavigationMenuContent">
           <div
             className={styles.items}
-            aria-label={`${webcams.length} Webcams`}
+            aria-label={`${webcams.length} Powder Mountain Webcams`}
           >
             {webcams?.map((item: any, index: number) => (
               <div
                 className={styles.item}
                 key={item.id}
                 tabIndex={0}
-                aria-label={`Webcam number ${index + 1}`}
+                aria-label={`Powder Mountain Webcam number ${index + 1}`}
                 role="img"
               >
                 {/* eslint-disable-next-line */}

@@ -14,7 +14,10 @@ import { Menu } from '@/components/Menu';
 import { MenuCollapsed } from '@/components/MenuCollapsed';
 import { MenuToggle } from '@/components/MenuToggle';
 import { Logo } from '@/components/Logo';
-import { AllConditions } from '@/components/Weather/conditionTypes';
+import {
+  AllConditions,
+  OpenSnowConditionsData,
+} from '@/components/Weather/conditionTypes';
 
 function Wrapper({ children }: { children: React.ReactNode }) {
   const [scope, animate] = useAnimate();
@@ -66,9 +69,11 @@ function Inner({ children }: { children: React.ReactNode }) {
 export function Header({
   menuData,
   conditionsData,
+  openSnowData,
 }: {
   menuData: Content.MenuDocument;
   conditionsData: AllConditions;
+  openSnowData: OpenSnowConditionsData;
 }) {
   return (
     <Wrapper>
@@ -78,16 +83,24 @@ export function Header({
             <Link
               href="/"
               className={styles.logoLink}
-              aria-label="Go to the Homepage"
+              aria-label="Go to the Powder Mountain homepage"
             >
               <Logo />
             </Link>
           </div>
-          <Menu menuData={menuData} conditionsData={conditionsData} />
+          <Menu
+            menuData={menuData}
+            conditionsData={conditionsData}
+            openSnowData={openSnowData}
+          />
           <MenuToggle />
         </div>
       </Inner>
-      <MenuCollapsed menuData={menuData} conditionsData={conditionsData} />
+      <MenuCollapsed
+        menuData={menuData}
+        conditionsData={conditionsData}
+        openSnowData={openSnowData}
+      />
     </Wrapper>
   );
 }

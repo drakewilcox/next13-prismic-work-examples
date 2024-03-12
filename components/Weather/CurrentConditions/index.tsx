@@ -5,13 +5,13 @@ import parse from 'html-react-parser';
 // Hooks & Utilities
 import { useStore } from '@/hooks/useStore';
 import { formatDate } from '@/utilities/formatDate';
-import { findWeatherData } from '@/utilities/findWeatherData';
+import isEmpty from 'lodash.isempty';
 // Types
 import {
-  WeatherInfo,
   SnowData,
   ResortInfo,
   RoadCondition,
+  OSForecastResponse,
 } from '@/components/Weather/conditionTypes';
 // Components & Icons
 import { Card } from '../Card';
@@ -19,29 +19,51 @@ import { UnitToggle } from '../UnitToggle';
 import { StatusIcon, Closed } from '@/components/Icons';
 // Styles
 import sharedStyles from '../sharedWeatherStyles.module.css';
-import styles from './currentConditions.module.css';
 import { RoadConditionsKey } from '../RoadConditionsKey';
 
 export function CurrentConditions({
-  data,
   snowData,
   dailyReport,
   roadsData,
+  forecastImp,
+  forecastMet,
 }: {
-  data: WeatherInfo;
+  forecastImp?: OSForecastResponse;
+  forecastMet?: OSForecastResponse;
   snowData: SnowData;
   dailyReport?: ResortInfo;
   roadsData: RoadCondition[];
 }) {
-  const { current, temperatureMin, temperatureMax } = data ?? {};
-  const { temperature, lastModified, wind, skyStatus } = current ?? {};
-  const formattedDate = current
-    ? `Updated: ${formatDate(lastModified)}`
-    : 'Recent Weather Conditions Unavailable';
+  // OPEN SNOW:
   const unitSystem = useStore((state: any) => state.unitSystem);
+  const currentForecast =
+    unitSystem === 'US'
+      ? forecastImp?.forecastCurrent
+      : forecastMet?.forecastCurrent;
+  const forecastResponse = unitSystem === 'US' ? forecastImp : forecastMet;
+
+  const {
+    displayAt,
+    conditionsLabel,
+    temp,
+    windDirLabel,
+    windSpeed: OSWindSpeed,
+  } = currentForecast ?? {};
+
+  const fiveDayForecast = forecastResponse?.forecastDaily || [];
+
+  const dailyForecast = fiveDayForecast[0];
+  const { tempMin, tempMax } = dailyForecast ?? {};
+
+  const formattedDate = currentForecast
+    ? `Updated: ${formatDate(displayAt)}`
+    : 'Recent Weather Conditions Unavailable';
+
   const renderRoadStatusIcon = (surface: string) => {
     const green = ['CLEAR_DRY', 'UNDEF'];
+
     const yellow = ['CLEAR_WET', 'SOGGY', 'PACKED', 'PART_SNOW', 'ICY'];
+    const red = ['SNOWY'];
 
     if (green.includes(surface)) {
       return {
@@ -58,63 +80,45 @@ export function CurrentConditions({
         shortDescription: 'Wet, icy or snowy',
       };
     }
-    if (surface === 'SNOWY') {
+    if (red.includes(surface)) {
       return {
         icon: <StatusIcon fill={'#DA2F20'} />,
         description:
           'Snowy road. Passenger vehicles are required to have 4 wheel drive or all-wheel drive with snow tires and/or chains.',
         shortDescription: 'Snowy',
       };
-    } else {
-      return {
-        icon: <Closed />,
-        description: 'Road is Closed.',
-        shortDescription: 'Closed',
-      };
     }
-  };
-
-  const abbreviateDirection = (direction: string) => {
-    if (!direction) {
-      return '';
-    }
-    const words = direction.split('_');
-    const abbreviation = words
-      .map((word) => word[0])
-      .join('')
-      .toUpperCase();
-
-    return abbreviation;
+    return {
+      icon: <Closed />,
+      description: 'Road is Closed.',
+      shortDescription: 'Closed',
+    };
   };
 
   const currentTemp =
     unitSystem === 'SI'
-      ? `${Math.ceil(temperature?.value || 0)}\u00B0C`
-      : `${Math.ceil(temperature?.countryValue || 0)}\u00B0F`;
+      ? `${Math.ceil(temp || 0)}\u00B0C`
+      : `${Math.ceil(temp || 0)}\u00B0F`;
 
   const lowTemp =
     unitSystem === 'SI'
-      ? `${Math.ceil(temperatureMin?.value || 0)}\u00B0`
-      : `${Math.ceil(temperatureMin?.countryValue || 0)}\u00B0`;
+      ? `${Math.ceil(tempMin || 0)}\u00B0`
+      : `${Math.ceil(tempMin || 0)}\u00B0`;
 
   const highTemp =
     unitSystem === 'SI'
-      ? `${Math.ceil(temperatureMax?.value || 0)}\u00B0`
-      : `${Math.ceil(temperatureMax?.countryValue || 0)}\u00B0`;
+      ? `${Math.ceil(tempMax || 0)}\u00B0`
+      : `${Math.ceil(tempMax || 0)}\u00B0`;
 
   const windSpeed =
     unitSystem === 'SI'
-      ? `${Math.ceil(wind?.value?.value || 0)} KPH ${abbreviateDirection(
-          wind?.direction
-        )}`
-      : `${Math.ceil(wind?.value?.countryValue || 0)} MPH ${abbreviateDirection(
-          wind?.direction
-        )}`;
+      ? `${Math.ceil(OSWindSpeed || 0)} KPH ${windDirLabel || ''}`
+      : `${Math.ceil(OSWindSpeed || 0)} MPH ${windDirLabel || ''}`;
 
   const snowfall48 =
     unitSystem === 'SI'
-      ? `${snowData?.freshSnowFallDepth48H?.value || 0} cm`
-      : `${snowData?.freshSnowFallDepth48H?.countryValue || 0} "`;
+      ? `${Math.ceil(snowData?.freshSnowFallDepth48H?.value || 0)} cm`
+      : `${Math.ceil(snowData?.freshSnowFallDepth48H?.countryValue || 0)} "`;
 
   const stats = [
     {
@@ -123,7 +127,7 @@ export function CurrentConditions({
     },
     {
       title: 'Conditions',
-      data: findWeatherData(skyStatus).text,
+      data: conditionsLabel,
     },
     {
       title: 'High / Low',
@@ -146,12 +150,13 @@ export function CurrentConditions({
   return (
     <>
       <Card
+        openSnowAttr={forecastImp?.attribution}
         title="Current Conditions"
         id="current_conditions"
         subTitle={formattedDate}
         headerComponent={headerComponent}
       >
-        {data && (
+        {currentForecast && (
           <div className={classNames(sharedStyles.section)}>
             {stats.map((item) => (
               <div

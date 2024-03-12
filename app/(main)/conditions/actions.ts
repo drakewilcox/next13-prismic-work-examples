@@ -1,11 +1,18 @@
 'use server';
+import { camelizeKeys } from '@/utilities/camelizeKeys';
+import {
+  OSForecastResponse,
+  OSSnowResponse,
+} from '@/components/Weather/conditionTypes';
 
 const SECRET_KEY = process.env.LUMIPLAN_SECRET_KEY;
-const CLIENT_ID = process.env.CLIENT_ID;
+
+// LUMIPLAN
 
 async function fetchToken() {
   const endpoint =
     'https://mountain.live/auth/realms/lumiserveur/protocol/openid-connect/token';
+  const clientId = 'powdermountainweb';
 
   try {
     const res = await fetch(endpoint, {
@@ -13,9 +20,9 @@ async function fetchToken() {
       headers: {
         'Content-Type': 'application/x-www-form-urlencoded',
       },
-      body: `grant_type=client_credentials&client_id=${CLIENT_ID}&client_secret=${SECRET_KEY}`,
+      body: `grant_type=client_credentials&client_id=${clientId}&client_secret=${SECRET_KEY}`,
       next: {
-        revalidate: 1800,
+        revalidate: 60,
       },
     });
 
@@ -28,36 +35,6 @@ async function fetchToken() {
   } catch (error) {
     console.error('Error while fetching token:', error);
     return { access_token: '' };
-  }
-}
-
-export async function fetchWeather() {
-  try {
-    const token = await fetchToken();
-
-    const res = await fetch(
-      'https://api.mountain.live/mountain_secured/weather/2.0?country=en_US&daysNumber=4&weatherZone=915',
-      {
-        method: 'GET',
-        headers: {
-          Authorization: `Bearer ${token.access_token}`,
-          'Content-Type': 'application/json',
-        },
-        next: {
-          revalidate: 60,
-        },
-      }
-    );
-
-    if (res.ok) {
-      return res.json();
-    } else {
-      console.error(`Failed to fetch weather data. Status: ${res.status}`);
-      return null;
-    }
-  } catch (error) {
-    console.error('Error while fetching weather data:', error);
-    return null;
   }
 }
 
@@ -95,7 +72,7 @@ export async function fetchPOI() {
   try {
     const token = await fetchToken();
     const res = await fetch(
-      'https://api.mountain.live/mountain_secured/poi/2.0?operating=all&resort=894',
+      'https://api.mountain.live/mountain_secured/poi/2.0?resort=894',
       {
         method: 'GET',
         headers: {
@@ -242,6 +219,79 @@ export async function fetchWebcamService() {
     }
   } catch (error) {
     console.error('Error while fetching Webcam Service:', error);
+    return null;
+  }
+}
+
+// OPEN SNOW
+
+const OPEN_SNOW_API_KEY = process.env.OPEN_SNOW_API_KEY;
+
+export async function fetchOSForecast(
+  units = 'imperial'
+): Promise<OSForecastResponse> {
+  const endpoint = `https://api.opensnow.com/forecast/detail/powmow?api_key=${OPEN_SNOW_API_KEY}&v=1&units=${units}`;
+
+  try {
+    const res = await fetch(endpoint, {
+      method: 'GET',
+      next: {
+        revalidate: 60,
+      },
+    });
+
+    if (res.ok) {
+      return camelizeKeys(await res.json()) as OSForecastResponse;
+    } else {
+      console.error(`Failed to fetch forecast data. Status: ${res.status}`);
+      return null as OSForecastResponse;
+    }
+  } catch (error) {
+    console.error('Error while fetching forecast data', error);
+    return null as OSForecastResponse;
+  }
+}
+
+export async function fetchOSSnowDetail(
+  units = 'imperial'
+): Promise<OSSnowResponse> {
+  const endpoint = `https://api.opensnow.com/forecast/snow-detail/powmow?api_key=${OPEN_SNOW_API_KEY}&v=1&units=${units}`;
+
+  try {
+    const res = await fetch(endpoint, {
+      method: 'GET',
+      next: {
+        revalidate: 60,
+      },
+    });
+
+    if (res.ok) {
+      return camelizeKeys(await res.json()) as OSSnowResponse;
+    } else {
+      console.error(`Failed to fetch forecast data. Status: ${res.status}`);
+      return null as OSSnowResponse;
+    }
+  } catch (error) {
+    console.error('Error while fetching forecast data', error);
+    return null as OSSnowResponse;
+  }
+}
+
+export async function CurrentTime() {
+  try {
+    let res = await fetch(
+      'http://worldtimeapi.org/api/timezone/America/Los_Angeles',
+      {
+        next: { revalidate: 5 },
+      }
+    );
+    if (res.ok) {
+      return res.json();
+    } else {
+      return null;
+    }
+  } catch (error) {
+    console.error('Error while fetching', error);
     return null;
   }
 }

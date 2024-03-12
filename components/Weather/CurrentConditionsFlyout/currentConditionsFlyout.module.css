@@ -61,8 +61,36 @@
 }
 
 .cardSubTitle {
+  margin-top: 1rem;
   color: var(--text-graphics-secondary);
   font-size: var(--font-size-caption);
   line-height: var(--line-height-caption);
   letter-spacing: var(--letter-spacing-caption);
+}
+
+.openSnowAtrContainer {
+  color: var(--text-graphics-secondary);
+
+  /* max-width: 555px; */
+  font-size: var(--font-size-caption);
+  line-height: var(--line-height-caption);
+  letter-spacing: var(--letter-spacing-caption);
+
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 10px;
+  height: 15px;
+  text-decoration: none;
+
+  margin-top: 10px;
+
+  .link::after {
+    display: none !important;
+  }
+
+  .osImg {
+    height: 15px;
+    width: auto;
+  }
 }

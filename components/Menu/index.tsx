@@ -17,14 +17,19 @@ import classNames from 'classnames';
 import { useStore } from '@/hooks/useStore';
 import { NavConditions } from '@/components/Weather/NavConditions';
 import { NavWebcams } from '@/components/Weather/NavWebcams';
-import { AllConditions } from '@/components/Weather/conditionTypes';
+import {
+  AllConditions,
+  OpenSnowConditionsData,
+} from '@/components/Weather/conditionTypes';
 
 export function Menu({
   menuData,
   conditionsData,
+  openSnowData,
 }: {
   menuData: Content.MenuDocument;
   conditionsData: AllConditions;
+  openSnowData: OpenSnowConditionsData;
 }) {
   const { data } = menuData;
 
@@ -64,7 +69,7 @@ export function Menu({
 
           {/* Conditions flyout */}
           <NavConditions
-            currentWeather={conditionsData.currentWeather}
+            openSnowData={openSnowData}
             currentSnow={conditionsData.currentSnow}
             roadsData={conditionsData.roadsData}
             liftsOverall={conditionsData.liftsOverall}

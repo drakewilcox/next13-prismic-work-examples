@@ -1,27 +1,32 @@
-"use client";
+'use client';
 
-import styles from "./menuCollapsed.module.css";
+import styles from './menuCollapsed.module.css';
 
-import { useEffect } from "react";
-import Link from "next/link";
-import { type Content, isFilled } from "@prismicio/client";
-import { PrismicLink } from "@prismicio/react";
-import { motion, AnimatePresence } from "framer-motion";
-import { useWindowSize } from "@uidotdev/usehooks";
-import classNames from "classnames";
+import { useEffect } from 'react';
+import Link from 'next/link';
+import { type Content, isFilled } from '@prismicio/client';
+import { PrismicLink } from '@prismicio/react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { useWindowSize } from '@uidotdev/usehooks';
+import classNames from 'classnames';
 
-import { AllConditions } from "@/components/Weather/conditionTypes";
-import { useStore } from "@/hooks/useStore";
-import { usePathname } from "next/navigation";
-import { MiniConditions } from "@/components/Weather/MiniConditions";
-import { MiniWebcams } from "@/components/Weather/MiniWebcams";
+import {
+  AllConditions,
+  OpenSnowConditionsData,
+} from '@/components/Weather/conditionTypes';
+import { useStore } from '@/hooks/useStore';
+import { usePathname } from 'next/navigation';
+import { MiniConditions } from '@/components/Weather/MiniConditions';
+import { MiniWebcams } from '@/components/Weather/MiniWebcams';
 
 export const MenuCollapsed = ({
   menuData,
   conditionsData,
+  openSnowData,
 }: {
   menuData: Content.MenuDocument;
   conditionsData: AllConditions;
+  openSnowData: OpenSnowConditionsData;
 }) => {
   const windowSize = useWindowSize();
 
@@ -92,8 +97,8 @@ export const MenuCollapsed = ({
                 internalComponent={Link}
                 className={classNames([
                   styles.menuButton,
-                  "button",
-                  "fill-blue",
+                  'button',
+                  'fill-blue',
                 ])}
               >
                 <span>{data.button_label}</span>
@@ -105,7 +110,7 @@ export const MenuCollapsed = ({
               <ul className={styles.items}>
                 <li>
                   <MiniConditions
-                    currentWeather={conditionsData.currentWeather}
+                    openSnowData={openSnowData}
                     currentSnow={conditionsData.currentSnow}
                     roadsData={conditionsData.roadsData}
                     liftsOverall={conditionsData.liftsOverall}
@@ -118,7 +123,7 @@ export const MenuCollapsed = ({
                 </li>
 
                 {data?.slices.map((item: any) => {
-                  if (item.variation === "default" && item.primary?.link?.url) {
+                  if (item.variation === 'default' && item.primary?.link?.url) {
                     return (
                       <MenuLink
                         key={item.id}
@@ -128,7 +133,7 @@ export const MenuCollapsed = ({
                     );
                   }
 
-                  if (item.variation === "withSubmenu") {
+                  if (item.variation === 'withSubmenu') {
                     return (
                       <li key={item.id}>
                         <label>{item.primary?.label}</label>

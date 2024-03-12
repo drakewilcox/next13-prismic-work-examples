@@ -26,7 +26,7 @@ export function LiftStatus({
   trailsOverall,
   hoursOfOperation,
 }: {
-  sectorsData: Sector[];
+  sectorsData?: Sector[];
   liftsOverall: LiftsOverall;
   trailsOverall: TrailsOverall;
   hoursOfOperation?: ResortInfo;
@@ -37,7 +37,9 @@ export function LiftStatus({
 
   // const allTerrains = sectorsData?.filter((sector) => !sector.lifts);
   const adventureTerrain = sectorsData?.filter((sector) => sector.id === "986");
-  const adventureTerrainTrails = adventureTerrain[0]?.trails;
+  const adventureTerrainTrails = adventureTerrain
+    ? adventureTerrain[0]?.trails
+    : null;
 
   const {
     openTrails,
@@ -56,18 +58,18 @@ export function LiftStatus({
   const hideStats = !liftsOverall || !trailsOverall;
 
   const stats = [
-    {
-      title: "Acres Open",
-      data: openTrailsTotalSurface?.countryValue,
-    },
+    // {
+    //   title: "Acres Open",
+    //   data: openTrailsTotalSurface?.countryValue,
+    // },
     {
       title: "Lifts Open",
       data: `${openLifts} / ${lifts}`,
     },
-    {
-      title: "Terrain Open",
-      data: `${terrainOpen}%`,
-    },
+    // {
+    //   title: "Terrain Open",
+    //   data: `${terrainOpen}%`,
+    // },
     {
       title: "Trails Open",
       data: `${openTrails} / ${totalTrails}`,

@@ -148,8 +148,8 @@ ul.secondaryLinks {
 }
 
 .logo {
-  width: 100%;
   transform: translateX(-4px);
+  /* width: 400px; */
   svg {
     display: block;
     width: 100%;

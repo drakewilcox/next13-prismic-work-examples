@@ -5,43 +5,65 @@ import classNames from "classnames";
 // Hooks & Utilities
 import { useStore } from "@/hooks/useStore";
 import { formatDate } from "@/utilities/formatDate";
-import { findWeatherData } from "@/utilities/findWeatherData";
 // Types
 import {
-  WeatherInfo,
   SnowData,
-  ResortInfo,
   RoadCondition,
   LiftsOverall,
   TrailsOverall,
+  OpenSnowConditionsData,
 } from "@/components/Weather/conditionTypes";
 // Components & Icons
 import { UnitToggle } from "../UnitToggle";
-import { StatusIcon, Closed, XIcon } from "@/components/Icons";
+import { StatusIcon, Closed } from "@/components/Icons";
 // Styles
 import sharedStyles from "../sharedWeatherStyles.module.css";
 import styles from "./currentConditionsFlyout.module.css";
 
 export function CurrentConditionsFlyout({
-  data,
   snowData,
   roadsData,
   trailsOverall,
   liftsOverall,
+  openSnowData,
 }: {
-  data: WeatherInfo;
   snowData: SnowData;
   roadsData: RoadCondition[];
   liftsOverall: LiftsOverall;
   trailsOverall: TrailsOverall;
+  openSnowData: OpenSnowConditionsData;
 }) {
-  const { current, temperatureMin, temperatureMax } = data;
-  const { temperature, lastModified, wind, skyStatus } = current;
-  const formattedDate = formatDate(lastModified);
   const unitSystem = useStore((state: any) => state.unitSystem);
+
+  const { forecastImperial, forecastMetric } = openSnowData;
+
+  const currentForecast =
+    unitSystem === "US"
+      ? forecastImperial?.forecastCurrent
+      : forecastMetric?.forecastCurrent;
+  const forecastResponse =
+    unitSystem === "US" ? forecastImperial : forecastMetric;
+  const forecastDaily = forecastResponse?.forecastDaily || [];
+
+  const {
+    temp,
+    displayAt,
+    conditionsLabel,
+    windSpeed: OSWindSpeed,
+    windDirLabel,
+  } = currentForecast ?? {};
+  const { tempMin, tempMax } = forecastDaily[0] ?? {};
+
+  const openSnowAttr = forecastImperial?.attribution;
+
+  const formattedDate = currentForecast
+    ? `Updated: ${formatDate(displayAt)}`
+    : "Recent Weather Conditions Unavailable";
+
   const renderRoadStatusIcon = (surface: string) => {
     const green = ["CLEAR_DRY", "UNDEF"];
     const yellow = ["CLEAR_WET", "SOGGY", "PACKED", "PART_SNOW", "ICY"];
+    const red = ["SNOWY"];
 
     if (green.includes(surface)) {
       return {
@@ -58,60 +80,45 @@ export function CurrentConditionsFlyout({
         shortDescription: "Wet, icy or snowy",
       };
     }
-    if (surface === "CLEAR_DRY") {
+    if (red.includes(surface)) {
       return {
         icon: <StatusIcon fill={"#DA2F20"} />,
         description:
           "Snowy road. Passenger vehicles are required to have 4 wheel drive or all-wheel drive with snow tires and/or chains.",
         shortDescription: "Snowy",
       };
-    } else {
-      return {
-        icon: <Closed />,
-        description: "Road is Closed.",
-        shortDescription: "Closed",
-      };
     }
-  };
-
-  const abbreviateDirection = (direction: string) => {
-    const words = direction.split("_");
-    const abbreviation = words
-      .map((word) => word[0])
-      .join("")
-      .toUpperCase();
-
-    return abbreviation;
+    return {
+      icon: <Closed />,
+      description: "Road is Closed.",
+      shortDescription: "Closed",
+    };
   };
 
   const currentTemp =
     unitSystem === "SI"
-      ? `${Math.ceil(temperature.value)}\u00B0C`
-      : `${Math.ceil(temperature.countryValue)}\u00B0F`;
+      ? `${Math.ceil(temp || 0)}\u00B0C`
+      : `${Math.ceil(temp || 0)}\u00B0F`;
 
   const lowTemp =
     unitSystem === "SI"
-      ? `${Math.ceil(temperatureMin.value)}\u00B0`
-      : `${Math.ceil(temperatureMin.countryValue)}\u00B0`;
+      ? `${Math.ceil(tempMin || 0)}\u00B0`
+      : `${Math.ceil(tempMin || 0)}\u00B0`;
 
   const highTemp =
     unitSystem === "SI"
-      ? `${Math.ceil(temperatureMax.value)}\u00B0`
-      : `${Math.ceil(temperatureMax.countryValue)}\u00B0`;
+      ? `${Math.ceil(tempMax || 0)}\u00B0`
+      : `${Math.ceil(tempMax || 0)}\u00B0`;
 
   const windSpeed =
     unitSystem === "SI"
-      ? `${Math.ceil(wind.value.value)} KPH ${abbreviateDirection(
-          wind.direction
-        )}`
-      : `${Math.ceil(wind.value.countryValue)} MPH ${abbreviateDirection(
-          wind.direction
-        )}`;
+      ? `${Math.ceil(OSWindSpeed || 0)} KPH ${windDirLabel || ""}`
+      : `${Math.ceil(OSWindSpeed || 0)} MPH ${windDirLabel || ""}`;
 
   const snowfall48 =
     unitSystem === "SI"
-      ? `${snowData?.freshSnowFallDepth48H?.value} cm`
-      : `${snowData?.freshSnowFallDepth48H?.countryValue} "`;
+      ? `${Math.ceil(snowData?.freshSnowFallDepth48H?.value || 0)} cm`
+      : `${Math.ceil(snowData?.freshSnowFallDepth48H?.countryValue || 0)} "`;
 
   const { openLifts, lifts } = liftsOverall ?? {};
   const { openTrails, totalTrails } = trailsOverall ?? {};
@@ -123,7 +130,7 @@ export function CurrentConditionsFlyout({
     },
     {
       title: "Conditions",
-      data: findWeatherData(skyStatus).text,
+      data: conditionsLabel,
     },
     {
       title: "High / Low",
@@ -165,7 +172,7 @@ export function CurrentConditionsFlyout({
         <div className={styles.cardHeader}>
           <div className={styles.cardHeaderTitle}>
             <h2>Current Conditions</h2>
-            <p className={styles.cardSubTitle}>Updated: {formattedDate}</p>
+            <p className={styles.cardSubTitle}>{formattedDate}</p>
           </div>
           <div className={styles.cardToggleContainer}>
             <Link href="/conditions" className="button">
@@ -175,23 +182,45 @@ export function CurrentConditionsFlyout({
           </div>
         </div>
 
-        <div className={styles.cardBody}>
-          <div className={classNames(sharedStyles.section)}>
-            {stats.map((item) => {
-              if (item.data) {
-                return (
-                  <div
-                    aria-label={`${item.title}: ${item.data}`}
-                    key={item.title}
-                    className={sharedStyles.statContainer}
-                  >
-                    <div className={sharedStyles.statHeader}>{item.title}</div>
-                    <div className={sharedStyles.statData}>{item.data}</div>
-                  </div>
-                );
-              }
-            })}
+        {openSnowAttr && (
+          <div className={classNames([styles.openSnowAtrContainer])}>
+            <span>Powered by</span>
+            <Link
+              className={styles.link}
+              href={openSnowAttr.linkUrl}
+              target="_blank"
+            >
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                className={styles.osImg}
+                src={openSnowAttr.imageLightUrl}
+                alt=""
+              />
+            </Link>
           </div>
+        )}
+
+        <div className={styles.cardBody}>
+          {currentForecast && (
+            <div className={classNames(sharedStyles.section)}>
+              {stats.map((item) => {
+                if (item.data) {
+                  return (
+                    <div
+                      aria-label={`${item.title}: ${item.data}`}
+                      key={item.title}
+                      className={sharedStyles.statContainer}
+                    >
+                      <div className={sharedStyles.statHeader}>
+                        {item.title}
+                      </div>
+                      <div className={sharedStyles.statData}>{item.data}</div>
+                    </div>
+                  );
+                }
+              })}
+            </div>
+          )}
           {roadsData && (
             <div className={sharedStyles.section}>
               <div

@@ -4,6 +4,11 @@ const redirects = [
     destination: '/community',
     permanent: true,
   },
+  {
+    source: '/',
+    destination: '/conditions',
+    permanent: true,
+  },
 ];
 
 module.exports = redirects;

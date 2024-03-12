@@ -1,13 +1,12 @@
 import { useStore } from "@/hooks/useStore";
-import { findWeatherData } from "@/utilities/findWeatherData";
 
 import Link from "next/link";
 import {
   LiftsOverall,
+  OpenSnowConditionsData,
   RoadCondition,
   SnowData,
   TrailsOverall,
-  WeatherInfo,
 } from "@/components/Weather/conditionTypes";
 import { StatusIcon, Closed } from "@/components/Icons";
 import { UnitToggle } from "@/components/Weather/UnitToggle";
@@ -15,23 +14,30 @@ import { UnitToggle } from "@/components/Weather/UnitToggle";
 import styles from "./miniConditionsStyles.module.css";
 
 export function MiniConditions({
-  currentWeather,
   currentSnow,
   roadsData,
   trailsOverall,
   liftsOverall,
+  openSnowData,
 }: {
-  currentWeather: WeatherInfo;
   currentSnow: SnowData;
   roadsData: RoadCondition[];
   trailsOverall: TrailsOverall;
   liftsOverall: LiftsOverall;
+  openSnowData: OpenSnowConditionsData;
 }) {
   const [unitSystem] = useStore((state: any) => [state.unitSystem]);
 
-  const temperature = currentWeather?.current.temperature;
+  const { forecastImperial, forecastMetric } = openSnowData;
+
+  const currentForecast =
+    unitSystem === "US"
+      ? forecastImperial?.forecastCurrent
+      : forecastMetric?.forecastCurrent;
+
+  const { temp, conditionsLabel, conditionsIconUrl } = currentForecast ?? {};
+
   const freshSnowFallDepth48H = currentSnow?.freshSnowFallDepth48H;
-  const skyStatus = currentWeather?.current.skyStatus;
 
   const snowfall48H =
     unitSystem === "SI"
@@ -45,10 +51,8 @@ export function MiniConditions({
 
   const currentTemp =
     unitSystem === "SI"
-      ? `${Math.ceil(temperature?.value)}\u00B0C`
-      : `${Math.ceil(temperature?.countryValue)}\u00B0F`;
-
-  const skyStatusData = findWeatherData(skyStatus);
+      ? `${Math.ceil(temp || 0)}\u00B0C`
+      : `${Math.ceil(temp || 0)}\u00B0F`;
 
   const { openLifts, lifts } = liftsOverall ?? {};
   const { openTrails, totalTrails } = trailsOverall ?? {};
@@ -77,6 +81,7 @@ export function MiniConditions({
   const renderRoadStatusIcon = (surface: string) => {
     const green = ["CLEAR_DRY", "UNDEF"];
     const yellow = ["CLEAR_WET", "SOGGY", "PACKED", "PART_SNOW", "ICY"];
+    const red = ["SNOWY"];
 
     if (green.includes(surface)) {
       return {
@@ -93,20 +98,19 @@ export function MiniConditions({
         shortDescription: "Wet, icy or snowy",
       };
     }
-    if (surface === "CLEAR_DRY") {
+    if (red.includes(surface)) {
       return {
         icon: <StatusIcon fill={"#DA2F20"} />,
         description:
           "Snowy road. Passenger vehicles are required to have 4 wheel drive or all-wheel drive with snow tires and/or chains.",
         shortDescription: "Snowy",
       };
-    } else {
-      return {
-        icon: <Closed />,
-        description: "Road is Closed.",
-        shortDescription: "Closed",
-      };
     }
+    return {
+      icon: <Closed />,
+      description: "Road is Closed.",
+      shortDescription: "Closed",
+    };
   };
 
   return (
@@ -122,11 +126,12 @@ export function MiniConditions({
             </span>
           </>
         )}
-        {temperature && (
+        {temp && (
           <>
-            <span className="visually-hidden">{`${skyStatusData?.text} and ${currentTemp}`}</span>
+            <span className="visually-hidden">{`${conditionsLabel} and ${currentTemp}`}</span>
             <span aria-hidden={true}>
-              <span>{skyStatusData.icon}</span>
+              {/* eslint-disable-next-line */}
+              <img className={styles.icon} src={conditionsIconUrl} />
               <span>{currentTemp}</span>
             </span>
           </>
