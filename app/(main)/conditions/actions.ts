@@ -4,8 +4,10 @@ import {
   OSForecastResponse,
   OSSnowResponse,
 } from '@/components/Weather/conditionTypes';
+import mockData from '@/mockData/osForecastMockData.json';
 
 const SECRET_KEY = process.env.LUMIPLAN_SECRET_KEY;
+const USE_MOCK_DATA = process.env.NEXT_PUBLIC_USE_MOCK_DATA;
 
 // LUMIPLAN
 
@@ -230,25 +232,32 @@ const OPEN_SNOW_API_KEY = process.env.OPEN_SNOW_API_KEY;
 export async function fetchOSForecast(
   units = 'imperial'
 ): Promise<OSForecastResponse> {
-  const endpoint = `https://api.opensnow.com/forecast/detail/powmow?api_key=${OPEN_SNOW_API_KEY}&v=1&units=${units}`;
+  if (USE_MOCK_DATA) {
+    await new Promise((resolve) => setTimeout(resolve, 500));
+    const responseData =
+      units === 'imperial' ? mockData.imperial : mockData.metric;
+    return camelizeKeys(responseData) as OSForecastResponse;
+  } else {
+    const endpoint = `https://api.opensnow.com/forecast/detail/powmow?api_key=${OPEN_SNOW_API_KEY}&v=1&units=${units}`;
 
-  try {
-    const res = await fetch(endpoint, {
-      method: 'GET',
-      next: {
-        revalidate: 60,
-      },
-    });
+    try {
+      const res = await fetch(endpoint, {
+        method: 'GET',
+        next: {
+          revalidate: 60,
+        },
+      });
 
-    if (res.ok) {
-      return camelizeKeys(await res.json()) as OSForecastResponse;
-    } else {
-      console.error(`Failed to fetch forecast data. Status: ${res.status}`);
+      if (res.ok) {
+        return camelizeKeys(await res.json()) as OSForecastResponse;
+      } else {
+        console.error(`Failed to fetch forecast data. Status: ${res.status}`);
+        return null as OSForecastResponse;
+      }
+    } catch (error) {
+      console.error('Error while fetching forecast data', error);
       return null as OSForecastResponse;
     }
-  } catch (error) {
-    console.error('Error while fetching forecast data', error);
-    return null as OSForecastResponse;
   }
 }
 
