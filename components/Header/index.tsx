@@ -30,6 +30,7 @@ function Wrapper({ children }: { children: React.ReactNode }) {
       { y: ['-150%', '0%'] },
       { duration: 0.75, ease: [0.44, 0.21, 0, 1], delay: 0.25 }
     );
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (

@@ -37,7 +37,7 @@ export async function generateMetadata(): Promise<Metadata> {
     .catch(() => {});
 
   return {
-    metadataBase: new URL(''),
+    metadataBase: new URL('https://powdermountain.vercel.app'),
     title: {
       template: `%s – ${metadata?.data?.meta_title}`,
       default: 'Next JS and Prismic Example',
@@ -164,7 +164,7 @@ export default async function MainLayout({
       <SkipToContent />
       <Header menuData={menuData} conditionsData={conditionsData} />
       {children}
-      {/* <Footer footerData={footerData} /> */}
+      <Footer footerData={footerData} />
       <div className="preventTransparency" />
       <PrismicPreview repositoryName={repositoryName} />
       <PodiumChatManager />

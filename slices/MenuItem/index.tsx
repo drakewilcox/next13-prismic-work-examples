@@ -133,7 +133,6 @@ const Variants = {
  */
 const MenuItem = ({ slice }: ModifiedMenuItemProps): JSX.Element => {
   const Variation = Variants[slice.variation] ?? Variants['default'];
-  console.log('SLICE', slice);
 
   return <Variation slice={slice} />;
 };
