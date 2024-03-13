@@ -1,6 +1,8 @@
-# 🏔️ Mountain
+# NextJS + Prismic Work Examples
 
 This is a [Next.js](https://nextjs.org/) project that uses [Vercel](https://vercel.com/) to build, deploy and host the website and [Prismic](https://prismic.io/) to manage content.
+The features showcased here were built for clients during freelance projects I worked on.
+Also included is all of the technical documentation made for clients during this time.
 
 <details>
   <summary>Lumiplan Integration</summary>
