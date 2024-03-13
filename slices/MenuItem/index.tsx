@@ -1,12 +1,12 @@
-import styles from './menuItem.module.css';
+import styles from "./menuItem.module.css";
 
-import Link from 'next/link';
-import { Content } from '@prismicio/client';
-import { SliceComponentProps } from '@prismicio/react';
-import { PrismicLink } from '@prismicio/react';
+import Link from "next/link";
+import { Content } from "@prismicio/client";
+import { SliceComponentProps } from "@prismicio/react";
+import { PrismicLink } from "@prismicio/react";
 
-import * as NavigationMenu from '@radix-ui/react-navigation-menu';
-import { CaretDownIcon } from '@radix-ui/react-icons';
+import * as NavigationMenu from "@radix-ui/react-navigation-menu";
+import { CaretDownIcon } from "@radix-ui/react-icons";
 
 /**
  * Split array into two parts
@@ -41,7 +41,7 @@ type ModifiedMenuItemProps = {
 } & MenuItemProps;
 
 const Default = ({ slice }: ModifiedMenuItemProps): JSX.Element => {
-  if (slice.variation !== 'default') return <></>;
+  if (slice.variation !== "default") return <></>;
 
   const link = slice.primary?.link as any;
   return (
@@ -58,7 +58,7 @@ const Default = ({ slice }: ModifiedMenuItemProps): JSX.Element => {
 };
 
 const WithSubmenu = ({ slice }: ModifiedMenuItemProps): JSX.Element => {
-  if (slice.variation !== 'withSubmenu') return <></>;
+  if (slice.variation !== "withSubmenu") return <></>;
   const submenuData = slice.primary?.submenu as any;
   const [submenuLinksFirst, submenuLinksSecond] = splitArray(
     submenuData?.data?.slices ?? []
@@ -67,7 +67,7 @@ const WithSubmenu = ({ slice }: ModifiedMenuItemProps): JSX.Element => {
   return (
     <NavigationMenu.Item className="NavigationPrimaryItem">
       <NavigationMenu.Trigger className="NavigationMenuTrigger">
-        {slice.primary.label}{' '}
+        {slice.primary.label}{" "}
         <CaretDownIcon className="CaretDown" aria-hidden />
       </NavigationMenu.Trigger>
       <NavigationMenu.Content className="NavigationMenuContent">
@@ -84,9 +84,9 @@ const WithSubmenu = ({ slice }: ModifiedMenuItemProps): JSX.Element => {
                     className={styles.link}
                     internalComponent={Link}
                     aria-describedby={
-                      item.primary.link?.target === '_blank'
-                        ? 'new-window-2'
-                        : ''
+                      item.primary.link?.target === "_blank"
+                        ? "new-window-2"
+                        : ""
                     }
                   >
                     {item.primary.label}
@@ -106,9 +106,9 @@ const WithSubmenu = ({ slice }: ModifiedMenuItemProps): JSX.Element => {
                     className={styles.link}
                     internalComponent={Link}
                     aria-describedby={
-                      item.primary.link?.target === '_blank'
-                        ? 'new-window-2'
-                        : ''
+                      item.primary.link?.target === "_blank"
+                        ? "new-window-2"
+                        : ""
                     }
                   >
                     {item.primary.label}
@@ -132,7 +132,7 @@ const Variants = {
  * Component for "MenuItem" Slices.
  */
 const MenuItem = ({ slice }: ModifiedMenuItemProps): JSX.Element => {
-  const Variation = Variants[slice.variation] ?? Variants['default'];
+  const Variation = Variants[slice.variation] ?? Variants["default"];
 
   return <Variation slice={slice} />;
 };

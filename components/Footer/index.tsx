@@ -1,11 +1,11 @@
-import styles from './footer.module.css';
+import styles from "./footer.module.css";
 
-import type { Content } from '@prismicio/client';
-import { PrismicLink } from '@prismicio/react';
-import Link from 'next/link';
-import classNames from 'classnames';
-import { v4 as uuidv4 } from 'uuid';
-import { Logo } from '@/components/Logo';
+import type { Content } from "@prismicio/client";
+import { PrismicLink } from "@prismicio/react";
+import Link from "next/link";
+import classNames from "classnames";
+import { v4 as uuidv4 } from "uuid";
+import { Logo } from "@/components/Logo";
 
 const splitArray = (arr: Content.FooterDocumentDataPrimaryLinksItem[]) => {
   const half = Math.ceil(arr.length / 2);
@@ -20,7 +20,7 @@ export function Footer({ footerData }: { footerData: Content.FooterDocument }) {
 
   return (
     <footer className={classNames([styles.footer])}>
-      <div className={classNames([styles.footerGrid, 'grid'])}>
+      <div className={classNames([styles.footerGrid, "grid"])}>
         <div className={classNames([styles.logo, styles.logoMd, styles.col])}>
           <Logo />
         </div>
@@ -33,7 +33,7 @@ export function Footer({ footerData }: { footerData: Content.FooterDocument }) {
                   className={styles.link}
                   internalComponent={Link}
                   aria-describedby={
-                    item.link?.target === '_blank' ? 'new-window-2' : ''
+                    item.link?.target === "_blank" ? "new-window-2" : ""
                   }
                 >
                   {item?.label}
@@ -50,7 +50,7 @@ export function Footer({ footerData }: { footerData: Content.FooterDocument }) {
                   className={styles.link}
                   internalComponent={Link}
                   aria-describedby={
-                    item.link?.target === '_blank' ? 'new-window-2' : ''
+                    item.link?.target === "_blank" ? "new-window-2" : ""
                   }
                 >
                   {item?.label}
@@ -67,7 +67,7 @@ export function Footer({ footerData }: { footerData: Content.FooterDocument }) {
                   className={styles.link}
                   internalComponent={Link}
                   aria-describedby={
-                    item.link?.target === '_blank' ? 'new-window-2' : ''
+                    item.link?.target === "_blank" ? "new-window-2" : ""
                   }
                 >
                   {item?.label}
@@ -79,14 +79,14 @@ export function Footer({ footerData }: { footerData: Content.FooterDocument }) {
       </div>
 
       <div
-        className={classNames([styles.footerGrid, styles.bottomRow, 'grid'])}
+        className={classNames([styles.footerGrid, styles.bottomRow, "grid"])}
       >
         <div className={styles.col}>
           <div className={classNames([styles.logo, styles.logoBase])}>
             <Logo />
           </div>
           <p>
-            <span>&copy; {new Date().getFullYear()}</span>{' '}
+            <span>&copy; {new Date().getFullYear()}</span>{" "}
             <span>{footerData.data.copyright}</span>
           </p>
         </div>
@@ -99,7 +99,7 @@ export function Footer({ footerData }: { footerData: Content.FooterDocument }) {
                   className={styles.link}
                   internalComponent={Link}
                   aria-describedby={
-                    item.link?.target === '_blank' ? 'new-window-2' : ''
+                    item.link?.target === "_blank" ? "new-window-2" : ""
                   }
                 >
                   {item?.label}

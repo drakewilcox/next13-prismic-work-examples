@@ -1,12 +1,12 @@
 const redirects = [
   {
-    source: '/community-sep',
-    destination: '/community',
+    source: "/community-sep",
+    destination: "/community",
     permanent: true,
   },
   {
-    source: '/',
-    destination: '/conditions',
+    source: "/",
+    destination: "/conditions",
     permanent: true,
   },
 ];

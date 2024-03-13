@@ -1,25 +1,25 @@
-'use client';
+"use client";
 // Packages
-import classNames from 'classnames';
-import parse from 'html-react-parser';
+import classNames from "classnames";
+import parse from "html-react-parser";
 // Hooks & Utilities
-import { useStore } from '@/hooks/useStore';
-import { formatDate } from '@/utilities/formatDate';
-import isEmpty from 'lodash.isempty';
+import { useStore } from "@/hooks/useStore";
+import { formatDate } from "@/utilities/formatDate";
+import { isEmpty } from "lodash";
 // Types
 import {
   SnowData,
   ResortInfo,
   RoadCondition,
   OSForecastResponse,
-} from '@/components/Weather/conditionTypes';
+} from "@/components/Weather/conditionTypes";
 // Components & Icons
-import { Card } from '../Card';
-import { UnitToggle } from '../UnitToggle';
-import { StatusIcon, Closed } from '@/components/Icons';
+import { Card } from "../Card";
+import { UnitToggle } from "../UnitToggle";
+import { StatusIcon, Closed } from "@/components/Icons";
 // Styles
-import sharedStyles from '../sharedWeatherStyles.module.css';
-import { RoadConditionsKey } from '../RoadConditionsKey';
+import sharedStyles from "../sharedWeatherStyles.module.css";
+import { RoadConditionsKey } from "../RoadConditionsKey";
 
 export function CurrentConditions({
   snowData,
@@ -37,10 +37,10 @@ export function CurrentConditions({
   // OPEN SNOW:
   const unitSystem = useStore((state: any) => state.unitSystem);
   const currentForecast =
-    unitSystem === 'US'
+    unitSystem === "US"
       ? forecastImp?.forecastCurrent
       : forecastMet?.forecastCurrent;
-  const forecastResponse = unitSystem === 'US' ? forecastImp : forecastMet;
+  const forecastResponse = unitSystem === "US" ? forecastImp : forecastMet;
 
   const {
     displayAt,
@@ -57,94 +57,94 @@ export function CurrentConditions({
 
   const formattedDate = currentForecast
     ? `Updated: ${formatDate(displayAt)}`
-    : 'Recent Weather Conditions Unavailable';
+    : "Recent Weather Conditions Unavailable";
 
   const renderRoadStatusIcon = (surface: string) => {
-    const green = ['CLEAR_DRY', 'UNDEF'];
+    const green = ["CLEAR_DRY", "UNDEF"];
 
-    const yellow = ['CLEAR_WET', 'SOGGY', 'PACKED', 'PART_SNOW', 'ICY'];
-    const red = ['SNOWY'];
+    const yellow = ["CLEAR_WET", "SOGGY", "PACKED", "PART_SNOW", "ICY"];
+    const red = ["SNOWY"];
 
     if (green.includes(surface)) {
       return {
-        icon: <StatusIcon fill={'#008500'} />,
-        description: 'Dry road. Any passenger vehicles can access.',
-        shortDescription: 'Clear and dry',
+        icon: <StatusIcon fill={"#008500"} />,
+        description: "Dry road. Any passenger vehicles can access.",
+        shortDescription: "Clear and dry",
       };
     }
     if (yellow.includes(surface)) {
       return {
-        icon: <StatusIcon fill={'#FFD056'} />,
+        icon: <StatusIcon fill={"#FFD056"} />,
         description:
-          'Wet, icy or snowy road. Passenger vehicles should be outfitted with snow tires and all-wheel drive capabilities.',
-        shortDescription: 'Wet, icy or snowy',
+          "Wet, icy or snowy road. Passenger vehicles should be outfitted with snow tires and all-wheel drive capabilities.",
+        shortDescription: "Wet, icy or snowy",
       };
     }
     if (red.includes(surface)) {
       return {
-        icon: <StatusIcon fill={'#DA2F20'} />,
+        icon: <StatusIcon fill={"#DA2F20"} />,
         description:
-          'Snowy road. Passenger vehicles are required to have 4 wheel drive or all-wheel drive with snow tires and/or chains.',
-        shortDescription: 'Snowy',
+          "Snowy road. Passenger vehicles are required to have 4 wheel drive or all-wheel drive with snow tires and/or chains.",
+        shortDescription: "Snowy",
       };
     }
     return {
       icon: <Closed />,
-      description: 'Road is Closed.',
-      shortDescription: 'Closed',
+      description: "Road is Closed.",
+      shortDescription: "Closed",
     };
   };
 
   const currentTemp =
-    unitSystem === 'SI'
+    unitSystem === "SI"
       ? `${Math.ceil(temp || 0)}\u00B0C`
       : `${Math.ceil(temp || 0)}\u00B0F`;
 
   const lowTemp =
-    unitSystem === 'SI'
+    unitSystem === "SI"
       ? `${Math.ceil(tempMin || 0)}\u00B0`
       : `${Math.ceil(tempMin || 0)}\u00B0`;
 
   const highTemp =
-    unitSystem === 'SI'
+    unitSystem === "SI"
       ? `${Math.ceil(tempMax || 0)}\u00B0`
       : `${Math.ceil(tempMax || 0)}\u00B0`;
 
   const windSpeed =
-    unitSystem === 'SI'
-      ? `${Math.ceil(OSWindSpeed || 0)} KPH ${windDirLabel || ''}`
-      : `${Math.ceil(OSWindSpeed || 0)} MPH ${windDirLabel || ''}`;
+    unitSystem === "SI"
+      ? `${Math.ceil(OSWindSpeed || 0)} KPH ${windDirLabel || ""}`
+      : `${Math.ceil(OSWindSpeed || 0)} MPH ${windDirLabel || ""}`;
 
   const snowfall48 =
-    unitSystem === 'SI'
+    unitSystem === "SI"
       ? `${Math.ceil(snowData?.freshSnowFallDepth48H?.value || 0)} cm`
       : `${Math.ceil(snowData?.freshSnowFallDepth48H?.countryValue || 0)} "`;
 
   const stats = [
     {
-      title: 'Temp',
+      title: "Temp",
       data: currentTemp,
     },
     {
-      title: 'Conditions',
+      title: "Conditions",
       data: conditionsLabel,
     },
     {
-      title: 'High / Low',
+      title: "High / Low",
       data: `${highTemp} / ${lowTemp}`,
     },
     {
-      title: '48HR Snowfall',
+      title: "48HR Snowfall",
       data: snowfall48,
     },
     {
-      title: 'Wind',
+      title: "Wind",
       data: windSpeed,
     },
   ];
 
   const headerComponent: React.ReactNode = (
-    <UnitToggle usLabel={'\u00B0F'} siLabel={'\u00B0C'} />
+    <UnitToggle usLabel={"\u00B0F"} siLabel={"\u00B0C"} />
   );
 
   return (

@@ -1,15 +1,15 @@
-import { Metadata } from 'next';
-import { notFound } from 'next/navigation';
-import { SliceZone } from '@prismicio/react';
+import { Metadata } from "next";
+import { notFound } from "next/navigation";
+import { SliceZone } from "@prismicio/react";
 
-import { createClient } from '@/prismicio';
-import type { Content } from '@prismicio/client';
-import { components } from '@/slices';
-import { PageWrapper } from '@/components/PageWrapper';
+import { createClient } from "@/prismicio";
+import type { Content } from "@prismicio/client";
+import { components } from "@/slices";
+import { PageWrapper } from "@/components/PageWrapper";
 
 export default async function Error() {
   const client = createClient();
-  const page = await client.getSingle('error').catch(() => notFound());
+  const page = await client.getSingle("error").catch(() => notFound());
 
   return (
     <PageWrapper>
@@ -20,9 +20,9 @@ export default async function Error() {
 
 export async function generateMetadata(): Promise<Metadata> {
   const client = createClient();
-  const page = await client.getSingle('error').catch(() => notFound());
+  const page = await client.getSingle("error").catch(() => notFound());
   const metadata = await client
-    .getSingle<Content.MetadataDocument>('metadata')
+    .getSingle<Content.MetadataDocument>("metadata")
     .catch();
 
   // Pass optional metadata, if available

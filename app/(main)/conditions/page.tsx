@@ -1,28 +1,28 @@
-import { Metadata } from 'next';
-import { notFound } from 'next/navigation';
-import { isEmpty } from 'lodash';
+import { Metadata } from "next";
+import { notFound } from "next/navigation";
+import { isEmpty } from "lodash";
 // PRISMIC
-import { createClient } from '@/prismicio';
-import { fetchConditionData, getNavSections } from './conditionsHelpers';
+import { createClient } from "@/prismicio";
+import { fetchConditionData, getNavSections } from "./conditionsHelpers";
 // TYPES
-import { ResortInfo } from '@/components/Weather/conditionTypes';
+import { ResortInfo } from "@/components/Weather/conditionTypes";
 // COMPONENTS
-import { CurrentConditions } from '@/components/Weather/CurrentConditions';
-import { SnowReport } from '@/components/Weather/SnowReport';
-import { LiftStatus } from '@/components/Weather/LiftStatus';
-import { TrailStatus } from '@/components/Weather/TrailStatus';
-import { Forecast } from '@/components/Weather/Forecast';
-import { InPageNav } from '@/components/Weather/InPageNav';
-import { Banner } from '@/components/Weather/Banner';
-import { PageWrapper } from '@/components/PageWrapper';
-import { LiveFeed } from '@/components/Weather/LiveFeed';
-import classNames from 'classnames';
-import styles from './conditions.module.css';
+import { CurrentConditions } from "@/components/Weather/CurrentConditions";
+import { SnowReport } from "@/components/Weather/SnowReport";
+import { LiftStatus } from "@/components/Weather/LiftStatus";
+import { TrailStatus } from "@/components/Weather/TrailStatus";
+import { Forecast } from "@/components/Weather/Forecast";
+import { InPageNav } from "@/components/Weather/InPageNav";
+import { Banner } from "@/components/Weather/Banner";
+import { PageWrapper } from "@/components/PageWrapper";
+import { LiveFeed } from "@/components/Weather/LiveFeed";
+import classNames from "classnames";
+import styles from "./conditions.module.css";
 // Styles
 
 export default async function Conditions() {
   const client = createClient();
-  const page = await client.getSingle('conditions').catch(() => notFound());
+  const page = await client.getSingle("conditions").catch(() => notFound());
   const conditionsData = await fetchConditionData();
 
   const {
@@ -41,10 +41,10 @@ export default async function Conditions() {
   } = conditionsData;
 
   const dailyReport: ResortInfo | undefined = resortData?.find(
-    (item: ResortInfo) => item.title === 'Daily Report'
+    (item: ResortInfo) => item.title === "Daily Report"
   );
   const hoursOfOperation: ResortInfo | undefined = resortData?.find(
-    (item: ResortInfo) => item.title === 'Hours of Operation'
+    (item: ResortInfo) => item.title === "Hours of Operation"
   );
 
   const openSnowDataEmpty = !forecastImperial || !forecastMetric;
@@ -103,8 +103,8 @@ export default async function Conditions() {
           </div>
         </>
       ) : (
-        <div className={classNames('grid')}>
-          <div className={classNames('feature', styles.errorText)}>
+        <div className={classNames("grid")}>
+          <div className={classNames("feature", styles.errorText)}>
             {page.data.error_message}
           </div>
         </div>
@@ -115,7 +115,7 @@ export default async function Conditions() {
 
 export async function generateMetadata(): Promise<Metadata> {
   const client = createClient();
-  const page = await client.getSingle('conditions').catch(() => {});
+  const page = await client.getSingle("conditions").catch(() => {});
 
   // Pass optional metadata, if available
   const title = {

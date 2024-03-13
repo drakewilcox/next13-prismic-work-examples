@@ -1,66 +1,66 @@
-import '@/styles/globals.css';
+import "@/styles/globals.css";
 
-import localFont from 'next/font/local';
-import classNames from 'classnames';
+import localFont from "next/font/local";
+import classNames from "classnames";
 
 const fontDefault = localFont({
   src: [
     {
-      path: '../public/fonts/soehne-buch.woff2',
-      weight: '400',
-      style: 'normal',
+      path: "../public/fonts/soehne-buch.woff2",
+      weight: "400",
+      style: "normal",
     },
   ],
-  display: 'swap',
-  variable: '--font-default',
+  display: "swap",
+  variable: "--font-default",
 });
 
 const fontMedium = localFont({
   src: [
     {
-      path: '../public/fonts/soehne-kraftig.woff2',
-      weight: '500',
-      style: 'normal',
+      path: "../public/fonts/soehne-kraftig.woff2",
+      weight: "500",
+      style: "normal",
     },
   ],
-  display: 'swap',
-  variable: '--font-medium',
+  display: "swap",
+  variable: "--font-medium",
 });
 
 const fontHeadline = localFont({
   src: [
     {
-      path: '../public/fonts/soehne-schmal-extrafett.woff2',
-      weight: '900',
-      style: 'normal',
+      path: "../public/fonts/soehne-schmal-extrafett.woff2",
+      weight: "900",
+      style: "normal",
     },
   ],
-  display: 'swap',
-  variable: '--font-headline',
+  display: "swap",
+  variable: "--font-headline",
 });
 
 const fontSerif = localFont({
   src: [
     {
-      path: '../public/fonts/reckless-regular.woff2',
-      weight: '400',
-      style: 'normal',
+      path: "../public/fonts/reckless-regular.woff2",
+      weight: "400",
+      style: "normal",
     },
   ],
-  display: 'swap',
-  variable: '--font-serif',
+  display: "swap",
+  variable: "--font-serif",
 });
 
 const fontSerifMedium = localFont({
   src: [
     {
-      path: '../public/fonts/reckless-medium.woff2',
-      weight: '500',
-      style: 'normal',
+      path: "../public/fonts/reckless-medium.woff2",
+      weight: "500",
+      style: "normal",
     },
   ],
-  display: 'swap',
-  variable: '--font-serif-medium',
+  display: "swap",
+  variable: "--font-serif-medium",
 });
 
 export default async function RootLayout({

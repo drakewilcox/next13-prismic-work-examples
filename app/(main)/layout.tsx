@@ -1,16 +1,16 @@
-import '@/styles/globals.css';
+import "@/styles/globals.css";
 
-import type { Metadata } from 'next';
-import { Viewport } from 'next';
-import Script from 'next/script';
-import { PrismicPreview } from '@prismicio/next';
-import { repositoryName, createClient } from '@/prismicio';
-import type { Content } from '@prismicio/client';
+import type { Metadata } from "next";
+import { Viewport } from "next";
+import Script from "next/script";
+import { PrismicPreview } from "@prismicio/next";
+import { repositoryName, createClient } from "@/prismicio";
+import type { Content } from "@prismicio/client";
 
-import { SkipToContent } from '@/components/SkipToContent';
-import { Header } from '@/components/Header';
-import { Footer } from '@/components/Footer';
-import { PodiumChatManager } from '@/components/PodiumChatManager';
+import { SkipToContent } from "@/components/SkipToContent";
+import { Header } from "@/components/Header";
+import { Footer } from "@/components/Footer";
+import { PodiumChatManager } from "@/components/PodiumChatManager";
 
 import {
   fetchSnowReport,
@@ -19,7 +19,7 @@ import {
   fetchWebcamService,
   fetchOSForecast,
   CurrentTime,
-} from '@/app/(main)/conditions/actions';
+} from "@/app/(main)/conditions/actions";
 
 import {
   RoadCondition,
@@ -27,33 +27,33 @@ import {
   LiftsOverall,
   TrailsOverall,
   Webcams,
-} from '@/components/Weather/conditionTypes';
+} from "@/components/Weather/conditionTypes";
 
 export async function generateMetadata(): Promise<Metadata> {
   const client = createClient();
 
   const metadata = await client
-    .getSingle<Content.MetadataDocument>('metadata')
+    .getSingle<Content.MetadataDocument>("metadata")
     .catch(() => {});
 
   return {
-    metadataBase: new URL('https://powdermountain.vercel.app'),
+    metadataBase: new URL("https://powdermountain.vercel.app"),
     title: {
       template: `%s – ${metadata?.data?.meta_title}`,
-      default: 'Powder Mountain – Uncrowded by Design',
+      default: "Powder Mountain – Uncrowded by Design",
     },
     description: metadata?.data?.meta_description,
     openGraph: {
-      images: [metadata?.data?.meta_image?.url || ''],
+      images: [metadata?.data?.meta_image?.url || ""],
     },
   };
 }
 
 export const viewport: Viewport = {
-  width: 'device-width',
+  width: "device-width",
   initialScale: 1,
-  viewportFit: 'cover',
-  themeColor: 'black',
+  viewportFit: "cover",
+  themeColor: "black",
 };
 
 export default async function MainLayout({
@@ -64,7 +64,7 @@ export default async function MainLayout({
   const client = createClient();
 
   const menuData = (await client
-    .getSingle<Content.MenuDocument>('menu', {
+    .getSingle<Content.MenuDocument>("menu", {
       graphQuery: `
     {
       menu {
@@ -102,14 +102,14 @@ export default async function MainLayout({
     })
     .catch(() => {})) as any;
   const footerData = (await client
-    .getSingle<Content.FooterDocument>('footer')
+    .getSingle<Content.FooterDocument>("footer")
     .catch(() => {})) as any;
   const snow = await fetchSnowReport();
   const poiOverall = await fetchPOIOverall();
   const roads = await fetchResortAccessService();
   const webcams = await fetchWebcamService();
-  const forecastImperial = fetchOSForecast('imperial');
-  const forecastMetric = fetchOSForecast('metric');
+  const forecastImperial = fetchOSForecast("imperial");
+  const forecastMetric = fetchOSForecast("metric");
   const currentSnow: SnowData = snow?.content.snowZones[0];
   const roadsData: RoadCondition[] = roads?.content.resorts[0].roadConditions;
   const liftsOverall: LiftsOverall =

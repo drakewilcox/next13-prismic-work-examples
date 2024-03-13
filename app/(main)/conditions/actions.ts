@@ -1,29 +1,29 @@
-'use server';
-import { camelizeKeys } from '@/utilities/camelizeKeys';
+"use server";
+import { camelizeKeys } from "@/utilities/camelizeKeys";
 import {
   OSForecastResponse,
   OSSnowResponse,
-} from '@/components/Weather/conditionTypes';
-import osForecastMockData from '@/mockData/osForecastMockData.json';
-import osSnowDetailMockData from '@/mockData/osSnowDetailMockData.json';
-import snowReportMockData from '@/mockData/snowReportMockData.json';
-import poiMockData from '@/mockData/poiMockData.json';
-import poiOverallMockData from '@/mockData/poiOverallMockData.json';
-import webCamServiceMockData from '@/mockData/webCamServiceMockData.json';
-import resortOpeningServiceMockData from '@/mockData/resortOpeningServiceMockData.json';
-import resortAccessServiceMockData from '@/mockData/resortAccessServiceMockData.json';
+} from "@/components/Weather/conditionTypes";
+import osForecastMockData from "@/mockData/osForecastMockData.json";
+import osSnowDetailMockData from "@/mockData/osSnowDetailMockData.json";
+import snowReportMockData from "@/mockData/snowReportMockData.json";
+import poiMockData from "@/mockData/poiMockData.json";
+import poiOverallMockData from "@/mockData/poiOverallMockData.json";
+import webCamServiceMockData from "@/mockData/webCamServiceMockData.json";
+import resortOpeningServiceMockData from "@/mockData/resortOpeningServiceMockData.json";
+import resortAccessServiceMockData from "@/mockData/resortAccessServiceMockData.json";
 
 const SECRET_KEY = process.env.LUMIPLAN_SECRET_KEY;
 const OPEN_SNOW_API_KEY = process.env.OPEN_SNOW_API_KEY;
 const USE_MOCK_DATA = process.env.NEXT_PUBLIC_USE_MOCK_DATA;
 
 export async function fetchOSForecast(
-  units = 'imperial'
+  units = "imperial"
 ): Promise<OSForecastResponse> {
   if (USE_MOCK_DATA) {
     await new Promise((resolve) => setTimeout(resolve, 500));
     const responseData =
-      units === 'imperial'
+      units === "imperial"
         ? osForecastMockData.imperial
         : osForecastMockData.metric;
     return camelizeKeys(responseData) as OSForecastResponse;
@@ -32,7 +32,7 @@ export async function fetchOSForecast(
 
     try {
       const res = await fetch(endpoint, {
-        method: 'GET',
+        method: "GET",
         next: {
           revalidate: 60,
         },
@@ -45,19 +45,19 @@ export async function fetchOSForecast(
         return null as OSForecastResponse;
       }
     } catch (error) {
-      console.error('Error while fetching forecast data', error);
+      console.error("Error while fetching forecast data", error);
       return null as OSForecastResponse;
     }
   }
 }
 
 export async function fetchOSSnowDetail(
-  units = 'imperial'
+  units = "imperial"
 ): Promise<OSSnowResponse> {
   if (USE_MOCK_DATA) {
     await new Promise((resolve) => setTimeout(resolve, 500));
     const responseData =
-      units === 'imperial'
+      units === "imperial"
         ? osSnowDetailMockData.imperial
         : osSnowDetailMockData.metric;
     return camelizeKeys(responseData) as OSSnowResponse;
@@ -66,7 +66,7 @@ export async function fetchOSSnowDetail(
 
     try {
       const res = await fetch(endpoint, {
-        method: 'GET',
+        method: "GET",
         next: {
           revalidate: 60,
         },
@@ -79,7 +79,7 @@ export async function fetchOSSnowDetail(
         return null as OSSnowResponse;
       }
     } catch (error) {
-      console.error('Error while fetching forecast data', error);
+      console.error("Error while fetching forecast data", error);
       return null as OSSnowResponse;
     }
   }
@@ -89,14 +89,14 @@ export async function fetchOSSnowDetail(
 
 async function fetchToken() {
   const endpoint =
-    'https://mountain.live/auth/realms/lumiserveur/protocol/openid-connect/token';
-  const clientId = 'powdermountainweb';
+    "https://mountain.live/auth/realms/lumiserveur/protocol/openid-connect/token";
+  const clientId = "powdermountainweb";
 
   try {
     const res = await fetch(endpoint, {
-      method: 'POST',
+      method: "POST",
       headers: {
-        'Content-Type': 'application/x-www-form-urlencoded',
+        "Content-Type": "application/x-www-form-urlencoded",
       },
       body: `grant_type=client_credentials&client_id=${clientId}&client_secret=${SECRET_KEY}`,
       next: {
@@ -108,11 +108,11 @@ async function fetchToken() {
       return res.json();
     } else {
       console.error(`Failed to fetch token. Status: ${res.status}`);
-      return { access_token: '' };
+      return { access_token: "" };
     }
   } catch (error) {
-    console.error('Error while fetching token:', error);
-    return { access_token: '' };
+    console.error("Error while fetching token:", error);
+    return { access_token: "" };
   }
 }
 
@@ -125,12 +125,12 @@ export async function fetchSnowReport() {
       const token = await fetchToken();
 
       const res = await fetch(
-        'https://api.mountain.live/mountain_secured/snow/1.0?country=en_US&snowZone=919',
+        "https://api.mountain.live/mountain_secured/snow/1.0?country=en_US&snowZone=919",
         {
-          method: 'GET',
+          method: "GET",
           headers: {
             Authorization: `Bearer ${token.access_token}`,
-            'Content-Type': 'application/json',
+            "Content-Type": "application/json",
           },
           next: {
             revalidate: 60,
@@ -145,7 +145,7 @@ export async function fetchSnowReport() {
         return null;
       }
     } catch (error) {
-      console.error('Error while fetching snow report:', error);
+      console.error("Error while fetching snow report:", error);
       return null;
     }
   }
@@ -159,12 +159,12 @@ export async function fetchPOI() {
     try {
       const token = await fetchToken();
       const res = await fetch(
-        'https://api.mountain.live/mountain_secured/poi/2.0?resort=894',
+        "https://api.mountain.live/mountain_secured/poi/2.0?resort=894",
         {
-          method: 'GET',
+          method: "GET",
           headers: {
             Authorization: `Bearer ${token.access_token}`,
-            'Content-Type': 'application/json',
+            "Content-Type": "application/json",
           },
           next: {
             revalidate: 60,
@@ -179,7 +179,7 @@ export async function fetchPOI() {
         return null;
       }
     } catch (error) {
-      console.error('Error while fetching POI Data:', error);
+      console.error("Error while fetching POI Data:", error);
       return null;
     }
   }
@@ -194,12 +194,12 @@ export async function fetchPOIOverall() {
       const token = await fetchToken();
 
       const res = await fetch(
-        'https://api.mountain.live/mountain_secured/poi-overall/2.0?country=en_US&resort=894',
+        "https://api.mountain.live/mountain_secured/poi-overall/2.0?country=en_US&resort=894",
         {
-          method: 'GET',
+          method: "GET",
           headers: {
             Authorization: `Bearer ${token.access_token}`,
-            'Content-Type': 'application/json',
+            "Content-Type": "application/json",
           },
           next: {
             revalidate: 60,
@@ -216,7 +216,7 @@ export async function fetchPOIOverall() {
         return null;
       }
     } catch (error) {
-      console.error('Error while fetching POI overall data:', error);
+      console.error("Error while fetching POI overall data:", error);
       return null;
     }
   }
@@ -231,12 +231,12 @@ export async function fetchResortOpeningService() {
       const token = await fetchToken();
 
       const res = await fetch(
-        'https://api.mountain.live/mountain_secured/resort-opening/1.0?country=en_US&resort=894',
+        "https://api.mountain.live/mountain_secured/resort-opening/1.0?country=en_US&resort=894",
         {
-          method: 'GET',
+          method: "GET",
           headers: {
             Authorization: `Bearer ${token.access_token}`,
-            'Content-Type': 'application/json',
+            "Content-Type": "application/json",
           },
           next: {
             revalidate: 60,
@@ -253,7 +253,7 @@ export async function fetchResortOpeningService() {
         return null;
       }
     } catch (error) {
-      console.error('Error while fetching Resort Opening Service Data:', error);
+      console.error("Error while fetching Resort Opening Service Data:", error);
       return null;
     }
   }
@@ -268,12 +268,12 @@ export async function fetchResortAccessService() {
       const token = await fetchToken();
 
       const res = await fetch(
-        'https://api.mountain.live/mountain_secured/resort-access/1.0?country=en_US&resort=894',
+        "https://api.mountain.live/mountain_secured/resort-access/1.0?country=en_US&resort=894",
         {
-          method: 'GET',
+          method: "GET",
           headers: {
             Authorization: `Bearer ${token.access_token}`,
-            'Content-Type': 'application/json',
+            "Content-Type": "application/json",
           },
           next: {
             revalidate: 60,
@@ -290,7 +290,7 @@ export async function fetchResortAccessService() {
         return null;
       }
     } catch (error) {
-      console.error('Error while fetching Resort Access Service:', error);
+      console.error("Error while fetching Resort Access Service:", error);
       return null;
     }
   }
@@ -305,12 +305,12 @@ export async function fetchWebcamService() {
       const token = await fetchToken();
 
       const res = await fetch(
-        'https://api.mountain.live/mountain_secured/resort-webcam/1.0?country=en_US&resort=894',
+        "https://api.mountain.live/mountain_secured/resort-webcam/1.0?country=en_US&resort=894",
         {
-          method: 'GET',
+          method: "GET",
           headers: {
             Authorization: `Bearer ${token.access_token}`,
-            'Content-Type': 'application/json',
+            "Content-Type": "application/json",
           },
           next: {
             revalidate: 60,
@@ -325,7 +325,7 @@ export async function fetchWebcamService() {
         return null;
       }
     } catch (error) {
-      console.error('Error while fetching Webcam Service:', error);
+      console.error("Error while fetching Webcam Service:", error);
       return null;
     }
   }
@@ -335,7 +335,7 @@ export async function fetchWebcamService() {
 export async function CurrentTime() {
   try {
     let res = await fetch(
-      'http://worldtimeapi.org/api/timezone/America/Los_Angeles',
+      "http://worldtimeapi.org/api/timezone/America/Los_Angeles",
       {
         next: { revalidate: 5 },
       }
@@ -346,7 +346,7 @@ export async function CurrentTime() {
       return null;
     }
   } catch (error) {
-    console.error('Error while fetching', error);
+    console.error("Error while fetching", error);
     return null;
   }
 }

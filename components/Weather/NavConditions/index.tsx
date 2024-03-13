@@ -1,10 +1,10 @@
-'use client';
+"use client";
 // Packages
-import * as NavigationMenu from '@radix-ui/react-navigation-menu';
-import { isEmpty } from 'lodash';
+import * as NavigationMenu from "@radix-ui/react-navigation-menu";
+import { isEmpty } from "lodash";
 // Hooks & Utilities
-import { useStore } from '@/hooks/useStore';
-import { findWeatherData } from '@/utilities/findWeatherData';
+import { useStore } from "@/hooks/useStore";
+import { findWeatherData } from "@/utilities/findWeatherData";
 // Types
 import {
   LiftsOverall,
@@ -12,11 +12,11 @@ import {
   RoadCondition,
   SnowData,
   TrailsOverall,
-} from '@/components/Weather/conditionTypes';
+} from "@/components/Weather/conditionTypes";
 // Components
-import { CurrentConditionsFlyout } from '../CurrentConditionsFlyout';
+import { CurrentConditionsFlyout } from "../CurrentConditionsFlyout";
 // Styles
-import styles from './navConditionsStyles.module.css';
+import styles from "./navConditionsStyles.module.css";
 
 export function NavConditions({
   currentSnow,
@@ -36,7 +36,7 @@ export function NavConditions({
   const { forecastImperial, forecastMetric } = openSnowData;
 
   const currentForecast =
-    unitSystem === 'US'
+    unitSystem === "US"
       ? forecastImperial?.forecastCurrent
       : forecastMetric?.forecastCurrent;
 
@@ -45,17 +45,17 @@ export function NavConditions({
   const freshSnowFallDepth48H = currentSnow?.freshSnowFallDepth48H;
 
   const snowfall48H =
-    unitSystem === 'SI'
+    unitSystem === "SI"
       ? `${Math.ceil(freshSnowFallDepth48H?.value ?? 0)} cm`
       : `${Math.ceil(freshSnowFallDepth48H?.countryValue ?? 0)}"`;
 
   const snowfall48HA11y =
-    unitSystem === 'SI'
+    unitSystem === "SI"
       ? `${Math.ceil(freshSnowFallDepth48H?.value ?? 0)} centimeter`
       : `${Math.ceil(freshSnowFallDepth48H?.countryValue ?? 0)} inches`;
 
   const currentTemp =
-    unitSystem === 'SI'
+    unitSystem === "SI"
       ? `${Math.ceil(temp || 0)}\u00B0C`
       : `${Math.ceil(temp || 0)}\u00B0F`;
 
@@ -67,7 +67,7 @@ export function NavConditions({
             {freshSnowFallDepth48H && (
               <>
                 <span aria-hidden={true}>
-                  <span>{snowfall48H}</span> <span>&frasl;</span>{' '}
+                  <span>{snowfall48H}</span> <span>&frasl;</span>{" "}
                   <span>48Hrs</span>
                 </span>
                 <span className="visually-hidden">

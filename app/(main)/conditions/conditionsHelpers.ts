@@ -8,23 +8,23 @@ import {
   fetchOSSnowDetail,
   fetchOSForecast,
   CurrentTime,
-} from './actions';
+} from "./actions";
 // TYPES
 import {
   OSForecastResponse,
   OSSnowResponse,
   AllConditions,
-} from '@/components/Weather/conditionTypes';
+} from "@/components/Weather/conditionTypes";
 
 export async function fetchConditionData(): Promise<AllConditions> {
   // OPEN SNOW
   const forecastImperial: OSForecastResponse =
-    await fetchOSForecast('imperial');
-  const forecastMetric: OSForecastResponse = await fetchOSForecast('metric');
+    await fetchOSForecast("imperial");
+  const forecastMetric: OSForecastResponse = await fetchOSForecast("metric");
 
   const snowDetailImperial: OSSnowResponse =
-    await fetchOSSnowDetail('imperial');
-  const snowDetailMetric: OSSnowResponse = await fetchOSSnowDetail('metric');
+    await fetchOSSnowDetail("imperial");
+  const snowDetailMetric: OSSnowResponse = await fetchOSSnowDetail("metric");
 
   const snow = await fetchSnowReport();
   const poiData = await fetchPOI();
@@ -106,48 +106,48 @@ export function getNavSections(conditionsData: AllConditions): NavSection[] {
     ...(!hideCurrentConditions
       ? [
           {
-            first: 'Current',
-            second: 'Conditions',
+            first: "Current",
+            second: "Conditions",
           },
         ]
       : []),
     ...(!!currentSnow
       ? [
           {
-            first: 'Snow',
-            second: 'Report',
+            first: "Snow",
+            second: "Report",
           },
         ]
       : []),
     ...(!openSnowDataEmpty
       ? [
           {
-            first: 'Weather',
-            second: 'Forecast',
+            first: "Weather",
+            second: "Forecast",
           },
         ]
       : []),
     ...(!hideLiftStatus
       ? [
           {
-            first: 'Lift &',
-            second: 'Terrain Status',
+            first: "Lift &",
+            second: "Terrain Status",
           },
         ]
       : []),
     ...(!!sectorsData
       ? [
           {
-            first: 'Trail',
-            second: 'Status',
+            first: "Trail",
+            second: "Status",
           },
         ]
       : []),
     ...(!!webcams
       ? [
           {
-            first: 'Live',
-            second: 'Feed',
+            first: "Live",
+            second: "Feed",
           },
         ]
       : []),

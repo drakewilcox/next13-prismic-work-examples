@@ -1,14 +1,14 @@
-import { Metadata } from 'next';
-import { notFound } from 'next/navigation';
-import { createClient } from '@/prismicio';
-import { SliceZone } from '@prismicio/react';
-import { components } from '@/slices';
+import { Metadata } from "next";
+import { notFound } from "next/navigation";
+import { createClient } from "@/prismicio";
+import { SliceZone } from "@prismicio/react";
+import { components } from "@/slices";
 
-import { PageWrapper } from '@/components/PageWrapper';
+import { PageWrapper } from "@/components/PageWrapper";
 
 export default async function Homepage() {
   const client = createClient();
-  const page = await client.getSingle('homepage').catch(() => notFound());
+  const page = await client.getSingle("homepage").catch(() => notFound());
 
   return (
     <PageWrapper>
@@ -19,13 +19,13 @@ export default async function Homepage() {
 
 export async function generateMetadata(): Promise<Metadata> {
   const client = createClient();
-  const page = await client.getSingle('homepage').catch(() => {});
+  const page = await client.getSingle("homepage").catch(() => {});
 
   // Pass optional metadata, if available
   const title = {
     ...(page?.data?.meta_title
       ? { title: page.data.meta_title }
-      : { title: 'Uncrowded by Design' }),
+      : { title: "Uncrowded by Design" }),
   };
 
   const description = {

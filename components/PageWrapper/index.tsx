@@ -1,9 +1,9 @@
-'use client';
+"use client";
 
-import styles from './pageWrapper.module.css';
+import styles from "./pageWrapper.module.css";
 
-import { motion } from 'framer-motion';
-import classNames from 'classnames';
+import { motion } from "framer-motion";
+import classNames from "classnames";
 
 export const PageWrapper = ({
   children,
@@ -12,7 +12,7 @@ export const PageWrapper = ({
   children: React.ReactNode;
   className?: string;
 }) => {
-  if (process.env.NODE_ENV !== 'production') {
+  if (process.env.NODE_ENV !== "production") {
     return (
       <main className={classNames([styles.pageWrapper, className])} id="main">
         {children}

@@ -1,23 +1,23 @@
-'use client';
+"use client";
 
-import styles from './header.module.css';
+import styles from "./header.module.css";
 
-import { useEffect } from 'react';
-import type { Content } from '@prismicio/client';
-import Link from 'next/link';
-import { useAnimate, motion } from 'framer-motion';
-import { FocusOn } from 'react-focus-on';
-import classNames from 'classnames';
+import { useEffect } from "react";
+import type { Content } from "@prismicio/client";
+import Link from "next/link";
+import { useAnimate, motion } from "framer-motion";
+import { FocusOn } from "react-focus-on";
+import classNames from "classnames";
 
-import { useStore } from '@/hooks/useStore';
-import { Menu } from '@/components/Menu';
-import { MenuCollapsed } from '@/components/MenuCollapsed';
-import { MenuToggle } from '@/components/MenuToggle';
-import { Logo } from '@/components/Logo';
+import { useStore } from "@/hooks/useStore";
+import { Menu } from "@/components/Menu";
+import { MenuCollapsed } from "@/components/MenuCollapsed";
+import { MenuToggle } from "@/components/MenuToggle";
+import { Logo } from "@/components/Logo";
 import {
   AllConditions,
   OpenSnowConditionsData,
-} from '@/components/Weather/conditionTypes';
+} from "@/components/Weather/conditionTypes";
 
 function Wrapper({ children }: { children: React.ReactNode }) {
   const [scope, animate] = useAnimate();
@@ -30,7 +30,7 @@ function Wrapper({ children }: { children: React.ReactNode }) {
   useEffect(() => {
     animate(
       scope.current,
-      { y: ['-150%', '0%'] },
+      { y: ["-150%", "0%"] },
       { duration: 0.75, ease: [0.44, 0.21, 0, 1], delay: 0.25 }
     );
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -42,7 +42,7 @@ function Wrapper({ children }: { children: React.ReactNode }) {
       autoFocus={false}
       className={styles.headerWrapper}
       ref={scope}
-      style={{ transform: 'translateY(-150%)' }}
+      style={{ transform: "translateY(-150%)" }}
     >
       {children}
     </FocusOn>

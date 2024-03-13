@@ -1,6 +1,6 @@
 /** @type {import('next').NextConfig} */
 
-const redirects = require('./redirects.js');
+const redirects = require("./redirects.js");
 
 const nextConfig = {
   async redirects() {

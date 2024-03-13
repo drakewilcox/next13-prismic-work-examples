@@ -1,4 +1,4 @@
-import { OperatingHours } from '@/components/Weather/conditionTypes';
+import { OperatingHours } from "@/components/Weather/conditionTypes";
 
 export const formatTimeRange = (timeRange: OperatingHours): object => {
   const beginTime = timeRange.beginTime;
@@ -8,12 +8,12 @@ export const formatTimeRange = (timeRange: OperatingHours): object => {
   const endDate = endTime ? new Date(`1970-01-01T${endTime}`) : null;
 
   const displayBeginTime = beginDate?.toLocaleTimeString([], {
-    hour: 'numeric',
-    minute: '2-digit',
+    hour: "numeric",
+    minute: "2-digit",
   });
   const displayEndTime = endDate?.toLocaleTimeString([], {
-    hour: 'numeric',
-    minute: '2-digit',
+    hour: "numeric",
+    minute: "2-digit",
   });
 
   return {
