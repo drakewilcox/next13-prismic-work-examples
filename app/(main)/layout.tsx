@@ -37,10 +37,10 @@ export async function generateMetadata(): Promise<Metadata> {
     .catch(() => {});
 
   return {
-    metadataBase: new URL("https://powdermountain.vercel.app"),
+    metadataBase: new URL("https://next13-prismic-work-examples.vercel.app"),
     title: {
       template: `%s – ${metadata?.data?.meta_title}`,
-      default: "Powder Mountain – Uncrowded by Design",
+      default: "Drake Wilcox Developer Portfolio Examples",
     },
     description: metadata?.data?.meta_description,
     openGraph: {

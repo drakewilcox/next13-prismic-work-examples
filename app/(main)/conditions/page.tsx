@@ -98,7 +98,7 @@ export default async function Conditions() {
               {!isEmpty(sectorsData) && (
                 <TrailStatus sectorsData={sectorsData} />
               )}
-              <LiveFeed data={webcams} />
+              {/* <LiveFeed data={webcams} /> */}
             </div>
           </div>
         </>

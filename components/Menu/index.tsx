@@ -65,7 +65,7 @@ export function Menu({
           <SliceZone slices={data.slices} components={components} />
 
           {/* Webcams flyout */}
-          <NavWebcams webcams={conditionsData.webcams} />
+          {/* <NavWebcams webcams={conditionsData.webcams} /> */}
 
           {/* Conditions flyout */}
           <NavConditions
