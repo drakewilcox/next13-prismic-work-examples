@@ -1,6 +1,6 @@
 {
   "respTimestamp": "2024-03-13T15:39:49.857Z",
-  "requestor": "powdermountainweb",
+  "requestor": "mountainweb",
   "responseStatus": "200",
   "errorDescription": "OK",
   "apiVersion": "1.0",
@@ -14,7 +14,7 @@
         "roadConditions": [
           {
             "id": "34",
-            "name": "Powder Mountain Road",
+            "name": "Mountain Road",
             "number": "158",
             "status": true,
             "surface": "CLEAR_WET",
@@ -22,7 +22,7 @@
             "roadInfo": {
               "id": "307",
               "type": "RESORT_ROAD",
-              "title": "Road - Powder Mountain Road",
+              "title": "Road - Mountain Road",
               "data": [
                 {
                   "language": "en_US",

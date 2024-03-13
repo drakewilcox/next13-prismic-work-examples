@@ -2,7 +2,7 @@
   "imperial": {
     "id": 48,
     "slug": "powmow",
-    "name": "Powder Mountain",
+    "name": "Mountain",
     "coordinates": {
       "point": [-111.7604, 41.3796]
     },
@@ -235,7 +235,7 @@
   "metric": {
     "id": 48,
     "slug": "powmow",
-    "name": "Powder Mountain",
+    "name": "Mountain",
     "coordinates": {
       "point": [-111.7604, 41.3796]
     },

@@ -1,6 +1,6 @@
 {
   "respTimestamp": "2024-03-13T15:39:49.950Z",
-  "requestor": "powdermountainweb",
+  "requestor": "mountainweb",
   "responseStatus": "200",
   "errorDescription": "OK",
   "apiVersion": "1.0",
@@ -9,7 +9,7 @@
     "resorts": [
       {
         "id": "894",
-        "name": "Powder Mountain",
+        "name": "Mountain",
         "webcams": [
           {
             "id": "193",
