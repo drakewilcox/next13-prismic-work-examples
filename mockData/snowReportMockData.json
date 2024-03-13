@@ -1,0 +1,83 @@
+{
+  "respTimestamp": "2024-03-13T15:31:34.604Z",
+  "requestor": "powdermountainweb",
+  "responseStatus": "200",
+  "errorDescription": "OK",
+  "apiVersion": "1.0",
+  "implVersion": "2.11.3",
+  "content": {
+    "domains": [],
+    "resorts": [],
+    "snowZones": [
+      {
+        "id": "919",
+        "name": "Base",
+        "altitude": {
+          "value": 0.0,
+          "unit": "METER",
+          "countryValue": 0.0,
+          "countryUnit": "FOOT"
+        },
+        "altitudeLevel": "LOW",
+        "avalancheRisk": null,
+        "snowQuality": "POWDER",
+        "snowTotalDepth": {
+          "value": 246.38,
+          "unit": "CENTIMETER",
+          "countryValue": 97.0,
+          "countryUnit": "INCH"
+        },
+        "overnight": {
+          "value": 0.0,
+          "unit": "CENTIMETER",
+          "countryValue": 0.0,
+          "countryUnit": "INCH"
+        },
+        "freshSnowFallDepth12H": {
+          "value": 6.35,
+          "unit": "CENTIMETER",
+          "countryValue": 2.5,
+          "countryUnit": "INCH"
+        },
+        "freshSnowFallDepth24H": {
+          "value": 16.509999999999998,
+          "unit": "CENTIMETER",
+          "countryValue": 6.5,
+          "countryUnit": "INCH"
+        },
+        "freshSnowFallDepth48H": {
+          "value": 16.509999999999998,
+          "unit": "CENTIMETER",
+          "countryValue": 6.5,
+          "countryUnit": "INCH"
+        },
+        "freshSnowFallDepth72H": {
+          "value": 16.509999999999998,
+          "unit": "CENTIMETER",
+          "countryValue": 6.5,
+          "countryUnit": "INCH"
+        },
+        "freshSnowFallDepth7D": {
+          "value": 26.67,
+          "unit": "CENTIMETER",
+          "countryValue": 10.5,
+          "countryUnit": "INCH"
+        },
+        "snowFallDepthCompleteSeason": {
+          "value": 751.84,
+          "unit": "CENTIMETER",
+          "countryValue": 296.0,
+          "countryUnit": "INCH"
+        },
+        "lastSnowFallDepth": {
+          "value": 16.509999999999998,
+          "unit": "CENTIMETER",
+          "countryValue": 6.5,
+          "countryUnit": "INCH"
+        },
+        "lastSnowFallDate": "2024-03-13",
+        "lastModified": "2024-03-13T06:00:00.000-06:00"
+      }
+    ]
+  }
+}

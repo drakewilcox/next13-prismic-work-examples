@@ -1,0 +1,308 @@
+{
+  "respTimestamp": "2024-03-13T15:39:49.950Z",
+  "requestor": "powdermountainweb",
+  "responseStatus": "200",
+  "errorDescription": "OK",
+  "apiVersion": "1.0",
+  "implVersion": "2.11.3",
+  "content": {
+    "resorts": [
+      {
+        "id": "894",
+        "name": "Powder Mountain",
+        "webcams": [
+          {
+            "id": "193",
+            "name": {
+              "type": "UNDEF",
+              "data": [
+                {
+                  "language": "en_US",
+                  "data": "Hidden Lake"
+                }
+              ]
+            },
+            "altitude": {
+              "value": 0.0,
+              "unit": "METER",
+              "countryValue": 0.0,
+              "countryUnit": "FOOT"
+            },
+            "latitude": {
+              "value": 0.0,
+              "unit": "UNDEF",
+              "countryValue": 0.0,
+              "countryUnit": "UNDEF"
+            },
+            "longitude": {
+              "value": 0.0,
+              "unit": "UNDEF",
+              "countryValue": 0.0,
+              "countryUnit": "UNDEF"
+            },
+            "description": null,
+            "type": "JPG",
+            "urls": [
+              {
+                "tag": "LD",
+                "url": "https://www.ixnay.net/cams/pm/s1/current.jpg"
+              },
+              {
+                "tag": "MD",
+                "url": "https://www.ixnay.net/cams/pm/s1/current.jpg"
+              },
+              {
+                "tag": "HD",
+                "url": "https://www.ixnay.net/cams/pm/s1/current.jpg"
+              },
+              {
+                "tag": "LIVE",
+                "url": "https://www.ixnay.net/cams/pm/s1/current.jpg"
+              },
+              {
+                "tag": "IFRAME",
+                "url": "https://www.ixnay.net/cams/pm/s1/current.jpg"
+              }
+            ],
+            "lastModified": null,
+            "main": true,
+            "enabledOnDevice": true,
+            "order": 1
+          },
+          {
+            "id": "194",
+            "name": {
+              "type": "UNDEF",
+              "data": [
+                {
+                  "language": "en_US",
+                  "data": "James Peak"
+                }
+              ]
+            },
+            "altitude": {
+              "value": 0.0,
+              "unit": "METER",
+              "countryValue": 0.0,
+              "countryUnit": "FOOT"
+            },
+            "latitude": {
+              "value": 0.0,
+              "unit": "UNDEF",
+              "countryValue": 0.0,
+              "countryUnit": "UNDEF"
+            },
+            "longitude": {
+              "value": 0.0,
+              "unit": "UNDEF",
+              "countryValue": 0.0,
+              "countryUnit": "UNDEF"
+            },
+            "description": null,
+            "type": "JPG",
+            "urls": [
+              {
+                "tag": "LD",
+                "url": "https://www.ixnay.net/cams/pm/s2/current.jpg"
+              },
+              {
+                "tag": "MD",
+                "url": "https://www.ixnay.net/cams/pm/s2/current.jpg"
+              },
+              {
+                "tag": "HD",
+                "url": "https://www.ixnay.net/cams/pm/s2/current.jpg"
+              },
+              {
+                "tag": "LIVE",
+                "url": "https://www.ixnay.net/cams/pm/s2/current.jpg"
+              },
+              {
+                "tag": "IFRAME",
+                "url": "https://www.ixnay.net/cams/pm/s2/current.jpg"
+              }
+            ],
+            "lastModified": null,
+            "main": false,
+            "enabledOnDevice": true,
+            "order": 2
+          },
+          {
+            "id": "195",
+            "name": {
+              "type": "UNDEF",
+              "data": [
+                {
+                  "language": "en_US",
+                  "data": "Mary Cam"
+                }
+              ]
+            },
+            "altitude": {
+              "value": 0.0,
+              "unit": "METER",
+              "countryValue": 0.0,
+              "countryUnit": "FOOT"
+            },
+            "latitude": {
+              "value": 0.0,
+              "unit": "UNDEF",
+              "countryValue": 0.0,
+              "countryUnit": "UNDEF"
+            },
+            "longitude": {
+              "value": 0.0,
+              "unit": "UNDEF",
+              "countryValue": 0.0,
+              "countryUnit": "UNDEF"
+            },
+            "description": null,
+            "type": "JPG",
+            "urls": [
+              {
+                "tag": "LD",
+                "url": "https://www.ixnay.net/cams/pm/s3/current.jpg"
+              },
+              {
+                "tag": "MD",
+                "url": "https://www.ixnay.net/cams/pm/s3/current.jpg"
+              },
+              {
+                "tag": "HD",
+                "url": "https://www.ixnay.net/cams/pm/s3/current.jpg"
+              },
+              {
+                "tag": "LIVE",
+                "url": "https://www.ixnay.net/cams/pm/s3/current.jpg"
+              },
+              {
+                "tag": "IFRAME",
+                "url": "https://www.ixnay.net/cams/pm/s3/current.jpg"
+              }
+            ],
+            "lastModified": null,
+            "main": false,
+            "enabledOnDevice": true,
+            "order": 3
+          },
+          {
+            "id": "196",
+            "name": {
+              "type": "UNDEF",
+              "data": [
+                {
+                  "language": "en_US",
+                  "data": "Village Cam"
+                }
+              ]
+            },
+            "altitude": {
+              "value": 0.0,
+              "unit": "METER",
+              "countryValue": 0.0,
+              "countryUnit": "FOOT"
+            },
+            "latitude": {
+              "value": 0.0,
+              "unit": "UNDEF",
+              "countryValue": 0.0,
+              "countryUnit": "UNDEF"
+            },
+            "longitude": {
+              "value": 0.0,
+              "unit": "UNDEF",
+              "countryValue": 0.0,
+              "countryUnit": "UNDEF"
+            },
+            "description": null,
+            "type": "JPG",
+            "urls": [
+              {
+                "tag": "LD",
+                "url": "https://www.ixnay.net/cams/pm/s4/current.jpg"
+              },
+              {
+                "tag": "MD",
+                "url": "https://www.ixnay.net/cams/pm/s4/current.jpg"
+              },
+              {
+                "tag": "HD",
+                "url": "https://www.ixnay.net/cams/pm/s4/current.jpg"
+              },
+              {
+                "tag": "LIVE",
+                "url": "https://www.ixnay.net/cams/pm/s4/current.jpg"
+              },
+              {
+                "tag": "IFRAME",
+                "url": "https://www.ixnay.net/cams/pm/s4/current.jpg"
+              }
+            ],
+            "lastModified": null,
+            "main": false,
+            "enabledOnDevice": true,
+            "order": 4
+          },
+          {
+            "id": "246",
+            "name": {
+              "type": "UNDEF",
+              "data": [
+                {
+                  "language": "en_US",
+                  "data": "Timberline Lodge"
+                }
+              ]
+            },
+            "altitude": {
+              "value": 0.0,
+              "unit": "METER",
+              "countryValue": 0.0,
+              "countryUnit": "FOOT"
+            },
+            "latitude": {
+              "value": 0.0,
+              "unit": "UNDEF",
+              "countryValue": 0.0,
+              "countryUnit": "UNDEF"
+            },
+            "longitude": {
+              "value": 0.0,
+              "unit": "UNDEF",
+              "countryValue": 0.0,
+              "countryUnit": "UNDEF"
+            },
+            "description": null,
+            "type": "JPG",
+            "urls": [
+              {
+                "tag": "LD",
+                "url": "https://www.ixnay.net/cams/powdermountain/lodge/current.jpg?1228120619"
+              },
+              {
+                "tag": "MD",
+                "url": "https://www.ixnay.net/cams/powdermountain/lodge/current.jpg?1228120619"
+              },
+              {
+                "tag": "HD",
+                "url": "https://www.ixnay.net/cams/powdermountain/lodge/current.jpg?1228120619"
+              },
+              {
+                "tag": "LIVE",
+                "url": "https://www.ixnay.net/cams/powdermountain/lodge/current.jpg?1228120619"
+              },
+              {
+                "tag": "IFRAME",
+                "url": "https://www.ixnay.net/cams/powdermountain/lodge/current.jpg?1228120619"
+              }
+            ],
+            "lastModified": null,
+            "main": false,
+            "enabledOnDevice": true,
+            "order": 5
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "respTimestamp": "2024-03-13T15:39:00.959Z",
+  "requestor": "powdermountainweb",
+  "responseStatus": "200",
+  "errorDescription": "OK",
+  "apiVersion": "1.0",
+  "implVersion": "2.11.3",
+  "content": {
+    "domains": [],
+    "resorts": [
+      {
+        "id": "894",
+        "name": "Powder Mountain",
+        "availability": null,
+        "resortInfos": [
+          {
+            "id": "306",
+            "type": "RESORT_OTHER",
+            "title": "Daily Report",
+            "data": [
+              {
+                "language": "en_US",
+                "data": "<p>6\" in the past 24 hours! Spring skiing conditions are predicted for the next 10+ days, get after the powder today.</p>\n<p>Registration for Turn N Burn and No joke Tele Race are OPEN! Learn more about these rad events via the events page.</p>"
+              }
+            ]
+          },
+          {
+            "id": "308",
+            "type": "RESORT_OTHER",
+            "title": "Hours of Operation",
+            "data": [
+              {
+                "language": "en_US",
+                "data": "<p>9am - 9pm</p>"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

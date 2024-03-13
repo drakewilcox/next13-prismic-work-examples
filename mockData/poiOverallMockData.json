@@ -1,0 +1,4293 @@
+{
+  "respTimestamp": "2024-03-13T15:02:59.916Z",
+  "requestor": "powdermountainweb",
+  "responseStatus": "200",
+  "errorDescription": "OK",
+  "apiVersion": "1.0",
+  "implVersion": "2.11.3",
+  "content": {
+    "overalls": [
+      {
+        "mode": "merge",
+        "name": null,
+        "id": null,
+        "liftsOverall": {
+          "liftsInPeriode": 9,
+          "lifts": 9,
+          "expectedLifts": 0,
+          "openLifts": 9,
+          "closedLifts": 0,
+          "openLiftsbyType": [
+            {
+              "type": "TRAIN",
+              "count": 0
+            },
+            {
+              "type": "FUNICULAR",
+              "count": 0
+            },
+            {
+              "type": "TRAM",
+              "count": 0
+            },
+            {
+              "type": "FUNITEL",
+              "count": 0
+            },
+            {
+              "type": "GONDOLA",
+              "count": 0
+            },
+            {
+              "type": "COMBINED_CHAIR_GONDOLA_LIFT",
+              "count": 0
+            },
+            {
+              "type": "DETACHABLE_BUBBLE_CHAIRLIFT",
+              "count": 0
+            },
+            {
+              "type": "DETACHABLE_CHAIRLIFT",
+              "count": 1
+            },
+            {
+              "type": "CHAIRLIFT",
+              "count": 5
+            },
+            {
+              "type": "SURFACE_LIFT",
+              "count": 2
+            },
+            {
+              "type": "MAGIC_CARPET",
+              "count": 0
+            },
+            {
+              "type": "ROPE_TOW",
+              "count": 1
+            },
+            {
+              "type": "CABRIOLET_GONDOLA",
+              "count": 0
+            },
+            {
+              "type": "PEDESTRIAN_SKI_LIFT",
+              "count": 0
+            },
+            {
+              "type": "LIFT",
+              "count": 0
+            },
+            {
+              "type": "UNDEF",
+              "count": 0
+            }
+          ],
+          "liftsInPeriodebyType": [
+            {
+              "type": "TRAIN",
+              "count": 0
+            },
+            {
+              "type": "FUNICULAR",
+              "count": 0
+            },
+            {
+              "type": "TRAM",
+              "count": 0
+            },
+            {
+              "type": "FUNITEL",
+              "count": 0
+            },
+            {
+              "type": "GONDOLA",
+              "count": 0
+            },
+            {
+              "type": "COMBINED_CHAIR_GONDOLA_LIFT",
+              "count": 0
+            },
+            {
+              "type": "DETACHABLE_BUBBLE_CHAIRLIFT",
+              "count": 0
+            },
+            {
+              "type": "DETACHABLE_CHAIRLIFT",
+              "count": 1
+            },
+            {
+              "type": "CHAIRLIFT",
+              "count": 5
+            },
+            {
+              "type": "SURFACE_LIFT",
+              "count": 2
+            },
+            {
+              "type": "MAGIC_CARPET",
+              "count": 0
+            },
+            {
+              "type": "ROPE_TOW",
+              "count": 1
+            },
+            {
+              "type": "CABRIOLET_GONDOLA",
+              "count": 0
+            },
+            {
+              "type": "PEDESTRIAN_SKI_LIFT",
+              "count": 0
+            },
+            {
+              "type": "LIFT",
+              "count": 0
+            },
+            {
+              "type": "UNDEF",
+              "count": 0
+            }
+          ],
+          "liftsbyType": [
+            {
+              "type": "TRAIN",
+              "count": 0
+            },
+            {
+              "type": "FUNICULAR",
+              "count": 0
+            },
+            {
+              "type": "TRAM",
+              "count": 0
+            },
+            {
+              "type": "FUNITEL",
+              "count": 0
+            },
+            {
+              "type": "GONDOLA",
+              "count": 0
+            },
+            {
+              "type": "COMBINED_CHAIR_GONDOLA_LIFT",
+              "count": 0
+            },
+            {
+              "type": "DETACHABLE_BUBBLE_CHAIRLIFT",
+              "count": 0
+            },
+            {
+              "type": "DETACHABLE_CHAIRLIFT",
+              "count": 1
+            },
+            {
+              "type": "CHAIRLIFT",
+              "count": 5
+            },
+            {
+              "type": "SURFACE_LIFT",
+              "count": 2
+            },
+            {
+              "type": "MAGIC_CARPET",
+              "count": 0
+            },
+            {
+              "type": "ROPE_TOW",
+              "count": 1
+            },
+            {
+              "type": "CABRIOLET_GONDOLA",
+              "count": 0
+            },
+            {
+              "type": "PEDESTRIAN_SKI_LIFT",
+              "count": 0
+            },
+            {
+              "type": "LIFT",
+              "count": 0
+            },
+            {
+              "type": "UNDEF",
+              "count": 0
+            }
+          ],
+          "expectedliftsbyType": [
+            {
+              "type": "TRAIN",
+              "count": 0
+            },
+            {
+              "type": "FUNICULAR",
+              "count": 0
+            },
+            {
+              "type": "TRAM",
+              "count": 0
+            },
+            {
+              "type": "FUNITEL",
+              "count": 0
+            },
+            {
+              "type": "GONDOLA",
+              "count": 0
+            },
+            {
+              "type": "COMBINED_CHAIR_GONDOLA_LIFT",
+              "count": 0
+            },
+            {
+              "type": "DETACHABLE_BUBBLE_CHAIRLIFT",
+              "count": 0
+            },
+            {
+              "type": "DETACHABLE_CHAIRLIFT",
+              "count": 0
+            },
+            {
+              "type": "CHAIRLIFT",
+              "count": 0
+            },
+            {
+              "type": "SURFACE_LIFT",
+              "count": 0
+            },
+            {
+              "type": "MAGIC_CARPET",
+              "count": 0
+            },
+            {
+              "type": "ROPE_TOW",
+              "count": 0
+            },
+            {
+              "type": "CABRIOLET_GONDOLA",
+              "count": 0
+            },
+            {
+              "type": "PEDESTRIAN_SKI_LIFT",
+              "count": 0
+            },
+            {
+              "type": "LIFT",
+              "count": 0
+            },
+            {
+              "type": "UNDEF",
+              "count": 0
+            }
+          ],
+          "closedLiftsbyType": [
+            {
+              "type": "TRAIN",
+              "count": 0
+            },
+            {
+              "type": "FUNICULAR",
+              "count": 0
+            },
+            {
+              "type": "TRAM",
+              "count": 0
+            },
+            {
+              "type": "FUNITEL",
+              "count": 0
+            },
+            {
+              "type": "GONDOLA",
+              "count": 0
+            },
+            {
+              "type": "COMBINED_CHAIR_GONDOLA_LIFT",
+              "count": 0
+            },
+            {
+              "type": "DETACHABLE_BUBBLE_CHAIRLIFT",
+              "count": 0
+            },
+            {
+              "type": "DETACHABLE_CHAIRLIFT",
+              "count": 0
+            },
+            {
+              "type": "CHAIRLIFT",
+              "count": 0
+            },
+            {
+              "type": "SURFACE_LIFT",
+              "count": 0
+            },
+            {
+              "type": "MAGIC_CARPET",
+              "count": 0
+            },
+            {
+              "type": "ROPE_TOW",
+              "count": 0
+            },
+            {
+              "type": "CABRIOLET_GONDOLA",
+              "count": 0
+            },
+            {
+              "type": "PEDESTRIAN_SKI_LIFT",
+              "count": 0
+            },
+            {
+              "type": "LIFT",
+              "count": 0
+            },
+            {
+              "type": "UNDEF",
+              "count": 0
+            }
+          ]
+        },
+        "activitiesOverall": {
+          "activitiesInPeriode": 0,
+          "activities": 0,
+          "expectedActivities": 0,
+          "openActivities": 0,
+          "closedActivities": 0,
+          "openActivitiesByType": [
+            {
+              "type": "COASTER",
+              "count": 0
+            },
+            {
+              "type": "TYROLEAN",
+              "count": 0
+            },
+            {
+              "type": "PARAGLIDING",
+              "count": 0
+            },
+            {
+              "type": "TREETOP_ADVENTURE_PARK",
+              "count": 0
+            },
+            {
+              "type": "AIRBAG",
+              "count": 0
+            },
+            {
+              "type": "TUBING",
+              "count": 0
+            },
+            {
+              "type": "SNOWTUBING",
+              "count": 0
+            },
+            {
+              "type": "CARROUSEL",
+              "count": 0
+            },
+            {
+              "type": "SWIMMING_POOL",
+              "count": 0
+            },
+            {
+              "type": "ICE_RINK",
+              "count": 0
+            },
+            {
+              "type": "SLED_DOG",
+              "count": 0
+            },
+            {
+              "type": "HORSE_CARRIAGE",
+              "count": 0
+            },
+            {
+              "type": "CLIMBING_WALL",
+              "count": 0
+            },
+            {
+              "type": "ARCHERY",
+              "count": 0
+            },
+            {
+              "type": "MOVIE_THEATER",
+              "count": 0
+            },
+            {
+              "type": "PANORAMIC_VIEW",
+              "count": 0
+            },
+            {
+              "type": "THEME_TRAIL",
+              "count": 0
+            },
+            {
+              "type": "SLEIGH_RIDE",
+              "count": 0
+            },
+            {
+              "type": "GOLF",
+              "count": 0
+            },
+            {
+              "type": "TENNIS",
+              "count": 0
+            },
+            {
+              "type": "DISC_GOLF",
+              "count": 0
+            },
+            {
+              "type": "MINIATURE_GOLF",
+              "count": 0
+            },
+            {
+              "type": "WATER_POINT",
+              "count": 0
+            },
+            {
+              "type": "WATERSPORTS_CENTER",
+              "count": 0
+            },
+            {
+              "type": "ESQUESTRIAN_CENTER",
+              "count": 0
+            },
+            {
+              "type": "VIA_FERRATA",
+              "count": 0
+            },
+            {
+              "type": "MUSEUM",
+              "count": 0
+            },
+            {
+              "type": "THEATER",
+              "count": 0
+            },
+            {
+              "type": "FISHING_AREA",
+              "count": 0
+            },
+            {
+              "type": "SNOWMOBILE",
+              "count": 0
+            },
+            {
+              "type": "QUAD_BIKE",
+              "count": 0
+            },
+            {
+              "type": "ELECTRIC_SCOOTER",
+              "count": 0
+            },
+            {
+              "type": "PLAYGROUND",
+              "count": 0
+            },
+            {
+              "type": "SPA",
+              "count": 0
+            },
+            {
+              "type": "FITNESS_CENTER",
+              "count": 0
+            },
+            {
+              "type": "EXPLORE_GAME",
+              "count": 0
+            },
+            {
+              "type": "SNOW_GARDEN",
+              "count": 0
+            },
+            {
+              "type": "UNDEF",
+              "count": 0
+            }
+          ],
+          "activitiesInPeriodeByType": [
+            {
+              "type": "COASTER",
+              "count": 0
+            },
+            {
+              "type": "TYROLEAN",
+              "count": 0
+            },
+            {
+              "type": "PARAGLIDING",
+              "count": 0
+            },
+            {
+              "type": "TREETOP_ADVENTURE_PARK",
+              "count": 0
+            },
+            {
+              "type": "AIRBAG",
+              "count": 0
+            },
+            {
+              "type": "TUBING",
+              "count": 0
+            },
+            {
+              "type": "SNOWTUBING",
+              "count": 0
+            },
+            {
+              "type": "CARROUSEL",
+              "count": 0
+            },
+            {
+              "type": "SWIMMING_POOL",
+              "count": 0
+            },
+            {
+              "type": "ICE_RINK",
+              "count": 0
+            },
+            {
+              "type": "SLED_DOG",
+              "count": 0
+            },
+            {
+              "type": "HORSE_CARRIAGE",
+              "count": 0
+            },
+            {
+              "type": "CLIMBING_WALL",
+              "count": 0
+            },
+            {
+              "type": "ARCHERY",
+              "count": 0
+            },
+            {
+              "type": "MOVIE_THEATER",
+              "count": 0
+            },
+            {
+              "type": "PANORAMIC_VIEW",
+              "count": 0
+            },
+            {
+              "type": "THEME_TRAIL",
+              "count": 0
+            },
+            {
+              "type": "SLEIGH_RIDE",
+              "count": 0
+            },
+            {
+              "type": "GOLF",
+              "count": 0
+            },
+            {
+              "type": "TENNIS",
+              "count": 0
+            },
+            {
+              "type": "DISC_GOLF",
+              "count": 0
+            },
+            {
+              "type": "MINIATURE_GOLF",
+              "count": 0
+            },
+            {
+              "type": "WATER_POINT",
+              "count": 0
+            },
+            {
+              "type": "WATERSPORTS_CENTER",
+              "count": 0
+            },
+            {
+              "type": "ESQUESTRIAN_CENTER",
+              "count": 0
+            },
+            {
+              "type": "VIA_FERRATA",
+              "count": 0
+            },
+            {
+              "type": "MUSEUM",
+              "count": 0
+            },
+            {
+              "type": "THEATER",
+              "count": 0
+            },
+            {
+              "type": "FISHING_AREA",
+              "count": 0
+            },
+            {
+              "type": "SNOWMOBILE",
+              "count": 0
+            },
+            {
+              "type": "QUAD_BIKE",
+              "count": 0
+            },
+            {
+              "type": "ELECTRIC_SCOOTER",
+              "count": 0
+            },
+            {
+              "type": "PLAYGROUND",
+              "count": 0
+            },
+            {
+              "type": "SPA",
+              "count": 0
+            },
+            {
+              "type": "FITNESS_CENTER",
+              "count": 0
+            },
+            {
+              "type": "EXPLORE_GAME",
+              "count": 0
+            },
+            {
+              "type": "SNOW_GARDEN",
+              "count": 0
+            },
+            {
+              "type": "UNDEF",
+              "count": 0
+            }
+          ],
+          "activitiesByType": [
+            {
+              "type": "COASTER",
+              "count": 0
+            },
+            {
+              "type": "TYROLEAN",
+              "count": 0
+            },
+            {
+              "type": "PARAGLIDING",
+              "count": 0
+            },
+            {
+              "type": "TREETOP_ADVENTURE_PARK",
+              "count": 0
+            },
+            {
+              "type": "AIRBAG",
+              "count": 0
+            },
+            {
+              "type": "TUBING",
+              "count": 0
+            },
+            {
+              "type": "SNOWTUBING",
+              "count": 0
+            },
+            {
+              "type": "CARROUSEL",
+              "count": 0
+            },
+            {
+              "type": "SWIMMING_POOL",
+              "count": 0
+            },
+            {
+              "type": "ICE_RINK",
+              "count": 0
+            },
+            {
+              "type": "SLED_DOG",
+              "count": 0
+            },
+            {
+              "type": "HORSE_CARRIAGE",
+              "count": 0
+            },
+            {
+              "type": "CLIMBING_WALL",
+              "count": 0
+            },
+            {
+              "type": "ARCHERY",
+              "count": 0
+            },
+            {
+              "type": "MOVIE_THEATER",
+              "count": 0
+            },
+            {
+              "type": "PANORAMIC_VIEW",
+              "count": 0
+            },
+            {
+              "type": "THEME_TRAIL",
+              "count": 0
+            },
+            {
+              "type": "SLEIGH_RIDE",
+              "count": 0
+            },
+            {
+              "type": "GOLF",
+              "count": 0
+            },
+            {
+              "type": "TENNIS",
+              "count": 0
+            },
+            {
+              "type": "DISC_GOLF",
+              "count": 0
+            },
+            {
+              "type": "MINIATURE_GOLF",
+              "count": 0
+            },
+            {
+              "type": "WATER_POINT",
+              "count": 0
+            },
+            {
+              "type": "WATERSPORTS_CENTER",
+              "count": 0
+            },
+            {
+              "type": "ESQUESTRIAN_CENTER",
+              "count": 0
+            },
+            {
+              "type": "VIA_FERRATA",
+              "count": 0
+            },
+            {
+              "type": "MUSEUM",
+              "count": 0
+            },
+            {
+              "type": "THEATER",
+              "count": 0
+            },
+            {
+              "type": "FISHING_AREA",
+              "count": 0
+            },
+            {
+              "type": "SNOWMOBILE",
+              "count": 0
+            },
+            {
+              "type": "QUAD_BIKE",
+              "count": 0
+            },
+            {
+              "type": "ELECTRIC_SCOOTER",
+              "count": 0
+            },
+            {
+              "type": "PLAYGROUND",
+              "count": 0
+            },
+            {
+              "type": "SPA",
+              "count": 0
+            },
+            {
+              "type": "FITNESS_CENTER",
+              "count": 0
+            },
+            {
+              "type": "EXPLORE_GAME",
+              "count": 0
+            },
+            {
+              "type": "SNOW_GARDEN",
+              "count": 0
+            },
+            {
+              "type": "UNDEF",
+              "count": 0
+            }
+          ],
+          "expectedActivitiesByType": [
+            {
+              "type": "COASTER",
+              "count": 0
+            },
+            {
+              "type": "TYROLEAN",
+              "count": 0
+            },
+            {
+              "type": "PARAGLIDING",
+              "count": 0
+            },
+            {
+              "type": "TREETOP_ADVENTURE_PARK",
+              "count": 0
+            },
+            {
+              "type": "AIRBAG",
+              "count": 0
+            },
+            {
+              "type": "TUBING",
+              "count": 0
+            },
+            {
+              "type": "SNOWTUBING",
+              "count": 0
+            },
+            {
+              "type": "CARROUSEL",
+              "count": 0
+            },
+            {
+              "type": "SWIMMING_POOL",
+              "count": 0
+            },
+            {
+              "type": "ICE_RINK",
+              "count": 0
+            },
+            {
+              "type": "SLED_DOG",
+              "count": 0
+            },
+            {
+              "type": "HORSE_CARRIAGE",
+              "count": 0
+            },
+            {
+              "type": "CLIMBING_WALL",
+              "count": 0
+            },
+            {
+              "type": "ARCHERY",
+              "count": 0
+            },
+            {
+              "type": "MOVIE_THEATER",
+              "count": 0
+            },
+            {
+              "type": "PANORAMIC_VIEW",
+              "count": 0
+            },
+            {
+              "type": "THEME_TRAIL",
+              "count": 0
+            },
+            {
+              "type": "SLEIGH_RIDE",
+              "count": 0
+            },
+            {
+              "type": "GOLF",
+              "count": 0
+            },
+            {
+              "type": "TENNIS",
+              "count": 0
+            },
+            {
+              "type": "DISC_GOLF",
+              "count": 0
+            },
+            {
+              "type": "MINIATURE_GOLF",
+              "count": 0
+            },
+            {
+              "type": "WATER_POINT",
+              "count": 0
+            },
+            {
+              "type": "WATERSPORTS_CENTER",
+              "count": 0
+            },
+            {
+              "type": "ESQUESTRIAN_CENTER",
+              "count": 0
+            },
+            {
+              "type": "VIA_FERRATA",
+              "count": 0
+            },
+            {
+              "type": "MUSEUM",
+              "count": 0
+            },
+            {
+              "type": "THEATER",
+              "count": 0
+            },
+            {
+              "type": "FISHING_AREA",
+              "count": 0
+            },
+            {
+              "type": "SNOWMOBILE",
+              "count": 0
+            },
+            {
+              "type": "QUAD_BIKE",
+              "count": 0
+            },
+            {
+              "type": "ELECTRIC_SCOOTER",
+              "count": 0
+            },
+            {
+              "type": "PLAYGROUND",
+              "count": 0
+            },
+            {
+              "type": "SPA",
+              "count": 0
+            },
+            {
+              "type": "FITNESS_CENTER",
+              "count": 0
+            },
+            {
+              "type": "EXPLORE_GAME",
+              "count": 0
+            },
+            {
+              "type": "SNOW_GARDEN",
+              "count": 0
+            },
+            {
+              "type": "UNDEF",
+              "count": 0
+            }
+          ],
+          "closedActivitiesByType": [
+            {
+              "type": "COASTER",
+              "count": 0
+            },
+            {
+              "type": "TYROLEAN",
+              "count": 0
+            },
+            {
+              "type": "PARAGLIDING",
+              "count": 0
+            },
+            {
+              "type": "TREETOP_ADVENTURE_PARK",
+              "count": 0
+            },
+            {
+              "type": "AIRBAG",
+              "count": 0
+            },
+            {
+              "type": "TUBING",
+              "count": 0
+            },
+            {
+              "type": "SNOWTUBING",
+              "count": 0
+            },
+            {
+              "type": "CARROUSEL",
+              "count": 0
+            },
+            {
+              "type": "SWIMMING_POOL",
+              "count": 0
+            },
+            {
+              "type": "ICE_RINK",
+              "count": 0
+            },
+            {
+              "type": "SLED_DOG",
+              "count": 0
+            },
+            {
+              "type": "HORSE_CARRIAGE",
+              "count": 0
+            },
+            {
+              "type": "CLIMBING_WALL",
+              "count": 0
+            },
+            {
+              "type": "ARCHERY",
+              "count": 0
+            },
+            {
+              "type": "MOVIE_THEATER",
+              "count": 0
+            },
+            {
+              "type": "PANORAMIC_VIEW",
+              "count": 0
+            },
+            {
+              "type": "THEME_TRAIL",
+              "count": 0
+            },
+            {
+              "type": "SLEIGH_RIDE",
+              "count": 0
+            },
+            {
+              "type": "GOLF",
+              "count": 0
+            },
+            {
+              "type": "TENNIS",
+              "count": 0
+            },
+            {
+              "type": "DISC_GOLF",
+              "count": 0
+            },
+            {
+              "type": "MINIATURE_GOLF",
+              "count": 0
+            },
+            {
+              "type": "WATER_POINT",
+              "count": 0
+            },
+            {
+              "type": "WATERSPORTS_CENTER",
+              "count": 0
+            },
+            {
+              "type": "ESQUESTRIAN_CENTER",
+              "count": 0
+            },
+            {
+              "type": "VIA_FERRATA",
+              "count": 0
+            },
+            {
+              "type": "MUSEUM",
+              "count": 0
+            },
+            {
+              "type": "THEATER",
+              "count": 0
+            },
+            {
+              "type": "FISHING_AREA",
+              "count": 0
+            },
+            {
+              "type": "SNOWMOBILE",
+              "count": 0
+            },
+            {
+              "type": "QUAD_BIKE",
+              "count": 0
+            },
+            {
+              "type": "ELECTRIC_SCOOTER",
+              "count": 0
+            },
+            {
+              "type": "PLAYGROUND",
+              "count": 0
+            },
+            {
+              "type": "SPA",
+              "count": 0
+            },
+            {
+              "type": "FITNESS_CENTER",
+              "count": 0
+            },
+            {
+              "type": "EXPLORE_GAME",
+              "count": 0
+            },
+            {
+              "type": "SNOW_GARDEN",
+              "count": 0
+            },
+            {
+              "type": "UNDEF",
+              "count": 0
+            }
+          ]
+        },
+        "trailsOverall": {
+          "openTrails": 165,
+          "trailsInPeriode": 165,
+          "totalTrails": 165,
+          "expectedTrails": 0,
+          "closedTrails": 0,
+          "openTrailsByLevel": [
+            {
+              "type": "GREEN",
+              "count": 0
+            },
+            {
+              "type": "BLUE",
+              "count": 0
+            },
+            {
+              "type": "RED",
+              "count": 0
+            },
+            {
+              "type": "BLACK",
+              "count": 9
+            },
+            {
+              "type": "YELLOW",
+              "count": 0
+            },
+            {
+              "type": "GREEN_CIRCLE",
+              "count": 25
+            },
+            {
+              "type": "DOUBLE_GREEN_CIRCLE",
+              "count": 0
+            },
+            {
+              "type": "BLACK_DIAMOND_IN_GREEN_CIRCLE",
+              "count": 0
+            },
+            {
+              "type": "BLUE_SQUARE",
+              "count": 50
+            },
+            {
+              "type": "DOUBLE_BLUE_SQUARE",
+              "count": 0
+            },
+            {
+              "type": "BLACK_DIAMOND_IN_BLUE_SQUARE",
+              "count": 0
+            },
+            {
+              "type": "GREEN_CIRCLE_IN_BLACK_SQUARE",
+              "count": 0
+            },
+            {
+              "type": "GREEN_CIRCLE_IN_BLACK_DIAMOND",
+              "count": 0
+            },
+            {
+              "type": "BLUE_SQUARE_IN_BLACK_DIAMOND",
+              "count": 0
+            },
+            {
+              "type": "BLACK_DIAMOND",
+              "count": 77
+            },
+            {
+              "type": "DOUBLE_BLACK_DIAMOND",
+              "count": 4
+            },
+            {
+              "type": "DOUBLE_BLACK_DIAMOND_EXTREM",
+              "count": 0
+            },
+            {
+              "type": "TERRAIN_PARKS",
+              "count": 0
+            },
+            {
+              "type": "RED_SQUARE",
+              "count": 0
+            },
+            {
+              "type": "ADVENTURE_ZONE",
+              "count": 0
+            },
+            {
+              "type": "UNDEF",
+              "count": 0
+            }
+          ],
+          "openAlpineTrailsByLevel": [
+            {
+              "type": "GREEN",
+              "count": 0
+            },
+            {
+              "type": "BLUE",
+              "count": 0
+            },
+            {
+              "type": "RED",
+              "count": 0
+            },
+            {
+              "type": "BLACK",
+              "count": 0
+            },
+            {
+              "type": "YELLOW",
+              "count": 0
+            },
+            {
+              "type": "GREEN_CIRCLE",
+              "count": 25
+            },
+            {
+              "type": "DOUBLE_GREEN_CIRCLE",
+              "count": 0
+            },
+            {
+              "type": "BLACK_DIAMOND_IN_GREEN_CIRCLE",
+              "count": 0
+            },
+            {
+              "type": "BLUE_SQUARE",
+              "count": 50
+            },
+            {
+              "type": "DOUBLE_BLUE_SQUARE",
+              "count": 0
+            },
+            {
+              "type": "BLACK_DIAMOND_IN_BLUE_SQUARE",
+              "count": 0
+            },
+            {
+              "type": "GREEN_CIRCLE_IN_BLACK_SQUARE",
+              "count": 0
+            },
+            {
+              "type": "GREEN_CIRCLE_IN_BLACK_DIAMOND",
+              "count": 0
+            },
+            {
+              "type": "BLUE_SQUARE_IN_BLACK_DIAMOND",
+              "count": 0
+            },
+            {
+              "type": "BLACK_DIAMOND",
+              "count": 77
+            },
+            {
+              "type": "DOUBLE_BLACK_DIAMOND",
+              "count": 4
+            },
+            {
+              "type": "DOUBLE_BLACK_DIAMOND_EXTREM",
+              "count": 0
+            },
+            {
+              "type": "TERRAIN_PARKS",
+              "count": 0
+            },
+            {
+              "type": "RED_SQUARE",
+              "count": 0
+            },
+            {
+              "type": "ADVENTURE_ZONE",
+              "count": 0
+            },
+            {
+              "type": "UNDEF",
+              "count": 0
+            }
+          ],
+          "alpineTrailsInPeriodByLevel": [
+            {
+              "type": "GREEN",
+              "count": 0
+            },
+            {
+              "type": "BLUE",
+              "count": 0
+            },
+            {
+              "type": "RED",
+              "count": 0
+            },
+            {
+              "type": "BLACK",
+              "count": 0
+            },
+            {
+              "type": "YELLOW",
+              "count": 0
+            },
+            {
+              "type": "GREEN_CIRCLE",
+              "count": 25
+            },
+            {
+              "type": "DOUBLE_GREEN_CIRCLE",
+              "count": 0
+            },
+            {
+              "type": "BLACK_DIAMOND_IN_GREEN_CIRCLE",
+              "count": 0
+            },
+            {
+              "type": "BLUE_SQUARE",
+              "count": 50
+            },
+            {
+              "type": "DOUBLE_BLUE_SQUARE",
+              "count": 0
+            },
+            {
+              "type": "BLACK_DIAMOND_IN_BLUE_SQUARE",
+              "count": 0
+            },
+            {
+              "type": "GREEN_CIRCLE_IN_BLACK_SQUARE",
+              "count": 0
+            },
+            {
+              "type": "GREEN_CIRCLE_IN_BLACK_DIAMOND",
+              "count": 0
+            },
+            {
+              "type": "BLUE_SQUARE_IN_BLACK_DIAMOND",
+              "count": 0
+            },
+            {
+              "type": "BLACK_DIAMOND",
+              "count": 77
+            },
+            {
+              "type": "DOUBLE_BLACK_DIAMOND",
+              "count": 4
+            },
+            {
+              "type": "DOUBLE_BLACK_DIAMOND_EXTREM",
+              "count": 0
+            },
+            {
+              "type": "TERRAIN_PARKS",
+              "count": 0
+            },
+            {
+              "type": "RED_SQUARE",
+              "count": 0
+            },
+            {
+              "type": "ADVENTURE_ZONE",
+              "count": 0
+            },
+            {
+              "type": "UNDEF",
+              "count": 0
+            }
+          ],
+          "openSleddingTrailsByLevel": [
+            {
+              "type": "GREEN",
+              "count": 0
+            },
+            {
+              "type": "BLUE",
+              "count": 0
+            },
+            {
+              "type": "RED",
+              "count": 0
+            },
+            {
+              "type": "BLACK",
+              "count": 0
+            },
+            {
+              "type": "YELLOW",
+              "count": 0
+            },
+            {
+              "type": "GREEN_CIRCLE",
+              "count": 0
+            },
+            {
+              "type": "DOUBLE_GREEN_CIRCLE",
+              "count": 0
+            },
+            {
+              "type": "BLACK_DIAMOND_IN_GREEN_CIRCLE",
+              "count": 0
+            },
+            {
+              "type": "BLUE_SQUARE",
+              "count": 0
+            },
+            {
+              "type": "DOUBLE_BLUE_SQUARE",
+              "count": 0
+            },
+            {
+              "type": "BLACK_DIAMOND_IN_BLUE_SQUARE",
+              "count": 0
+            },
+            {
+              "type": "GREEN_CIRCLE_IN_BLACK_SQUARE",
+              "count": 0
+            },
+            {
+              "type": "GREEN_CIRCLE_IN_BLACK_DIAMOND",
+              "count": 0
+            },
+            {
+              "type": "BLUE_SQUARE_IN_BLACK_DIAMOND",
+              "count": 0
+            },
+            {
+              "type": "BLACK_DIAMOND",
+              "count": 0
+            },
+            {
+              "type": "DOUBLE_BLACK_DIAMOND",
+              "count": 0
+            },
+            {
+              "type": "DOUBLE_BLACK_DIAMOND_EXTREM",
+              "count": 0
+            },
+            {
+              "type": "TERRAIN_PARKS",
+              "count": 0
+            },
+            {
+              "type": "RED_SQUARE",
+              "count": 0
+            },
+            {
+              "type": "ADVENTURE_ZONE",
+              "count": 0
+            },
+            {
+              "type": "UNDEF",
+              "count": 0
+            }
+          ],
+          "openCrossCountryTrailsByLevel": [
+            {
+              "type": "GREEN",
+              "count": 0
+            },
+            {
+              "type": "BLUE",
+              "count": 0
+            },
+            {
+              "type": "RED",
+              "count": 0
+            },
+            {
+              "type": "BLACK",
+              "count": 0
+            },
+            {
+              "type": "YELLOW",
+              "count": 0
+            },
+            {
+              "type": "GREEN_CIRCLE",
+              "count": 0
+            },
+            {
+              "type": "DOUBLE_GREEN_CIRCLE",
+              "count": 0
+            },
+            {
+              "type": "BLACK_DIAMOND_IN_GREEN_CIRCLE",
+              "count": 0
+            },
+            {
+              "type": "BLUE_SQUARE",
+              "count": 0
+            },
+            {
+              "type": "DOUBLE_BLUE_SQUARE",
+              "count": 0
+            },
+            {
+              "type": "BLACK_DIAMOND_IN_BLUE_SQUARE",
+              "count": 0
+            },
+            {
+              "type": "GREEN_CIRCLE_IN_BLACK_SQUARE",
+              "count": 0
+            },
+            {
+              "type": "GREEN_CIRCLE_IN_BLACK_DIAMOND",
+              "count": 0
+            },
+            {
+              "type": "BLUE_SQUARE_IN_BLACK_DIAMOND",
+              "count": 0
+            },
+            {
+              "type": "BLACK_DIAMOND",
+              "count": 0
+            },
+            {
+              "type": "DOUBLE_BLACK_DIAMOND",
+              "count": 0
+            },
+            {
+              "type": "DOUBLE_BLACK_DIAMOND_EXTREM",
+              "count": 0
+            },
+            {
+              "type": "TERRAIN_PARKS",
+              "count": 0
+            },
+            {
+              "type": "RED_SQUARE",
+              "count": 0
+            },
+            {
+              "type": "ADVENTURE_ZONE",
+              "count": 0
+            },
+            {
+              "type": "UNDEF",
+              "count": 0
+            }
+          ],
+          "openSkiTouringTrailsByLevel": [
+            {
+              "type": "GREEN",
+              "count": 0
+            },
+            {
+              "type": "BLUE",
+              "count": 0
+            },
+            {
+              "type": "RED",
+              "count": 0
+            },
+            {
+              "type": "BLACK",
+              "count": 0
+            },
+            {
+              "type": "YELLOW",
+              "count": 0
+            },
+            {
+              "type": "GREEN_CIRCLE",
+              "count": 0
+            },
+            {
+              "type": "DOUBLE_GREEN_CIRCLE",
+              "count": 0
+            },
+            {
+              "type": "BLACK_DIAMOND_IN_GREEN_CIRCLE",
+              "count": 0
+            },
+            {
+              "type": "BLUE_SQUARE",
+              "count": 0
+            },
+            {
+              "type": "DOUBLE_BLUE_SQUARE",
+              "count": 0
+            },
+            {
+              "type": "BLACK_DIAMOND_IN_BLUE_SQUARE",
+              "count": 0
+            },
+            {
+              "type": "GREEN_CIRCLE_IN_BLACK_SQUARE",
+              "count": 0
+            },
+            {
+              "type": "GREEN_CIRCLE_IN_BLACK_DIAMOND",
+              "count": 0
+            },
+            {
+              "type": "BLUE_SQUARE_IN_BLACK_DIAMOND",
+              "count": 0
+            },
+            {
+              "type": "BLACK_DIAMOND",
+              "count": 0
+            },
+            {
+              "type": "DOUBLE_BLACK_DIAMOND",
+              "count": 0
+            },
+            {
+              "type": "DOUBLE_BLACK_DIAMOND_EXTREM",
+              "count": 0
+            },
+            {
+              "type": "TERRAIN_PARKS",
+              "count": 0
+            },
+            {
+              "type": "RED_SQUARE",
+              "count": 0
+            },
+            {
+              "type": "ADVENTURE_ZONE",
+              "count": 0
+            },
+            {
+              "type": "UNDEF",
+              "count": 0
+            }
+          ],
+          "openSnowshoeTrailsByLevel": [
+            {
+              "type": "GREEN",
+              "count": 0
+            },
+            {
+              "type": "BLUE",
+              "count": 0
+            },
+            {
+              "type": "RED",
+              "count": 0
+            },
+            {
+              "type": "BLACK",
+              "count": 0
+            },
+            {
+              "type": "YELLOW",
+              "count": 0
+            },
+            {
+              "type": "GREEN_CIRCLE",
+              "count": 0
+            },
+            {
+              "type": "DOUBLE_GREEN_CIRCLE",
+              "count": 0
+            },
+            {
+              "type": "BLACK_DIAMOND_IN_GREEN_CIRCLE",
+              "count": 0
+            },
+            {
+              "type": "BLUE_SQUARE",
+              "count": 0
+            },
+            {
+              "type": "DOUBLE_BLUE_SQUARE",
+              "count": 0
+            },
+            {
+              "type": "BLACK_DIAMOND_IN_BLUE_SQUARE",
+              "count": 0
+            },
+            {
+              "type": "GREEN_CIRCLE_IN_BLACK_SQUARE",
+              "count": 0
+            },
+            {
+              "type": "GREEN_CIRCLE_IN_BLACK_DIAMOND",
+              "count": 0
+            },
+            {
+              "type": "BLUE_SQUARE_IN_BLACK_DIAMOND",
+              "count": 0
+            },
+            {
+              "type": "BLACK_DIAMOND",
+              "count": 0
+            },
+            {
+              "type": "DOUBLE_BLACK_DIAMOND",
+              "count": 0
+            },
+            {
+              "type": "DOUBLE_BLACK_DIAMOND_EXTREM",
+              "count": 0
+            },
+            {
+              "type": "TERRAIN_PARKS",
+              "count": 0
+            },
+            {
+              "type": "RED_SQUARE",
+              "count": 0
+            },
+            {
+              "type": "ADVENTURE_ZONE",
+              "count": 0
+            },
+            {
+              "type": "UNDEF",
+              "count": 0
+            }
+          ],
+          "openHikingTrailsByLevel": [
+            {
+              "type": "GREEN",
+              "count": 0
+            },
+            {
+              "type": "BLUE",
+              "count": 0
+            },
+            {
+              "type": "RED",
+              "count": 0
+            },
+            {
+              "type": "BLACK",
+              "count": 0
+            },
+            {
+              "type": "YELLOW",
+              "count": 0
+            },
+            {
+              "type": "GREEN_CIRCLE",
+              "count": 0
+            },
+            {
+              "type": "DOUBLE_GREEN_CIRCLE",
+              "count": 0
+            },
+            {
+              "type": "BLACK_DIAMOND_IN_GREEN_CIRCLE",
+              "count": 0
+            },
+            {
+              "type": "BLUE_SQUARE",
+              "count": 0
+            },
+            {
+              "type": "DOUBLE_BLUE_SQUARE",
+              "count": 0
+            },
+            {
+              "type": "BLACK_DIAMOND_IN_BLUE_SQUARE",
+              "count": 0
+            },
+            {
+              "type": "GREEN_CIRCLE_IN_BLACK_SQUARE",
+              "count": 0
+            },
+            {
+              "type": "GREEN_CIRCLE_IN_BLACK_DIAMOND",
+              "count": 0
+            },
+            {
+              "type": "BLUE_SQUARE_IN_BLACK_DIAMOND",
+              "count": 0
+            },
+            {
+              "type": "BLACK_DIAMOND",
+              "count": 0
+            },
+            {
+              "type": "DOUBLE_BLACK_DIAMOND",
+              "count": 0
+            },
+            {
+              "type": "DOUBLE_BLACK_DIAMOND_EXTREM",
+              "count": 0
+            },
+            {
+              "type": "TERRAIN_PARKS",
+              "count": 0
+            },
+            {
+              "type": "RED_SQUARE",
+              "count": 0
+            },
+            {
+              "type": "ADVENTURE_ZONE",
+              "count": 0
+            },
+            {
+              "type": "UNDEF",
+              "count": 0
+            }
+          ],
+          "openFunZoneTrailsByLevel": [
+            {
+              "type": "GREEN",
+              "count": 0
+            },
+            {
+              "type": "BLUE",
+              "count": 0
+            },
+            {
+              "type": "RED",
+              "count": 0
+            },
+            {
+              "type": "BLACK",
+              "count": 0
+            },
+            {
+              "type": "YELLOW",
+              "count": 0
+            },
+            {
+              "type": "GREEN_CIRCLE",
+              "count": 0
+            },
+            {
+              "type": "DOUBLE_GREEN_CIRCLE",
+              "count": 0
+            },
+            {
+              "type": "BLACK_DIAMOND_IN_GREEN_CIRCLE",
+              "count": 0
+            },
+            {
+              "type": "BLUE_SQUARE",
+              "count": 0
+            },
+            {
+              "type": "DOUBLE_BLUE_SQUARE",
+              "count": 0
+            },
+            {
+              "type": "BLACK_DIAMOND_IN_BLUE_SQUARE",
+              "count": 0
+            },
+            {
+              "type": "GREEN_CIRCLE_IN_BLACK_SQUARE",
+              "count": 0
+            },
+            {
+              "type": "GREEN_CIRCLE_IN_BLACK_DIAMOND",
+              "count": 0
+            },
+            {
+              "type": "BLUE_SQUARE_IN_BLACK_DIAMOND",
+              "count": 0
+            },
+            {
+              "type": "BLACK_DIAMOND",
+              "count": 0
+            },
+            {
+              "type": "DOUBLE_BLACK_DIAMOND",
+              "count": 0
+            },
+            {
+              "type": "DOUBLE_BLACK_DIAMOND_EXTREM",
+              "count": 0
+            },
+            {
+              "type": "TERRAIN_PARKS",
+              "count": 0
+            },
+            {
+              "type": "RED_SQUARE",
+              "count": 0
+            },
+            {
+              "type": "ADVENTURE_ZONE",
+              "count": 0
+            },
+            {
+              "type": "UNDEF",
+              "count": 0
+            }
+          ],
+          "openDownhillMTBTrailsByLevel": [
+            {
+              "type": "GREEN",
+              "count": 0
+            },
+            {
+              "type": "BLUE",
+              "count": 0
+            },
+            {
+              "type": "RED",
+              "count": 0
+            },
+            {
+              "type": "BLACK",
+              "count": 0
+            },
+            {
+              "type": "YELLOW",
+              "count": 0
+            },
+            {
+              "type": "GREEN_CIRCLE",
+              "count": 0
+            },
+            {
+              "type": "DOUBLE_GREEN_CIRCLE",
+              "count": 0
+            },
+            {
+              "type": "BLACK_DIAMOND_IN_GREEN_CIRCLE",
+              "count": 0
+            },
+            {
+              "type": "BLUE_SQUARE",
+              "count": 0
+            },
+            {
+              "type": "DOUBLE_BLUE_SQUARE",
+              "count": 0
+            },
+            {
+              "type": "BLACK_DIAMOND_IN_BLUE_SQUARE",
+              "count": 0
+            },
+            {
+              "type": "GREEN_CIRCLE_IN_BLACK_SQUARE",
+              "count": 0
+            },
+            {
+              "type": "GREEN_CIRCLE_IN_BLACK_DIAMOND",
+              "count": 0
+            },
+            {
+              "type": "BLUE_SQUARE_IN_BLACK_DIAMOND",
+              "count": 0
+            },
+            {
+              "type": "BLACK_DIAMOND",
+              "count": 0
+            },
+            {
+              "type": "DOUBLE_BLACK_DIAMOND",
+              "count": 0
+            },
+            {
+              "type": "DOUBLE_BLACK_DIAMOND_EXTREM",
+              "count": 0
+            },
+            {
+              "type": "TERRAIN_PARKS",
+              "count": 0
+            },
+            {
+              "type": "RED_SQUARE",
+              "count": 0
+            },
+            {
+              "type": "ADVENTURE_ZONE",
+              "count": 0
+            },
+            {
+              "type": "UNDEF",
+              "count": 0
+            }
+          ],
+          "openMTBEnduroTrailsByLevel": [
+            {
+              "type": "GREEN",
+              "count": 0
+            },
+            {
+              "type": "BLUE",
+              "count": 0
+            },
+            {
+              "type": "RED",
+              "count": 0
+            },
+            {
+              "type": "BLACK",
+              "count": 0
+            },
+            {
+              "type": "YELLOW",
+              "count": 0
+            },
+            {
+              "type": "GREEN_CIRCLE",
+              "count": 0
+            },
+            {
+              "type": "DOUBLE_GREEN_CIRCLE",
+              "count": 0
+            },
+            {
+              "type": "BLACK_DIAMOND_IN_GREEN_CIRCLE",
+              "count": 0
+            },
+            {
+              "type": "BLUE_SQUARE",
+              "count": 0
+            },
+            {
+              "type": "DOUBLE_BLUE_SQUARE",
+              "count": 0
+            },
+            {
+              "type": "BLACK_DIAMOND_IN_BLUE_SQUARE",
+              "count": 0
+            },
+            {
+              "type": "GREEN_CIRCLE_IN_BLACK_SQUARE",
+              "count": 0
+            },
+            {
+              "type": "GREEN_CIRCLE_IN_BLACK_DIAMOND",
+              "count": 0
+            },
+            {
+              "type": "BLUE_SQUARE_IN_BLACK_DIAMOND",
+              "count": 0
+            },
+            {
+              "type": "BLACK_DIAMOND",
+              "count": 0
+            },
+            {
+              "type": "DOUBLE_BLACK_DIAMOND",
+              "count": 0
+            },
+            {
+              "type": "DOUBLE_BLACK_DIAMOND_EXTREM",
+              "count": 0
+            },
+            {
+              "type": "TERRAIN_PARKS",
+              "count": 0
+            },
+            {
+              "type": "RED_SQUARE",
+              "count": 0
+            },
+            {
+              "type": "ADVENTURE_ZONE",
+              "count": 0
+            },
+            {
+              "type": "UNDEF",
+              "count": 0
+            }
+          ],
+          "trailsByLevelInPeriode": [
+            {
+              "type": "GREEN",
+              "count": 0
+            },
+            {
+              "type": "BLUE",
+              "count": 0
+            },
+            {
+              "type": "RED",
+              "count": 0
+            },
+            {
+              "type": "BLACK",
+              "count": 9
+            },
+            {
+              "type": "YELLOW",
+              "count": 0
+            },
+            {
+              "type": "GREEN_CIRCLE",
+              "count": 25
+            },
+            {
+              "type": "DOUBLE_GREEN_CIRCLE",
+              "count": 0
+            },
+            {
+              "type": "BLACK_DIAMOND_IN_GREEN_CIRCLE",
+              "count": 0
+            },
+            {
+              "type": "BLUE_SQUARE",
+              "count": 50
+            },
+            {
+              "type": "DOUBLE_BLUE_SQUARE",
+              "count": 0
+            },
+            {
+              "type": "BLACK_DIAMOND_IN_BLUE_SQUARE",
+              "count": 0
+            },
+            {
+              "type": "GREEN_CIRCLE_IN_BLACK_SQUARE",
+              "count": 0
+            },
+            {
+              "type": "GREEN_CIRCLE_IN_BLACK_DIAMOND",
+              "count": 0
+            },
+            {
+              "type": "BLUE_SQUARE_IN_BLACK_DIAMOND",
+              "count": 0
+            },
+            {
+              "type": "BLACK_DIAMOND",
+              "count": 77
+            },
+            {
+              "type": "DOUBLE_BLACK_DIAMOND",
+              "count": 4
+            },
+            {
+              "type": "DOUBLE_BLACK_DIAMOND_EXTREM",
+              "count": 0
+            },
+            {
+              "type": "TERRAIN_PARKS",
+              "count": 0
+            },
+            {
+              "type": "RED_SQUARE",
+              "count": 0
+            },
+            {
+              "type": "ADVENTURE_ZONE",
+              "count": 0
+            },
+            {
+              "type": "UNDEF",
+              "count": 0
+            }
+          ],
+          "trailsByLevel": [
+            {
+              "type": "GREEN",
+              "count": 0
+            },
+            {
+              "type": "BLUE",
+              "count": 0
+            },
+            {
+              "type": "RED",
+              "count": 0
+            },
+            {
+              "type": "BLACK",
+              "count": 9
+            },
+            {
+              "type": "YELLOW",
+              "count": 0
+            },
+            {
+              "type": "GREEN_CIRCLE",
+              "count": 25
+            },
+            {
+              "type": "DOUBLE_GREEN_CIRCLE",
+              "count": 0
+            },
+            {
+              "type": "BLACK_DIAMOND_IN_GREEN_CIRCLE",
+              "count": 0
+            },
+            {
+              "type": "BLUE_SQUARE",
+              "count": 50
+            },
+            {
+              "type": "DOUBLE_BLUE_SQUARE",
+              "count": 0
+            },
+            {
+              "type": "BLACK_DIAMOND_IN_BLUE_SQUARE",
+              "count": 0
+            },
+            {
+              "type": "GREEN_CIRCLE_IN_BLACK_SQUARE",
+              "count": 0
+            },
+            {
+              "type": "GREEN_CIRCLE_IN_BLACK_DIAMOND",
+              "count": 0
+            },
+            {
+              "type": "BLUE_SQUARE_IN_BLACK_DIAMOND",
+              "count": 0
+            },
+            {
+              "type": "BLACK_DIAMOND",
+              "count": 77
+            },
+            {
+              "type": "DOUBLE_BLACK_DIAMOND",
+              "count": 4
+            },
+            {
+              "type": "DOUBLE_BLACK_DIAMOND_EXTREM",
+              "count": 0
+            },
+            {
+              "type": "TERRAIN_PARKS",
+              "count": 0
+            },
+            {
+              "type": "RED_SQUARE",
+              "count": 0
+            },
+            {
+              "type": "ADVENTURE_ZONE",
+              "count": 0
+            },
+            {
+              "type": "UNDEF",
+              "count": 0
+            }
+          ],
+          "expectedTrailsByLevel": [
+            {
+              "type": "GREEN",
+              "count": 0
+            },
+            {
+              "type": "BLUE",
+              "count": 0
+            },
+            {
+              "type": "RED",
+              "count": 0
+            },
+            {
+              "type": "BLACK",
+              "count": 0
+            },
+            {
+              "type": "YELLOW",
+              "count": 0
+            },
+            {
+              "type": "GREEN_CIRCLE",
+              "count": 0
+            },
+            {
+              "type": "DOUBLE_GREEN_CIRCLE",
+              "count": 0
+            },
+            {
+              "type": "BLACK_DIAMOND_IN_GREEN_CIRCLE",
+              "count": 0
+            },
+            {
+              "type": "BLUE_SQUARE",
+              "count": 0
+            },
+            {
+              "type": "DOUBLE_BLUE_SQUARE",
+              "count": 0
+            },
+            {
+              "type": "BLACK_DIAMOND_IN_BLUE_SQUARE",
+              "count": 0
+            },
+            {
+              "type": "GREEN_CIRCLE_IN_BLACK_SQUARE",
+              "count": 0
+            },
+            {
+              "type": "GREEN_CIRCLE_IN_BLACK_DIAMOND",
+              "count": 0
+            },
+            {
+              "type": "BLUE_SQUARE_IN_BLACK_DIAMOND",
+              "count": 0
+            },
+            {
+              "type": "BLACK_DIAMOND",
+              "count": 0
+            },
+            {
+              "type": "DOUBLE_BLACK_DIAMOND",
+              "count": 0
+            },
+            {
+              "type": "DOUBLE_BLACK_DIAMOND_EXTREM",
+              "count": 0
+            },
+            {
+              "type": "TERRAIN_PARKS",
+              "count": 0
+            },
+            {
+              "type": "RED_SQUARE",
+              "count": 0
+            },
+            {
+              "type": "ADVENTURE_ZONE",
+              "count": 0
+            },
+            {
+              "type": "UNDEF",
+              "count": 0
+            }
+          ],
+          "expectedTrailsAlpineByLevel": [
+            {
+              "type": "GREEN",
+              "count": 0
+            },
+            {
+              "type": "BLUE",
+              "count": 0
+            },
+            {
+              "type": "RED",
+              "count": 0
+            },
+            {
+              "type": "BLACK",
+              "count": 0
+            },
+            {
+              "type": "YELLOW",
+              "count": 0
+            },
+            {
+              "type": "GREEN_CIRCLE",
+              "count": 0
+            },
+            {
+              "type": "DOUBLE_GREEN_CIRCLE",
+              "count": 0
+            },
+            {
+              "type": "BLACK_DIAMOND_IN_GREEN_CIRCLE",
+              "count": 0
+            },
+            {
+              "type": "BLUE_SQUARE",
+              "count": 0
+            },
+            {
+              "type": "DOUBLE_BLUE_SQUARE",
+              "count": 0
+            },
+            {
+              "type": "BLACK_DIAMOND_IN_BLUE_SQUARE",
+              "count": 0
+            },
+            {
+              "type": "GREEN_CIRCLE_IN_BLACK_SQUARE",
+              "count": 0
+            },
+            {
+              "type": "GREEN_CIRCLE_IN_BLACK_DIAMOND",
+              "count": 0
+            },
+            {
+              "type": "BLUE_SQUARE_IN_BLACK_DIAMOND",
+              "count": 0
+            },
+            {
+              "type": "BLACK_DIAMOND",
+              "count": 0
+            },
+            {
+              "type": "DOUBLE_BLACK_DIAMOND",
+              "count": 0
+            },
+            {
+              "type": "DOUBLE_BLACK_DIAMOND_EXTREM",
+              "count": 0
+            },
+            {
+              "type": "TERRAIN_PARKS",
+              "count": 0
+            },
+            {
+              "type": "RED_SQUARE",
+              "count": 0
+            },
+            {
+              "type": "ADVENTURE_ZONE",
+              "count": 0
+            },
+            {
+              "type": "UNDEF",
+              "count": 0
+            }
+          ],
+          "expectedTrailsSleddingByLevel": [
+            {
+              "type": "GREEN",
+              "count": 0
+            },
+            {
+              "type": "BLUE",
+              "count": 0
+            },
+            {
+              "type": "RED",
+              "count": 0
+            },
+            {
+              "type": "BLACK",
+              "count": 0
+            },
+            {
+              "type": "YELLOW",
+              "count": 0
+            },
+            {
+              "type": "GREEN_CIRCLE",
+              "count": 0
+            },
+            {
+              "type": "DOUBLE_GREEN_CIRCLE",
+              "count": 0
+            },
+            {
+              "type": "BLACK_DIAMOND_IN_GREEN_CIRCLE",
+              "count": 0
+            },
+            {
+              "type": "BLUE_SQUARE",
+              "count": 0
+            },
+            {
+              "type": "DOUBLE_BLUE_SQUARE",
+              "count": 0
+            },
+            {
+              "type": "BLACK_DIAMOND_IN_BLUE_SQUARE",
+              "count": 0
+            },
+            {
+              "type": "GREEN_CIRCLE_IN_BLACK_SQUARE",
+              "count": 0
+            },
+            {
+              "type": "GREEN_CIRCLE_IN_BLACK_DIAMOND",
+              "count": 0
+            },
+            {
+              "type": "BLUE_SQUARE_IN_BLACK_DIAMOND",
+              "count": 0
+            },
+            {
+              "type": "BLACK_DIAMOND",
+              "count": 0
+            },
+            {
+              "type": "DOUBLE_BLACK_DIAMOND",
+              "count": 0
+            },
+            {
+              "type": "DOUBLE_BLACK_DIAMOND_EXTREM",
+              "count": 0
+            },
+            {
+              "type": "TERRAIN_PARKS",
+              "count": 0
+            },
+            {
+              "type": "RED_SQUARE",
+              "count": 0
+            },
+            {
+              "type": "ADVENTURE_ZONE",
+              "count": 0
+            },
+            {
+              "type": "UNDEF",
+              "count": 0
+            }
+          ],
+          "expectedTrailsCrossCountryByLevel": [
+            {
+              "type": "GREEN",
+              "count": 0
+            },
+            {
+              "type": "BLUE",
+              "count": 0
+            },
+            {
+              "type": "RED",
+              "count": 0
+            },
+            {
+              "type": "BLACK",
+              "count": 0
+            },
+            {
+              "type": "YELLOW",
+              "count": 0
+            },
+            {
+              "type": "GREEN_CIRCLE",
+              "count": 0
+            },
+            {
+              "type": "DOUBLE_GREEN_CIRCLE",
+              "count": 0
+            },
+            {
+              "type": "BLACK_DIAMOND_IN_GREEN_CIRCLE",
+              "count": 0
+            },
+            {
+              "type": "BLUE_SQUARE",
+              "count": 0
+            },
+            {
+              "type": "DOUBLE_BLUE_SQUARE",
+              "count": 0
+            },
+            {
+              "type": "BLACK_DIAMOND_IN_BLUE_SQUARE",
+              "count": 0
+            },
+            {
+              "type": "GREEN_CIRCLE_IN_BLACK_SQUARE",
+              "count": 0
+            },
+            {
+              "type": "GREEN_CIRCLE_IN_BLACK_DIAMOND",
+              "count": 0
+            },
+            {
+              "type": "BLUE_SQUARE_IN_BLACK_DIAMOND",
+              "count": 0
+            },
+            {
+              "type": "BLACK_DIAMOND",
+              "count": 0
+            },
+            {
+              "type": "DOUBLE_BLACK_DIAMOND",
+              "count": 0
+            },
+            {
+              "type": "DOUBLE_BLACK_DIAMOND_EXTREM",
+              "count": 0
+            },
+            {
+              "type": "TERRAIN_PARKS",
+              "count": 0
+            },
+            {
+              "type": "RED_SQUARE",
+              "count": 0
+            },
+            {
+              "type": "ADVENTURE_ZONE",
+              "count": 0
+            },
+            {
+              "type": "UNDEF",
+              "count": 0
+            }
+          ],
+          "expectedTrailsSkiTouringByLevel": [
+            {
+              "type": "GREEN",
+              "count": 0
+            },
+            {
+              "type": "BLUE",
+              "count": 0
+            },
+            {
+              "type": "RED",
+              "count": 0
+            },
+            {
+              "type": "BLACK",
+              "count": 0
+            },
+            {
+              "type": "YELLOW",
+              "count": 0
+            },
+            {
+              "type": "GREEN_CIRCLE",
+              "count": 0
+            },
+            {
+              "type": "DOUBLE_GREEN_CIRCLE",
+              "count": 0
+            },
+            {
+              "type": "BLACK_DIAMOND_IN_GREEN_CIRCLE",
+              "count": 0
+            },
+            {
+              "type": "BLUE_SQUARE",
+              "count": 0
+            },
+            {
+              "type": "DOUBLE_BLUE_SQUARE",
+              "count": 0
+            },
+            {
+              "type": "BLACK_DIAMOND_IN_BLUE_SQUARE",
+              "count": 0
+            },
+            {
+              "type": "GREEN_CIRCLE_IN_BLACK_SQUARE",
+              "count": 0
+            },
+            {
+              "type": "GREEN_CIRCLE_IN_BLACK_DIAMOND",
+              "count": 0
+            },
+            {
+              "type": "BLUE_SQUARE_IN_BLACK_DIAMOND",
+              "count": 0
+            },
+            {
+              "type": "BLACK_DIAMOND",
+              "count": 0
+            },
+            {
+              "type": "DOUBLE_BLACK_DIAMOND",
+              "count": 0
+            },
+            {
+              "type": "DOUBLE_BLACK_DIAMOND_EXTREM",
+              "count": 0
+            },
+            {
+              "type": "TERRAIN_PARKS",
+              "count": 0
+            },
+            {
+              "type": "RED_SQUARE",
+              "count": 0
+            },
+            {
+              "type": "ADVENTURE_ZONE",
+              "count": 0
+            },
+            {
+              "type": "UNDEF",
+              "count": 0
+            }
+          ],
+          "expectedTrailsSnowshoeByLevel": [
+            {
+              "type": "GREEN",
+              "count": 0
+            },
+            {
+              "type": "BLUE",
+              "count": 0
+            },
+            {
+              "type": "RED",
+              "count": 0
+            },
+            {
+              "type": "BLACK",
+              "count": 0
+            },
+            {
+              "type": "YELLOW",
+              "count": 0
+            },
+            {
+              "type": "GREEN_CIRCLE",
+              "count": 0
+            },
+            {
+              "type": "DOUBLE_GREEN_CIRCLE",
+              "count": 0
+            },
+            {
+              "type": "BLACK_DIAMOND_IN_GREEN_CIRCLE",
+              "count": 0
+            },
+            {
+              "type": "BLUE_SQUARE",
+              "count": 0
+            },
+            {
+              "type": "DOUBLE_BLUE_SQUARE",
+              "count": 0
+            },
+            {
+              "type": "BLACK_DIAMOND_IN_BLUE_SQUARE",
+              "count": 0
+            },
+            {
+              "type": "GREEN_CIRCLE_IN_BLACK_SQUARE",
+              "count": 0
+            },
+            {
+              "type": "GREEN_CIRCLE_IN_BLACK_DIAMOND",
+              "count": 0
+            },
+            {
+              "type": "BLUE_SQUARE_IN_BLACK_DIAMOND",
+              "count": 0
+            },
+            {
+              "type": "BLACK_DIAMOND",
+              "count": 0
+            },
+            {
+              "type": "DOUBLE_BLACK_DIAMOND",
+              "count": 0
+            },
+            {
+              "type": "DOUBLE_BLACK_DIAMOND_EXTREM",
+              "count": 0
+            },
+            {
+              "type": "TERRAIN_PARKS",
+              "count": 0
+            },
+            {
+              "type": "RED_SQUARE",
+              "count": 0
+            },
+            {
+              "type": "ADVENTURE_ZONE",
+              "count": 0
+            },
+            {
+              "type": "UNDEF",
+              "count": 0
+            }
+          ],
+          "expectedTrailsHikingByLevel": [
+            {
+              "type": "GREEN",
+              "count": 0
+            },
+            {
+              "type": "BLUE",
+              "count": 0
+            },
+            {
+              "type": "RED",
+              "count": 0
+            },
+            {
+              "type": "BLACK",
+              "count": 0
+            },
+            {
+              "type": "YELLOW",
+              "count": 0
+            },
+            {
+              "type": "GREEN_CIRCLE",
+              "count": 0
+            },
+            {
+              "type": "DOUBLE_GREEN_CIRCLE",
+              "count": 0
+            },
+            {
+              "type": "BLACK_DIAMOND_IN_GREEN_CIRCLE",
+              "count": 0
+            },
+            {
+              "type": "BLUE_SQUARE",
+              "count": 0
+            },
+            {
+              "type": "DOUBLE_BLUE_SQUARE",
+              "count": 0
+            },
+            {
+              "type": "BLACK_DIAMOND_IN_BLUE_SQUARE",
+              "count": 0
+            },
+            {
+              "type": "GREEN_CIRCLE_IN_BLACK_SQUARE",
+              "count": 0
+            },
+            {
+              "type": "GREEN_CIRCLE_IN_BLACK_DIAMOND",
+              "count": 0
+            },
+            {
+              "type": "BLUE_SQUARE_IN_BLACK_DIAMOND",
+              "count": 0
+            },
+            {
+              "type": "BLACK_DIAMOND",
+              "count": 0
+            },
+            {
+              "type": "DOUBLE_BLACK_DIAMOND",
+              "count": 0
+            },
+            {
+              "type": "DOUBLE_BLACK_DIAMOND_EXTREM",
+              "count": 0
+            },
+            {
+              "type": "TERRAIN_PARKS",
+              "count": 0
+            },
+            {
+              "type": "RED_SQUARE",
+              "count": 0
+            },
+            {
+              "type": "ADVENTURE_ZONE",
+              "count": 0
+            },
+            {
+              "type": "UNDEF",
+              "count": 0
+            }
+          ],
+          "expectedTrailsFunZoneByLevel": [
+            {
+              "type": "GREEN",
+              "count": 0
+            },
+            {
+              "type": "BLUE",
+              "count": 0
+            },
+            {
+              "type": "RED",
+              "count": 0
+            },
+            {
+              "type": "BLACK",
+              "count": 0
+            },
+            {
+              "type": "YELLOW",
+              "count": 0
+            },
+            {
+              "type": "GREEN_CIRCLE",
+              "count": 0
+            },
+            {
+              "type": "DOUBLE_GREEN_CIRCLE",
+              "count": 0
+            },
+            {
+              "type": "BLACK_DIAMOND_IN_GREEN_CIRCLE",
+              "count": 0
+            },
+            {
+              "type": "BLUE_SQUARE",
+              "count": 0
+            },
+            {
+              "type": "DOUBLE_BLUE_SQUARE",
+              "count": 0
+            },
+            {
+              "type": "BLACK_DIAMOND_IN_BLUE_SQUARE",
+              "count": 0
+            },
+            {
+              "type": "GREEN_CIRCLE_IN_BLACK_SQUARE",
+              "count": 0
+            },
+            {
+              "type": "GREEN_CIRCLE_IN_BLACK_DIAMOND",
+              "count": 0
+            },
+            {
+              "type": "BLUE_SQUARE_IN_BLACK_DIAMOND",
+              "count": 0
+            },
+            {
+              "type": "BLACK_DIAMOND",
+              "count": 0
+            },
+            {
+              "type": "DOUBLE_BLACK_DIAMOND",
+              "count": 0
+            },
+            {
+              "type": "DOUBLE_BLACK_DIAMOND_EXTREM",
+              "count": 0
+            },
+            {
+              "type": "TERRAIN_PARKS",
+              "count": 0
+            },
+            {
+              "type": "RED_SQUARE",
+              "count": 0
+            },
+            {
+              "type": "ADVENTURE_ZONE",
+              "count": 0
+            },
+            {
+              "type": "UNDEF",
+              "count": 0
+            }
+          ],
+          "expectedTrailsDownhillMTBByLevel": [
+            {
+              "type": "GREEN",
+              "count": 0
+            },
+            {
+              "type": "BLUE",
+              "count": 0
+            },
+            {
+              "type": "RED",
+              "count": 0
+            },
+            {
+              "type": "BLACK",
+              "count": 0
+            },
+            {
+              "type": "YELLOW",
+              "count": 0
+            },
+            {
+              "type": "GREEN_CIRCLE",
+              "count": 0
+            },
+            {
+              "type": "DOUBLE_GREEN_CIRCLE",
+              "count": 0
+            },
+            {
+              "type": "BLACK_DIAMOND_IN_GREEN_CIRCLE",
+              "count": 0
+            },
+            {
+              "type": "BLUE_SQUARE",
+              "count": 0
+            },
+            {
+              "type": "DOUBLE_BLUE_SQUARE",
+              "count": 0
+            },
+            {
+              "type": "BLACK_DIAMOND_IN_BLUE_SQUARE",
+              "count": 0
+            },
+            {
+              "type": "GREEN_CIRCLE_IN_BLACK_SQUARE",
+              "count": 0
+            },
+            {
+              "type": "GREEN_CIRCLE_IN_BLACK_DIAMOND",
+              "count": 0
+            },
+            {
+              "type": "BLUE_SQUARE_IN_BLACK_DIAMOND",
+              "count": 0
+            },
+            {
+              "type": "BLACK_DIAMOND",
+              "count": 0
+            },
+            {
+              "type": "DOUBLE_BLACK_DIAMOND",
+              "count": 0
+            },
+            {
+              "type": "DOUBLE_BLACK_DIAMOND_EXTREM",
+              "count": 0
+            },
+            {
+              "type": "TERRAIN_PARKS",
+              "count": 0
+            },
+            {
+              "type": "RED_SQUARE",
+              "count": 0
+            },
+            {
+              "type": "ADVENTURE_ZONE",
+              "count": 0
+            },
+            {
+              "type": "UNDEF",
+              "count": 0
+            }
+          ],
+          "expectedTrailsMTBEnduroByLevel": [
+            {
+              "type": "GREEN",
+              "count": 0
+            },
+            {
+              "type": "BLUE",
+              "count": 0
+            },
+            {
+              "type": "RED",
+              "count": 0
+            },
+            {
+              "type": "BLACK",
+              "count": 0
+            },
+            {
+              "type": "YELLOW",
+              "count": 0
+            },
+            {
+              "type": "GREEN_CIRCLE",
+              "count": 0
+            },
+            {
+              "type": "DOUBLE_GREEN_CIRCLE",
+              "count": 0
+            },
+            {
+              "type": "BLACK_DIAMOND_IN_GREEN_CIRCLE",
+              "count": 0
+            },
+            {
+              "type": "BLUE_SQUARE",
+              "count": 0
+            },
+            {
+              "type": "DOUBLE_BLUE_SQUARE",
+              "count": 0
+            },
+            {
+              "type": "BLACK_DIAMOND_IN_BLUE_SQUARE",
+              "count": 0
+            },
+            {
+              "type": "GREEN_CIRCLE_IN_BLACK_SQUARE",
+              "count": 0
+            },
+            {
+              "type": "GREEN_CIRCLE_IN_BLACK_DIAMOND",
+              "count": 0
+            },
+            {
+              "type": "BLUE_SQUARE_IN_BLACK_DIAMOND",
+              "count": 0
+            },
+            {
+              "type": "BLACK_DIAMOND",
+              "count": 0
+            },
+            {
+              "type": "DOUBLE_BLACK_DIAMOND",
+              "count": 0
+            },
+            {
+              "type": "DOUBLE_BLACK_DIAMOND_EXTREM",
+              "count": 0
+            },
+            {
+              "type": "TERRAIN_PARKS",
+              "count": 0
+            },
+            {
+              "type": "RED_SQUARE",
+              "count": 0
+            },
+            {
+              "type": "ADVENTURE_ZONE",
+              "count": 0
+            },
+            {
+              "type": "UNDEF",
+              "count": 0
+            }
+          ],
+          "closedTrailsByLevel": [
+            {
+              "type": "GREEN",
+              "count": 0
+            },
+            {
+              "type": "BLUE",
+              "count": 0
+            },
+            {
+              "type": "RED",
+              "count": 0
+            },
+            {
+              "type": "BLACK",
+              "count": 0
+            },
+            {
+              "type": "YELLOW",
+              "count": 0
+            },
+            {
+              "type": "GREEN_CIRCLE",
+              "count": 0
+            },
+            {
+              "type": "DOUBLE_GREEN_CIRCLE",
+              "count": 0
+            },
+            {
+              "type": "BLACK_DIAMOND_IN_GREEN_CIRCLE",
+              "count": 0
+            },
+            {
+              "type": "BLUE_SQUARE",
+              "count": 0
+            },
+            {
+              "type": "DOUBLE_BLUE_SQUARE",
+              "count": 0
+            },
+            {
+              "type": "BLACK_DIAMOND_IN_BLUE_SQUARE",
+              "count": 0
+            },
+            {
+              "type": "GREEN_CIRCLE_IN_BLACK_SQUARE",
+              "count": 0
+            },
+            {
+              "type": "GREEN_CIRCLE_IN_BLACK_DIAMOND",
+              "count": 0
+            },
+            {
+              "type": "BLUE_SQUARE_IN_BLACK_DIAMOND",
+              "count": 0
+            },
+            {
+              "type": "BLACK_DIAMOND",
+              "count": 0
+            },
+            {
+              "type": "DOUBLE_BLACK_DIAMOND",
+              "count": 0
+            },
+            {
+              "type": "DOUBLE_BLACK_DIAMOND_EXTREM",
+              "count": 0
+            },
+            {
+              "type": "TERRAIN_PARKS",
+              "count": 0
+            },
+            {
+              "type": "RED_SQUARE",
+              "count": 0
+            },
+            {
+              "type": "ADVENTURE_ZONE",
+              "count": 0
+            },
+            {
+              "type": "UNDEF",
+              "count": 0
+            }
+          ],
+          "closedTrailsAlpineByLevel": [
+            {
+              "type": "GREEN",
+              "count": 0
+            },
+            {
+              "type": "BLUE",
+              "count": 0
+            },
+            {
+              "type": "RED",
+              "count": 0
+            },
+            {
+              "type": "BLACK",
+              "count": 0
+            },
+            {
+              "type": "YELLOW",
+              "count": 0
+            },
+            {
+              "type": "GREEN_CIRCLE",
+              "count": 0
+            },
+            {
+              "type": "DOUBLE_GREEN_CIRCLE",
+              "count": 0
+            },
+            {
+              "type": "BLACK_DIAMOND_IN_GREEN_CIRCLE",
+              "count": 0
+            },
+            {
+              "type": "BLUE_SQUARE",
+              "count": 0
+            },
+            {
+              "type": "DOUBLE_BLUE_SQUARE",
+              "count": 0
+            },
+            {
+              "type": "BLACK_DIAMOND_IN_BLUE_SQUARE",
+              "count": 0
+            },
+            {
+              "type": "GREEN_CIRCLE_IN_BLACK_SQUARE",
+              "count": 0
+            },
+            {
+              "type": "GREEN_CIRCLE_IN_BLACK_DIAMOND",
+              "count": 0
+            },
+            {
+              "type": "BLUE_SQUARE_IN_BLACK_DIAMOND",
+              "count": 0
+            },
+            {
+              "type": "BLACK_DIAMOND",
+              "count": 0
+            },
+            {
+              "type": "DOUBLE_BLACK_DIAMOND",
+              "count": 0
+            },
+            {
+              "type": "DOUBLE_BLACK_DIAMOND_EXTREM",
+              "count": 0
+            },
+            {
+              "type": "TERRAIN_PARKS",
+              "count": 0
+            },
+            {
+              "type": "RED_SQUARE",
+              "count": 0
+            },
+            {
+              "type": "ADVENTURE_ZONE",
+              "count": 0
+            },
+            {
+              "type": "UNDEF",
+              "count": 0
+            }
+          ],
+          "closedTrailsSleddingByLevel": [
+            {
+              "type": "GREEN",
+              "count": 0
+            },
+            {
+              "type": "BLUE",
+              "count": 0
+            },
+            {
+              "type": "RED",
+              "count": 0
+            },
+            {
+              "type": "BLACK",
+              "count": 0
+            },
+            {
+              "type": "YELLOW",
+              "count": 0
+            },
+            {
+              "type": "GREEN_CIRCLE",
+              "count": 0
+            },
+            {
+              "type": "DOUBLE_GREEN_CIRCLE",
+              "count": 0
+            },
+            {
+              "type": "BLACK_DIAMOND_IN_GREEN_CIRCLE",
+              "count": 0
+            },
+            {
+              "type": "BLUE_SQUARE",
+              "count": 0
+            },
+            {
+              "type": "DOUBLE_BLUE_SQUARE",
+              "count": 0
+            },
+            {
+              "type": "BLACK_DIAMOND_IN_BLUE_SQUARE",
+              "count": 0
+            },
+            {
+              "type": "GREEN_CIRCLE_IN_BLACK_SQUARE",
+              "count": 0
+            },
+            {
+              "type": "GREEN_CIRCLE_IN_BLACK_DIAMOND",
+              "count": 0
+            },
+            {
+              "type": "BLUE_SQUARE_IN_BLACK_DIAMOND",
+              "count": 0
+            },
+            {
+              "type": "BLACK_DIAMOND",
+              "count": 0
+            },
+            {
+              "type": "DOUBLE_BLACK_DIAMOND",
+              "count": 0
+            },
+            {
+              "type": "DOUBLE_BLACK_DIAMOND_EXTREM",
+              "count": 0
+            },
+            {
+              "type": "TERRAIN_PARKS",
+              "count": 0
+            },
+            {
+              "type": "RED_SQUARE",
+              "count": 0
+            },
+            {
+              "type": "ADVENTURE_ZONE",
+              "count": 0
+            },
+            {
+              "type": "UNDEF",
+              "count": 0
+            }
+          ],
+          "closedTrailsCrossCountryByLevel": [
+            {
+              "type": "GREEN",
+              "count": 0
+            },
+            {
+              "type": "BLUE",
+              "count": 0
+            },
+            {
+              "type": "RED",
+              "count": 0
+            },
+            {
+              "type": "BLACK",
+              "count": 0
+            },
+            {
+              "type": "YELLOW",
+              "count": 0
+            },
+            {
+              "type": "GREEN_CIRCLE",
+              "count": 0
+            },
+            {
+              "type": "DOUBLE_GREEN_CIRCLE",
+              "count": 0
+            },
+            {
+              "type": "BLACK_DIAMOND_IN_GREEN_CIRCLE",
+              "count": 0
+            },
+            {
+              "type": "BLUE_SQUARE",
+              "count": 0
+            },
+            {
+              "type": "DOUBLE_BLUE_SQUARE",
+              "count": 0
+            },
+            {
+              "type": "BLACK_DIAMOND_IN_BLUE_SQUARE",
+              "count": 0
+            },
+            {
+              "type": "GREEN_CIRCLE_IN_BLACK_SQUARE",
+              "count": 0
+            },
+            {
+              "type": "GREEN_CIRCLE_IN_BLACK_DIAMOND",
+              "count": 0
+            },
+            {
+              "type": "BLUE_SQUARE_IN_BLACK_DIAMOND",
+              "count": 0
+            },
+            {
+              "type": "BLACK_DIAMOND",
+              "count": 0
+            },
+            {
+              "type": "DOUBLE_BLACK_DIAMOND",
+              "count": 0
+            },
+            {
+              "type": "DOUBLE_BLACK_DIAMOND_EXTREM",
+              "count": 0
+            },
+            {
+              "type": "TERRAIN_PARKS",
+              "count": 0
+            },
+            {
+              "type": "RED_SQUARE",
+              "count": 0
+            },
+            {
+              "type": "ADVENTURE_ZONE",
+              "count": 0
+            },
+            {
+              "type": "UNDEF",
+              "count": 0
+            }
+          ],
+          "closedTrailsSkiTouringByLevel": [
+            {
+              "type": "GREEN",
+              "count": 0
+            },
+            {
+              "type": "BLUE",
+              "count": 0
+            },
+            {
+              "type": "RED",
+              "count": 0
+            },
+            {
+              "type": "BLACK",
+              "count": 0
+            },
+            {
+              "type": "YELLOW",
+              "count": 0
+            },
+            {
+              "type": "GREEN_CIRCLE",
+              "count": 0
+            },
+            {
+              "type": "DOUBLE_GREEN_CIRCLE",
+              "count": 0
+            },
+            {
+              "type": "BLACK_DIAMOND_IN_GREEN_CIRCLE",
+              "count": 0
+            },
+            {
+              "type": "BLUE_SQUARE",
+              "count": 0
+            },
+            {
+              "type": "DOUBLE_BLUE_SQUARE",
+              "count": 0
+            },
+            {
+              "type": "BLACK_DIAMOND_IN_BLUE_SQUARE",
+              "count": 0
+            },
+            {
+              "type": "GREEN_CIRCLE_IN_BLACK_SQUARE",
+              "count": 0
+            },
+            {
+              "type": "GREEN_CIRCLE_IN_BLACK_DIAMOND",
+              "count": 0
+            },
+            {
+              "type": "BLUE_SQUARE_IN_BLACK_DIAMOND",
+              "count": 0
+            },
+            {
+              "type": "BLACK_DIAMOND",
+              "count": 0
+            },
+            {
+              "type": "DOUBLE_BLACK_DIAMOND",
+              "count": 0
+            },
+            {
+              "type": "DOUBLE_BLACK_DIAMOND_EXTREM",
+              "count": 0
+            },
+            {
+              "type": "TERRAIN_PARKS",
+              "count": 0
+            },
+            {
+              "type": "RED_SQUARE",
+              "count": 0
+            },
+            {
+              "type": "ADVENTURE_ZONE",
+              "count": 0
+            },
+            {
+              "type": "UNDEF",
+              "count": 0
+            }
+          ],
+          "closedTrailsSnowshoeByLevel": [
+            {
+              "type": "GREEN",
+              "count": 0
+            },
+            {
+              "type": "BLUE",
+              "count": 0
+            },
+            {
+              "type": "RED",
+              "count": 0
+            },
+            {
+              "type": "BLACK",
+              "count": 0
+            },
+            {
+              "type": "YELLOW",
+              "count": 0
+            },
+            {
+              "type": "GREEN_CIRCLE",
+              "count": 0
+            },
+            {
+              "type": "DOUBLE_GREEN_CIRCLE",
+              "count": 0
+            },
+            {
+              "type": "BLACK_DIAMOND_IN_GREEN_CIRCLE",
+              "count": 0
+            },
+            {
+              "type": "BLUE_SQUARE",
+              "count": 0
+            },
+            {
+              "type": "DOUBLE_BLUE_SQUARE",
+              "count": 0
+            },
+            {
+              "type": "BLACK_DIAMOND_IN_BLUE_SQUARE",
+              "count": 0
+            },
+            {
+              "type": "GREEN_CIRCLE_IN_BLACK_SQUARE",
+              "count": 0
+            },
+            {
+              "type": "GREEN_CIRCLE_IN_BLACK_DIAMOND",
+              "count": 0
+            },
+            {
+              "type": "BLUE_SQUARE_IN_BLACK_DIAMOND",
+              "count": 0
+            },
+            {
+              "type": "BLACK_DIAMOND",
+              "count": 0
+            },
+            {
+              "type": "DOUBLE_BLACK_DIAMOND",
+              "count": 0
+            },
+            {
+              "type": "DOUBLE_BLACK_DIAMOND_EXTREM",
+              "count": 0
+            },
+            {
+              "type": "TERRAIN_PARKS",
+              "count": 0
+            },
+            {
+              "type": "RED_SQUARE",
+              "count": 0
+            },
+            {
+              "type": "ADVENTURE_ZONE",
+              "count": 0
+            },
+            {
+              "type": "UNDEF",
+              "count": 0
+            }
+          ],
+          "closedTrailsHikingByLevel": [
+            {
+              "type": "GREEN",
+              "count": 0
+            },
+            {
+              "type": "BLUE",
+              "count": 0
+            },
+            {
+              "type": "RED",
+              "count": 0
+            },
+            {
+              "type": "BLACK",
+              "count": 0
+            },
+            {
+              "type": "YELLOW",
+              "count": 0
+            },
+            {
+              "type": "GREEN_CIRCLE",
+              "count": 0
+            },
+            {
+              "type": "DOUBLE_GREEN_CIRCLE",
+              "count": 0
+            },
+            {
+              "type": "BLACK_DIAMOND_IN_GREEN_CIRCLE",
+              "count": 0
+            },
+            {
+              "type": "BLUE_SQUARE",
+              "count": 0
+            },
+            {
+              "type": "DOUBLE_BLUE_SQUARE",
+              "count": 0
+            },
+            {
+              "type": "BLACK_DIAMOND_IN_BLUE_SQUARE",
+              "count": 0
+            },
+            {
+              "type": "GREEN_CIRCLE_IN_BLACK_SQUARE",
+              "count": 0
+            },
+            {
+              "type": "GREEN_CIRCLE_IN_BLACK_DIAMOND",
+              "count": 0
+            },
+            {
+              "type": "BLUE_SQUARE_IN_BLACK_DIAMOND",
+              "count": 0
+            },
+            {
+              "type": "BLACK_DIAMOND",
+              "count": 0
+            },
+            {
+              "type": "DOUBLE_BLACK_DIAMOND",
+              "count": 0
+            },
+            {
+              "type": "DOUBLE_BLACK_DIAMOND_EXTREM",
+              "count": 0
+            },
+            {
+              "type": "TERRAIN_PARKS",
+              "count": 0
+            },
+            {
+              "type": "RED_SQUARE",
+              "count": 0
+            },
+            {
+              "type": "ADVENTURE_ZONE",
+              "count": 0
+            },
+            {
+              "type": "UNDEF",
+              "count": 0
+            }
+          ],
+          "closedTrailsFunZoneByLevel": [
+            {
+              "type": "GREEN",
+              "count": 0
+            },
+            {
+              "type": "BLUE",
+              "count": 0
+            },
+            {
+              "type": "RED",
+              "count": 0
+            },
+            {
+              "type": "BLACK",
+              "count": 0
+            },
+            {
+              "type": "YELLOW",
+              "count": 0
+            },
+            {
+              "type": "GREEN_CIRCLE",
+              "count": 0
+            },
+            {
+              "type": "DOUBLE_GREEN_CIRCLE",
+              "count": 0
+            },
+            {
+              "type": "BLACK_DIAMOND_IN_GREEN_CIRCLE",
+              "count": 0
+            },
+            {
+              "type": "BLUE_SQUARE",
+              "count": 0
+            },
+            {
+              "type": "DOUBLE_BLUE_SQUARE",
+              "count": 0
+            },
+            {
+              "type": "BLACK_DIAMOND_IN_BLUE_SQUARE",
+              "count": 0
+            },
+            {
+              "type": "GREEN_CIRCLE_IN_BLACK_SQUARE",
+              "count": 0
+            },
+            {
+              "type": "GREEN_CIRCLE_IN_BLACK_DIAMOND",
+              "count": 0
+            },
+            {
+              "type": "BLUE_SQUARE_IN_BLACK_DIAMOND",
+              "count": 0
+            },
+            {
+              "type": "BLACK_DIAMOND",
+              "count": 0
+            },
+            {
+              "type": "DOUBLE_BLACK_DIAMOND",
+              "count": 0
+            },
+            {
+              "type": "DOUBLE_BLACK_DIAMOND_EXTREM",
+              "count": 0
+            },
+            {
+              "type": "TERRAIN_PARKS",
+              "count": 0
+            },
+            {
+              "type": "RED_SQUARE",
+              "count": 0
+            },
+            {
+              "type": "ADVENTURE_ZONE",
+              "count": 0
+            },
+            {
+              "type": "UNDEF",
+              "count": 0
+            }
+          ],
+          "closedTrailsDownhillMTBByLevel": [
+            {
+              "type": "GREEN",
+              "count": 0
+            },
+            {
+              "type": "BLUE",
+              "count": 0
+            },
+            {
+              "type": "RED",
+              "count": 0
+            },
+            {
+              "type": "BLACK",
+              "count": 0
+            },
+            {
+              "type": "YELLOW",
+              "count": 0
+            },
+            {
+              "type": "GREEN_CIRCLE",
+              "count": 0
+            },
+            {
+              "type": "DOUBLE_GREEN_CIRCLE",
+              "count": 0
+            },
+            {
+              "type": "BLACK_DIAMOND_IN_GREEN_CIRCLE",
+              "count": 0
+            },
+            {
+              "type": "BLUE_SQUARE",
+              "count": 0
+            },
+            {
+              "type": "DOUBLE_BLUE_SQUARE",
+              "count": 0
+            },
+            {
+              "type": "BLACK_DIAMOND_IN_BLUE_SQUARE",
+              "count": 0
+            },
+            {
+              "type": "GREEN_CIRCLE_IN_BLACK_SQUARE",
+              "count": 0
+            },
+            {
+              "type": "GREEN_CIRCLE_IN_BLACK_DIAMOND",
+              "count": 0
+            },
+            {
+              "type": "BLUE_SQUARE_IN_BLACK_DIAMOND",
+              "count": 0
+            },
+            {
+              "type": "BLACK_DIAMOND",
+              "count": 0
+            },
+            {
+              "type": "DOUBLE_BLACK_DIAMOND",
+              "count": 0
+            },
+            {
+              "type": "DOUBLE_BLACK_DIAMOND_EXTREM",
+              "count": 0
+            },
+            {
+              "type": "TERRAIN_PARKS",
+              "count": 0
+            },
+            {
+              "type": "RED_SQUARE",
+              "count": 0
+            },
+            {
+              "type": "ADVENTURE_ZONE",
+              "count": 0
+            },
+            {
+              "type": "UNDEF",
+              "count": 0
+            }
+          ],
+          "closedTrailsMTBEnduroByLevel": [
+            {
+              "type": "GREEN",
+              "count": 0
+            },
+            {
+              "type": "BLUE",
+              "count": 0
+            },
+            {
+              "type": "RED",
+              "count": 0
+            },
+            {
+              "type": "BLACK",
+              "count": 0
+            },
+            {
+              "type": "YELLOW",
+              "count": 0
+            },
+            {
+              "type": "GREEN_CIRCLE",
+              "count": 0
+            },
+            {
+              "type": "DOUBLE_GREEN_CIRCLE",
+              "count": 0
+            },
+            {
+              "type": "BLACK_DIAMOND_IN_GREEN_CIRCLE",
+              "count": 0
+            },
+            {
+              "type": "BLUE_SQUARE",
+              "count": 0
+            },
+            {
+              "type": "DOUBLE_BLUE_SQUARE",
+              "count": 0
+            },
+            {
+              "type": "BLACK_DIAMOND_IN_BLUE_SQUARE",
+              "count": 0
+            },
+            {
+              "type": "GREEN_CIRCLE_IN_BLACK_SQUARE",
+              "count": 0
+            },
+            {
+              "type": "GREEN_CIRCLE_IN_BLACK_DIAMOND",
+              "count": 0
+            },
+            {
+              "type": "BLUE_SQUARE_IN_BLACK_DIAMOND",
+              "count": 0
+            },
+            {
+              "type": "BLACK_DIAMOND",
+              "count": 0
+            },
+            {
+              "type": "DOUBLE_BLACK_DIAMOND",
+              "count": 0
+            },
+            {
+              "type": "DOUBLE_BLACK_DIAMOND_EXTREM",
+              "count": 0
+            },
+            {
+              "type": "TERRAIN_PARKS",
+              "count": 0
+            },
+            {
+              "type": "RED_SQUARE",
+              "count": 0
+            },
+            {
+              "type": "ADVENTURE_ZONE",
+              "count": 0
+            },
+            {
+              "type": "UNDEF",
+              "count": 0
+            }
+          ],
+          "groomedTrailsByLevel": [
+            {
+              "type": "GREEN",
+              "count": 0
+            },
+            {
+              "type": "BLUE",
+              "count": 0
+            },
+            {
+              "type": "RED",
+              "count": 0
+            },
+            {
+              "type": "BLACK",
+              "count": 0
+            },
+            {
+              "type": "YELLOW",
+              "count": 0
+            },
+            {
+              "type": "GREEN_CIRCLE",
+              "count": 24
+            },
+            {
+              "type": "DOUBLE_GREEN_CIRCLE",
+              "count": 0
+            },
+            {
+              "type": "BLACK_DIAMOND_IN_GREEN_CIRCLE",
+              "count": 0
+            },
+            {
+              "type": "BLUE_SQUARE",
+              "count": 27
+            },
+            {
+              "type": "DOUBLE_BLUE_SQUARE",
+              "count": 0
+            },
+            {
+              "type": "BLACK_DIAMOND_IN_BLUE_SQUARE",
+              "count": 0
+            },
+            {
+              "type": "GREEN_CIRCLE_IN_BLACK_SQUARE",
+              "count": 0
+            },
+            {
+              "type": "GREEN_CIRCLE_IN_BLACK_DIAMOND",
+              "count": 0
+            },
+            {
+              "type": "BLUE_SQUARE_IN_BLACK_DIAMOND",
+              "count": 0
+            },
+            {
+              "type": "BLACK_DIAMOND",
+              "count": 10
+            },
+            {
+              "type": "DOUBLE_BLACK_DIAMOND",
+              "count": 0
+            },
+            {
+              "type": "DOUBLE_BLACK_DIAMOND_EXTREM",
+              "count": 0
+            },
+            {
+              "type": "TERRAIN_PARKS",
+              "count": 0
+            },
+            {
+              "type": "RED_SQUARE",
+              "count": 0
+            },
+            {
+              "type": "ADVENTURE_ZONE",
+              "count": 0
+            },
+            {
+              "type": "UNDEF",
+              "count": 0
+            }
+          ],
+          "groomedTrailsAlpineByLevel": [
+            {
+              "type": "GREEN",
+              "count": 0
+            },
+            {
+              "type": "BLUE",
+              "count": 0
+            },
+            {
+              "type": "RED",
+              "count": 0
+            },
+            {
+              "type": "BLACK",
+              "count": 0
+            },
+            {
+              "type": "YELLOW",
+              "count": 0
+            },
+            {
+              "type": "GREEN_CIRCLE",
+              "count": 24
+            },
+            {
+              "type": "DOUBLE_GREEN_CIRCLE",
+              "count": 0
+            },
+            {
+              "type": "BLACK_DIAMOND_IN_GREEN_CIRCLE",
+              "count": 0
+            },
+            {
+              "type": "BLUE_SQUARE",
+              "count": 27
+            },
+            {
+              "type": "DOUBLE_BLUE_SQUARE",
+              "count": 0
+            },
+            {
+              "type": "BLACK_DIAMOND_IN_BLUE_SQUARE",
+              "count": 0
+            },
+            {
+              "type": "GREEN_CIRCLE_IN_BLACK_SQUARE",
+              "count": 0
+            },
+            {
+              "type": "GREEN_CIRCLE_IN_BLACK_DIAMOND",
+              "count": 0
+            },
+            {
+              "type": "BLUE_SQUARE_IN_BLACK_DIAMOND",
+              "count": 0
+            },
+            {
+              "type": "BLACK_DIAMOND",
+              "count": 10
+            },
+            {
+              "type": "DOUBLE_BLACK_DIAMOND",
+              "count": 0
+            },
+            {
+              "type": "DOUBLE_BLACK_DIAMOND_EXTREM",
+              "count": 0
+            },
+            {
+              "type": "TERRAIN_PARKS",
+              "count": 0
+            },
+            {
+              "type": "RED_SQUARE",
+              "count": 0
+            },
+            {
+              "type": "ADVENTURE_ZONE",
+              "count": 0
+            },
+            {
+              "type": "UNDEF",
+              "count": 0
+            }
+          ],
+          "trailsTotalLengthInPeriode": {
+            "value": 0.0,
+            "unit": "METER",
+            "countryValue": 0.0,
+            "countryUnit": "FOOT"
+          },
+          "trailsAlpineTotalLengthInPeriode": {
+            "value": 0.0,
+            "unit": "METER",
+            "countryValue": 0.0,
+            "countryUnit": "FOOT"
+          },
+          "trailsSleddingTotalLengthInPeriode": {
+            "value": 0.0,
+            "unit": "METER",
+            "countryValue": 0.0,
+            "countryUnit": "FOOT"
+          },
+          "trailsCrossCountryTotalLengthInPeriode": {
+            "value": 0.0,
+            "unit": "METER",
+            "countryValue": 0.0,
+            "countryUnit": "FOOT"
+          },
+          "trailsSkiTouringTotalLengthInPeriode": {
+            "value": 0.0,
+            "unit": "METER",
+            "countryValue": 0.0,
+            "countryUnit": "FOOT"
+          },
+          "trailsSnowshoeTotalLengthInPeriode": {
+            "value": 0.0,
+            "unit": "METER",
+            "countryValue": 0.0,
+            "countryUnit": "FOOT"
+          },
+          "trailsHikingTotalLengthInPeriode": {
+            "value": 0.0,
+            "unit": "METER",
+            "countryValue": 0.0,
+            "countryUnit": "FOOT"
+          },
+          "trailsDownhillMTBTotalLengthInPeriod": {
+            "value": 0.0,
+            "unit": "METER",
+            "countryValue": 0.0,
+            "countryUnit": "FOOT"
+          },
+          "trailsMTBEnduroTotalLengthInPeriod": {
+            "value": 0.0,
+            "unit": "METER",
+            "countryValue": 0.0,
+            "countryUnit": "FOOT"
+          },
+          "openTrailsTotalLength": {
+            "value": 0.0,
+            "unit": "METER",
+            "countryValue": 0.0,
+            "countryUnit": "FOOT"
+          },
+          "openTrailsAlpineTotalLengthInPeriode": {
+            "value": 0.0,
+            "unit": "METER",
+            "countryValue": 0.0,
+            "countryUnit": "FOOT"
+          },
+          "openTrailsSleddingTotalLengthInPeriode": {
+            "value": 0.0,
+            "unit": "METER",
+            "countryValue": 0.0,
+            "countryUnit": "FOOT"
+          },
+          "openTrailsCrossCountryTotalLengthInPeriode": {
+            "value": 0.0,
+            "unit": "METER",
+            "countryValue": 0.0,
+            "countryUnit": "FOOT"
+          },
+          "openTrailsSkiTouringTotalLengthInPeriode": {
+            "value": 0.0,
+            "unit": "METER",
+            "countryValue": 0.0,
+            "countryUnit": "FOOT"
+          },
+          "openTrailsSnowshoeTotalLengthInPeriode": {
+            "value": 0.0,
+            "unit": "METER",
+            "countryValue": 0.0,
+            "countryUnit": "FOOT"
+          },
+          "openTrailsHikingTotalLengthInPeriode": {
+            "value": 0.0,
+            "unit": "METER",
+            "countryValue": 0.0,
+            "countryUnit": "FOOT"
+          },
+          "openTrailsDownhillMTBTotalLengthInPeriod": {
+            "value": 0.0,
+            "unit": "METER",
+            "countryValue": 0.0,
+            "countryUnit": "FOOT"
+          },
+          "openTrailsMTBEnduroTotalLengthInPeriod": {
+            "value": 0.0,
+            "unit": "METER",
+            "countryValue": 0.0,
+            "countryUnit": "FOOT"
+          },
+          "openTrailsLengthRatio": {
+            "value": "NaN",
+            "unit": "PERCENTAGE",
+            "countryValue": "NaN",
+            "countryUnit": "PERCENTAGE"
+          },
+          "trailsTotalSurfaceInPeriode": {
+            "value": 0.0,
+            "unit": "HECTARE",
+            "countryValue": 0.0,
+            "countryUnit": "ACRE"
+          },
+          "openTrailsTotalSurface": {
+            "value": 0.0,
+            "unit": "HECTARE",
+            "countryValue": 0.0,
+            "countryUnit": "ACRE"
+          },
+          "openTrailsSurfaceRatio": {
+            "value": "NaN",
+            "unit": "PERCENTAGE",
+            "countryValue": "NaN",
+            "countryUnit": "PERCENTAGE"
+          }
+        },
+        "interconnectionsOverall": {
+          "interconnectionsInPeriode": 0,
+          "interconnections": 0,
+          "expectedInterconnections": 0,
+          "openInterconnections": 0,
+          "closedInterconnections": 0
+        },
+        "othersPoiOverall": {
+          "pois": 0,
+          "openPoi": 0,
+          "closedPoi": 0
+        },
+        "lastModified": "2024-03-13T09:01:00.000-06:00"
+      }
+    ]
+  }
+}
