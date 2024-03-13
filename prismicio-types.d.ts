@@ -480,7 +480,7 @@ export type MetadataDocument<Lang extends string = string> =
     Lang
   >;
 
-type PageDocumentDataSlicesSlice = MenuItemSlice;
+type PageDocumentDataSlicesSlice = FormSlice | MenuItemSlice;
 
 /**
  * Content for Page documents
